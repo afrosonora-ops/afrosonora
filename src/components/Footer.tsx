@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Youtube, Facebook, Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -9,9 +10,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="inline-block">
-              <span className="font-display text-2xl font-bold text-gradient-gold">
-                AFROSONORA
-              </span>
+              <img 
+                src={logo} 
+                alt="AfroSonora" 
+                className="h-14 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               A ponte entre artistas africanos e o mercado europeu. 
