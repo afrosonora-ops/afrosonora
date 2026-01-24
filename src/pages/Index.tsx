@@ -3,52 +3,37 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { 
-  Music, 
-  Users, 
-  Calendar, 
-  Globe, 
-  Mic2, 
-  Video, 
-  Award, 
-  Heart,
-  ArrowRight,
-  Star,
-  CheckCircle2
-} from "lucide-react";
+import { Music, Users, Calendar, Globe, Mic2, Video, Award, Heart, ArrowRight, Star, CheckCircle2 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroBg})` }}>
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
         </div>
-        
+
         <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30">
               <Star className="w-4 h-4 text-gold" />
               <span className="text-gold text-sm font-medium">A ponte entre África e Europa</span>
             </div>
-            
+
             <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground leading-tight">
-              Conectamos <span className="text-gradient-gold">Artistas Africanos</span> ao Mercado Europeu
+              Conectamos <span className="text-gradient-gold">Artistas</span> ao Mercado Internacional
             </h1>
-            
+
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Promoção artística, criação de oportunidades reais, eventos exclusivos 
-              e ligação direta com promotores internacionais.
+              Promoção artística, criação de oportunidades reais, eventos exclusivos e ligação direta com promotores
+              internacionais.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link to="/registo">
                 <Button variant="hero" size="xl" className="w-full sm:w-auto">
@@ -61,7 +46,7 @@ const Index = () => {
                 </Button>
               </Link>
             </div>
-            
+
             <div className="flex flex-wrap justify-center gap-8 pt-8 text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Music className="w-5 h-5 text-gold" />
@@ -88,10 +73,9 @@ const Index = () => {
               O que é a <span className="text-gradient-gold">AFROSONORA</span>?
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              A AFROSONORA é uma plataforma digital que visa criar uma ponte sólida entre 
-              músicos, artistas e bandas africanas e o mercado europeu. Trabalhamos para 
-              oferecer visibilidade, oportunidades reais e ligações profissionais que 
-              transformam carreiras.
+              A AFROSONORA é uma plataforma digital que visa criar uma ponte sólida entre músicos, artistas e bandas
+              africanas e o mercado europeu. Trabalhamos para oferecer visibilidade, oportunidades reais e ligações
+              profissionais que transformam carreiras.
             </p>
           </div>
         </div>
@@ -108,7 +92,7 @@ const Index = () => {
               Uma plataforma desenhada para todos os intervenientes do ecossistema musical africano.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300">
               <CardHeader className="text-center pb-4">
@@ -123,7 +107,7 @@ const Index = () => {
                 </CardDescription>
               </CardContent>
             </Card>
-            
+
             <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300">
               <CardHeader className="text-center pb-4">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
@@ -137,7 +121,7 @@ const Index = () => {
                 </CardDescription>
               </CardContent>
             </Card>
-            
+
             <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300">
               <CardHeader className="text-center pb-4">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
@@ -151,7 +135,7 @@ const Index = () => {
                 </CardDescription>
               </CardContent>
             </Card>
-            
+
             <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300">
               <CardHeader className="text-center pb-4">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
@@ -180,58 +164,50 @@ const Index = () => {
               Criamos valor real para artistas através de quatro pilares fundamentais.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="flex gap-6 p-6 rounded-xl bg-background/50 border border-border hover:border-gold/30 transition-colors">
               <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center">
                 <Globe className="w-7 h-7 text-gold" />
               </div>
               <div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                  Divulgação de Artistas
-                </h3>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">Divulgação de Artistas</h3>
                 <p className="text-muted-foreground text-sm">
                   Promovemos artistas africanos junto de audiências europeias através de canais digitais e presenciais.
                 </p>
               </div>
             </div>
-            
+
             <div className="flex gap-6 p-6 rounded-xl bg-background/50 border border-border hover:border-gold/30 transition-colors">
               <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center">
                 <Calendar className="w-7 h-7 text-gold" />
               </div>
               <div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                  Criação de Oportunidades
-                </h3>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">Criação de Oportunidades</h3>
                 <p className="text-muted-foreground text-sm">
                   Organizamos showcases, ciclos de seleção e eventos exclusivos para dar palco aos artistas.
                 </p>
               </div>
             </div>
-            
+
             <div className="flex gap-6 p-6 rounded-xl bg-background/50 border border-border hover:border-gold/30 transition-colors">
               <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center">
                 <Video className="w-7 h-7 text-gold" />
               </div>
               <div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                  Conteúdo Editorial
-                </h3>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">Conteúdo Editorial</h3>
                 <p className="text-muted-foreground text-sm">
                   Produzimos entrevistas, lives, reportagens e destaques que contam histórias autênticas.
                 </p>
               </div>
             </div>
-            
+
             <div className="flex gap-6 p-6 rounded-xl bg-background/50 border border-border hover:border-gold/30 transition-colors">
               <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center">
                 <Users className="w-7 h-7 text-gold" />
               </div>
               <div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                  Ligação com Promotores
-                </h3>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">Ligação com Promotores</h3>
                 <p className="text-muted-foreground text-sm">
                   Conectamos artistas diretamente com agências, promotores e organizadores de eventos europeus.
                 </p>
@@ -252,7 +228,7 @@ const Index = () => {
               Escolha o plano que melhor se adapta à sua fase de carreira.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Base Plan */}
             <Card variant="elevated" className="relative overflow-hidden">
@@ -287,7 +263,7 @@ const Index = () => {
                 </Link>
               </CardContent>
             </Card>
-            
+
             {/* Premium Plan */}
             <Card variant="premium" className="relative overflow-hidden ring-2 ring-gold">
               <div className="absolute top-0 right-0 bg-gold text-primary-foreground text-xs font-semibold px-3 py-1 rounded-bl-lg">
@@ -328,7 +304,7 @@ const Index = () => {
                 </Link>
               </CardContent>
             </Card>
-            
+
             {/* Pro Plan */}
             <Card variant="elevated" className="relative overflow-hidden">
               <CardHeader className="pb-4">
@@ -367,9 +343,12 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
-          
+
           <div className="text-center mt-12">
-            <Link to="/planos" className="text-gold hover:text-gold-light transition-colors inline-flex items-center gap-2">
+            <Link
+              to="/planos"
+              className="text-gold hover:text-gold-light transition-colors inline-flex items-center gap-2"
+            >
               Ver todos os detalhes dos planos <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
