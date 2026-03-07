@@ -19,6 +19,7 @@ import BenefactorsPage from "./pages/BenefactorsPage";
 import AmbassadorsPage from "./pages/AmbassadorsPage";
 import PartnersPage from "./pages/PartnersPage";
 import PromotersPage from "./pages/PromotersPage";
+import AdminPage from "./pages/AdminPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -59,6 +60,14 @@ const App = () => (
             <Route path="/embaixadores" element={<AmbassadorsPage />} />
             <Route path="/parceiros" element={<PartnersPage />} />
             <Route path="/promotores" element={<PromotersPage />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute allowedRoles={["admin"]}>
+                  <AdminPage />
+                </ProtectedRoute>
+              }
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
