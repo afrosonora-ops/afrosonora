@@ -96,6 +96,11 @@ const Navbar = () => {
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
                 {user ? (
                   <>
+                    {roles.includes("admin") && (
+                      <Link to="/admin" onClick={() => setIsOpen(false)}>
+                        <Button variant="ghost" className="w-full gap-2 text-primary"><Shield className="w-4 h-4" />Admin</Button>
+                      </Link>
+                    )}
                     <Link to="/painel" onClick={() => setIsOpen(false)}>
                       <Button variant="goldOutline" className="w-full">O Meu Painel</Button>
                     </Link>
