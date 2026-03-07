@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, User, LogOut } from "lucide-react";
+import { Menu, X, User, LogOut, Shield } from "lucide-react";
 import { useState } from "react";
 import logo2 from "@/assets/logo2.png";
 import { useAuth } from "@/contexts/AuthContext";
@@ -8,7 +8,7 @@ import { useAuth } from "@/contexts/AuthContext";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const { user, profile, signOut } = useAuth();
+  const { user, profile, roles, signOut } = useAuth();
 
   const navLinks = [
     { href: "/", label: "Início" },
@@ -44,6 +44,14 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-4">
             {user ? (
               <>
+                {roles.includes("admin") && (
+                  <Link to="/admin">
+                    <Button variant="ghost" size="sm" className="gap-2 text-primary">
+                      <Shield className="w-4 h-4" />
+                      Admin
+                    </Button>
+                  </Link>
+                )}
                 <Link to="/painel">
                   <Button variant="goldOutline" size="sm" className="gap-2">
                     <User className="w-4 h-4" />
@@ -88,6 +96,11 @@ const Navbar = () => {
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
                 {user ? (
                   <>
+                    {roles.includes("admin") && (
+                      <Link to="/admin" onClick={() => setIsOpen(false)}>
+                        <Button variant="ghost" className="w-full gap-2 text-primary"><Shield className="w-4 h-4" />Admin</Button>
+                      </Link>
+                    )}
                     <Link to="/painel" onClick={() => setIsOpen(false)}>
                       <Button variant="goldOutline" className="w-full">O Meu Painel</Button>
                     </Link>

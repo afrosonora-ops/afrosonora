@@ -73,6 +73,7 @@ const DashboardPage = () => {
     partner: "Parceiro",
     benefactor: "Benfeitor",
     ambassador: "Embaixador",
+    admin: "Administrador",
   };
 
   return (
