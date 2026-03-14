@@ -67,6 +67,11 @@ const Footer = () => {
                   Começa a Criar
                 </Link>
               </li>
+              <li>
+                <Link to="/store" className="text-muted-foreground hover:text-gold transition-colors text-sm">
+                  Store AFROSONORA
+                </Link>
+              </li>
             </ul>
           </div>
 

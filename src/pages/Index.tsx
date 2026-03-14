@@ -234,6 +234,9 @@ const Index = () => {
       {/* Home Studio */}
       <HomeStudioSection />
 
+      {/* Store Section */}
+      <StoreSection />
+
       {/* Plans Preview */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
