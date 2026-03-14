@@ -94,61 +94,69 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                  <Mic2 className="w-8 h-8 text-gold" />
-                </div>
-                <CardTitle className="text-xl">Artistas</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-center">
-                  Músicos, cantores, DJs e bandas que querem expandir a sua carreira para a Europa.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Link to="/para-artistas">
+              <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300 h-full">
+                <CardHeader className="text-center pb-4">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                    <Mic2 className="w-8 h-8 text-gold" />
+                  </div>
+                  <CardTitle className="text-xl">Artistas</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-center">
+                    Músicos, cantores, DJs e bandas que querem expandir a sua carreira para a Europa.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                  <Users className="w-8 h-8 text-gold" />
-                </div>
-                <CardTitle className="text-xl">Promotores</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-center">
-                  Agências e promotores à procura de talento africano autêntico para os seus eventos.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Link to="/promotores">
+              <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300 h-full">
+                <CardHeader className="text-center pb-4">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                    <Users className="w-8 h-8 text-gold" />
+                  </div>
+                  <CardTitle className="text-xl">Promotores</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-center">
+                    Agências e promotores à procura de talento africano autêntico para os seus eventos.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                  <Heart className="w-8 h-8 text-gold" />
-                </div>
-                <CardTitle className="text-xl">Benfeitores</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-center">
-                  Pessoas que acreditam na cultura africana e querem apoiar artistas emergentes.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Link to="/benfeitores">
+              <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300 h-full">
+                <CardHeader className="text-center pb-4">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                    <Heart className="w-8 h-8 text-gold" />
+                  </div>
+                  <CardTitle className="text-xl">Benfeitores</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-center">
+                    Pessoas que acreditam na cultura africana e querem apoiar artistas emergentes.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                  <Award className="w-8 h-8 text-gold" />
-                </div>
-                <CardTitle className="text-xl">Embaixadores</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-center">
-                  Líderes comunitários que ajudam a expandir a missão AFROSONORA globalmente.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Link to="/embaixadores">
+              <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300 h-full">
+                <CardHeader className="text-center pb-4">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                    <Award className="w-8 h-8 text-gold" />
+                  </div>
+                  <CardTitle className="text-xl">Embaixadores</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-center">
+                    Líderes comunitários que ajudam a expandir a missão AFROSONORA globalmente.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>

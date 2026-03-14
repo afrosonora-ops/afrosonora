@@ -1,24 +1,14 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Users, Search, Mail, Star, CheckCircle2, ArrowRight } from "lucide-react";
+import { Users, ArrowRight } from "lucide-react";
 
 const PromotersPage = () => {
-  const benefits = [
-    "Acesso direto a uma base de talento africano autêntico",
-    "Perfis verificados e curados pela AFROSONORA",
-    "Contacto direto com artistas",
-    "Acesso prioritário a oportunidades e eventos",
-    "Suporte na seleção de artistas para os seus projetos",
-    "Lista de favoritos personalizável",
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           {/* Header */}
@@ -30,125 +20,128 @@ const PromotersPage = () => {
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
               Promotores & <span className="text-gradient-gold">Agências</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Descubra talento africano autêntico para os seus eventos, festivais e projetos artísticos.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              A AFROSONORA é uma plataforma criada para ligar músicos e artistas africanos ao mercado europeu, criando uma ponte direta entre talento emergente e profissionais da indústria musical.
             </p>
           </div>
-          
-          {/* Value Proposition */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card variant="gold" className="text-center animate-slide-up">
-                <CardHeader>
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center">
-                    <Search className="w-8 h-8 text-gold" />
-                  </div>
-                  <CardTitle className="text-xl">Descoberta</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Encontre artistas por género, país, disponibilidade e estilo. Filtros avançados para encontrar exatamente o que procura.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-              
-              <Card variant="gold" className="text-center animate-slide-up" style={{ animationDelay: "0.1s" }}>
-                <CardHeader>
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center">
-                    <Mail className="w-8 h-8 text-gold" />
-                  </div>
-                  <CardTitle className="text-xl">Contacto Direto</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Comunique diretamente com os artistas. Sem intermediários, sem complicações.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-              
-              <Card variant="gold" className="text-center animate-slide-up" style={{ animationDelay: "0.2s" }}>
-                <CardHeader>
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center">
-                    <Star className="w-8 h-8 text-gold" />
-                  </div>
-                  <CardTitle className="text-xl">Qualidade</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Todos os artistas são curados pela nossa equipa. Garantimos qualidade e profissionalismo.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-          
-          {/* Benefits */}
+
+          {/* Intro */}
           <div className="max-w-3xl mx-auto mb-16">
-            <h2 className="font-display text-3xl font-bold text-foreground text-center mb-8">
-              Benefícios para <span className="text-gradient-gold">Promotores</span>
-            </h2>
-            <div className="p-8 rounded-xl bg-charcoal border border-border">
-              <ul className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-center gap-4">
-                    <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
-                    <span className="text-foreground">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="p-8 rounded-xl bg-charcoal border border-border space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                A secção Promotores & Agências é dedicada a todos aqueles que procuram descobrir novos artistas autênticos, criar eventos, desenvolver carreiras e estabelecer novas colaborações no universo da música africana.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Se é promotor, agente artístico, produtor de eventos, festival ou agência, a AFROSONORA permite-lhe aceder a uma rede crescente de talentos, cuidadosamente apresentados numa plataforma profissional e internacional.
+              </p>
             </div>
           </div>
-          
-          {/* How it works */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
-              Como <span className="text-gradient-gold">funciona</span>?
+
+          {/* Descobrir talento */}
+          <div className="max-w-3xl mx-auto mb-16">
+            <h2 className="font-display text-3xl font-bold text-foreground mb-8 text-center">
+              Descobrir <span className="text-gradient-gold">talento africano</span>
             </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <p className="text-muted-foreground leading-relaxed mb-8 text-center">
+              Ao registar-se como Promotor ou Agência, terá acesso a:
+            </p>
+            <div className="space-y-4">
               {[
-                { step: "1", title: "Registe-se", desc: "Crie uma conta como promotor/agência" },
-                { step: "2", title: "Explore", desc: "Navegue pelo diretório de artistas" },
-                { step: "3", title: "Contacte", desc: "Entre em contacto direto com artistas" },
-                { step: "4", title: "Contrate", desc: "Feche acordos diretamente" },
-              ].map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-gold text-primary-foreground font-bold text-xl flex items-center justify-center">
-                    {item.step}
+                { emoji: "🎵", title: "Perfis de artistas e bandas africanas", desc: "Descubra músicos emergentes com identidade cultural forte e potencial internacional." },
+                { emoji: "📩", title: "Acesso direto a artistas", desc: "Possibilidade de contactar artistas registados na plataforma para colaborações, eventos ou projetos." },
+                { emoji: "📀", title: "Receção de novidades e maquetes musicais", desc: "Promotores registados poderão receber informações sobre artistas promissores, incluindo lançamentos, demos, projetos e novidades da comunidade AFROSONORA." },
+                { emoji: "🎤", title: "Oportunidades para eventos e showcases", desc: "Identifique artistas adequados para concertos, festivais, eventos culturais e programações artísticas." },
+              ].map((item, i) => (
+                <div key={i} className="p-5 rounded-lg bg-charcoal border border-border">
+                  <div className="flex items-start gap-4">
+                    <span className="text-2xl mt-0.5">{item.emoji}</span>
+                    <div>
+                      <h3 className="text-foreground font-semibold mb-1">{item.title}</h3>
+                      <p className="text-muted-foreground text-sm">{item.desc}</p>
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
-          
+
+          {/* Criar ligações */}
+          <div className="max-w-3xl mx-auto mb-16">
+            <h2 className="font-display text-3xl font-bold text-foreground mb-6 text-center">
+              Criar ligações e <span className="text-gradient-gold">desenvolver talento</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6 text-center">
+              A AFROSONORA não pretende apenas promover artistas — queremos também criar relações reais entre profissionais da indústria.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6 text-center">Promotores registados poderão:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg bg-charcoal border border-border text-foreground text-sm">Aconselhar artistas em fase de desenvolvimento</div>
+              <div className="p-4 rounded-lg bg-charcoal border border-border text-foreground text-sm">Acompanhar projetos promissores desde o início</div>
+              <div className="p-4 rounded-lg bg-charcoal border border-border text-foreground text-sm">Colaborar na promoção de músicas e projetos</div>
+              <div className="p-4 rounded-lg bg-charcoal border border-border text-foreground text-sm">Convidar artistas para eventos, espetáculos e programações culturais</div>
+            </div>
+            <p className="text-muted-foreground leading-relaxed mt-6 text-center">
+              Esta ligação direta pode contribuir para descobrir talentos antes de chegarem ao mercado mainstream.
+            </p>
+          </div>
+
+          {/* Programa */}
+          <div className="max-w-3xl mx-auto mb-16">
+            <h2 className="font-display text-3xl font-bold text-foreground mb-8 text-center">
+              Programa Promotores <span className="text-gradient-gold">AFROSONORA</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-8 text-center">
+              Para incentivar a participação ativa de promotores e agências, a AFROSONORA está a desenvolver um programa especial para promotores parceiros. Este programa poderá incluir:
+            </p>
+            <div className="space-y-4">
+              {[
+                { emoji: "🤝", text: "Acesso antecipado a novos artistas e projetos" },
+                { emoji: "🎤", text: "Prioridade na descoberta de talentos emergentes" },
+                { emoji: "🌍", text: "Participação em eventos e iniciativas AFROSONORA" },
+                { emoji: "📢", text: "Visibilidade como promotor parceiro da plataforma" },
+                { emoji: "💡", text: "Possibilidade de propor eventos, ciclos ou showcases" },
+                { emoji: "🎟", text: "Convites para eventos e encontros da comunidade AFROSONORA" },
+              ].map((item, i) => (
+                <div key={i} className="p-4 rounded-lg bg-charcoal border border-border flex items-center gap-4">
+                  <span className="text-2xl">{item.emoji}</span>
+                  <span className="text-foreground">{item.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Closing + CTA */}
+          <div className="max-w-3xl mx-auto mb-16 text-center">
+            <h2 className="font-display text-3xl font-bold text-foreground mb-6">
+              Construir o futuro da <span className="text-gradient-gold">música africana</span> na Europa
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              A AFROSONORA acredita que os promotores e agências são peças fundamentais no desenvolvimento da carreira dos artistas.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Se procura novos sons, novas culturas e novos talentos, esta é uma oportunidade para fazer parte de um movimento cultural em crescimento.
+            </p>
+          </div>
+
           {/* CTA */}
           <div className="max-w-2xl mx-auto text-center">
-            <Card variant="premium" className="p-8 ring-2 ring-gold">
+            <div className="p-8 rounded-xl bg-charcoal border-2 border-gold/30">
               <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                Pronto para descobrir talento africano?
+                Registe-se como Promotor 🌍🎶
               </h2>
               <p className="text-muted-foreground mb-6">
-                Registe-se gratuitamente e comece a explorar a nossa base de artistas verificados.
+                Comece a descobrir a próxima geração de artistas africanos.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/registo">
-                  <Button variant="gold" size="lg">
-                    Registar como Promotor <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </Link>
-                <Link to="/artistas">
-                  <Button variant="goldOutline" size="lg">
-                    Ver Artistas
-                  </Button>
-                </Link>
-              </div>
-            </Card>
+              <Link to="/registo">
+                <Button variant="gold" size="lg">
+                  Registar como Promotor <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

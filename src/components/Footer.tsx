@@ -72,7 +72,7 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/registo" className="text-muted-foreground hover:text-gold transition-colors text-sm">
+                <Link to="/para-artistas" className="text-muted-foreground hover:text-gold transition-colors text-sm">
                   Músicos & Artistas
                 </Link>
               </li>
