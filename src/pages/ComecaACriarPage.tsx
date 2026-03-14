@@ -1,12 +1,83 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Headphones, Mic2, Music, Cable, MonitorSpeaker, CheckCircle2, ArrowRight } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Headphones, Mic2, Music, Cable, MonitorSpeaker, CheckCircle2, Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import setupImg from "@/assets/home-studio-setup.jpg";
 import packImg from "@/assets/home-studio-pack.jpg";
 
+const productOptions = [
+  "Quero saber as condições do Pacote Home Studio AFROSONORA",
+  "Microfone de estúdio",
+  "Interface de áudio",
+  "Auscultadores profissionais",
+  "Pop filter e acessórios essenciais",
+  "Cabos e suporte de microfone",
+  "Software de produção musical (DAW)",
+  "Tratamento acústico (painéis, bass traps, cortinas)",
+  "Outros equipamentos de home studio",
+];
+
 const ComecaACriarPage = () => {
+  const [open, setOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  const [message, setMessage] = useState("");
+  const { toast } = useToast();
+
+  const toggleProduct = (product: string) => {
+    setSelectedProducts((prev) =>
+      prev.includes(product) ? prev.filter((p) => p !== product) : [...prev, product]
+    );
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!name.trim() || !email.trim() || selectedProducts.length === 0) {
+      toast({ title: "Campos obrigatórios em falta", description: "Preenche o nome, email e seleciona pelo menos um produto.", variant: "destructive" });
+      return;
+    }
+
+    const body = [
+      `Nome: ${name.trim()}`,
+      `Email: ${email.trim()}`,
+      whatsapp.trim() ? `WhatsApp: ${whatsapp.trim()}` : "",
+      "",
+      "Produtos / Informações:",
+      ...selectedProducts.map((p) => `• ${p}`),
+      "",
+      message.trim() ? `Mensagem adicional:\n${message.trim()}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const mailtoLink = `mailto:info@afrosonora.com?subject=${encodeURIComponent("Pedido de Informações – Home Studio AFROSONORA")}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoLink, "_blank");
+
+    setSubmitted(true);
+  };
+
+  const resetForm = () => {
+    setName("");
+    setEmail("");
+    setWhatsapp("");
+    setSelectedProducts([]);
+    setMessage("");
+    setSubmitted(false);
+    setOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -116,17 +187,87 @@ const ComecaACriarPage = () => {
           <p className="text-muted-foreground text-lg leading-relaxed">
             Se quiseres mais informações ou quiseres adquirir o pacote Home Studio AFROSONORA, entra em contacto connosco.
           </p>
-          <a href="mailto:info@afrosonora.com?subject=Informação%20sobre%20Pacote%20Home%20Studio">
-            <Button variant="hero" size="xl" className="mt-4">
-              <Headphones className="mr-2 w-5 h-5" />
-              Pedir Informações sobre Equipamento
-            </Button>
-          </a>
+          <Button variant="hero" size="xl" className="mt-4" onClick={() => setOpen(true)}>
+            <Headphones className="mr-2 w-5 h-5" />
+            Pedir Informações sobre Equipamento
+          </Button>
           <p className="text-muted-foreground text-sm pt-4">
             Equipamentos também disponíveis na nossa loja online, com condições especiais para membros registados da AFROSONORA.
           </p>
         </div>
       </section>
+
+      {/* Form Dialog */}
+      <Dialog open={open} onOpenChange={(v) => { if (!v) resetForm(); else setOpen(true); }}>
+        <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto bg-charcoal border-border">
+          {submitted ? (
+            <div className="py-10 text-center space-y-4">
+              <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto">
+                <CheckCircle2 className="w-8 h-8 text-gold" />
+              </div>
+              <h3 className="font-display text-xl font-bold text-foreground">Pedido Enviado com Sucesso!</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mx-auto">
+                O seu pedido foi enviado com sucesso! A equipa AFROSONORA entrará em contacto em breve.
+              </p>
+              <Button variant="gold" onClick={resetForm} className="mt-4">Fechar</Button>
+            </div>
+          ) : (
+            <>
+              <DialogHeader>
+                <DialogTitle className="font-display text-xl text-foreground">
+                  Pedido de <span className="text-gradient-gold">Informações</span>
+                </DialogTitle>
+                <DialogDescription className="text-muted-foreground text-sm">
+                  Preenche o formulário e a equipa AFROSONORA entrará em contacto.
+                </DialogDescription>
+              </DialogHeader>
+
+              <form onSubmit={handleSubmit} className="space-y-5 pt-2">
+                <div className="space-y-2">
+                  <Label htmlFor="form-name" className="text-foreground">Nome completo *</Label>
+                  <Input id="form-name" value={name} onChange={(e) => setName(e.target.value)} placeholder="O teu nome" required maxLength={100} className="bg-background/50 border-border" />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="form-email" className="text-foreground">Email *</Label>
+                  <Input id="form-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email@exemplo.com" required maxLength={255} className="bg-background/50 border-border" />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="form-whatsapp" className="text-foreground">WhatsApp <span className="text-muted-foreground text-xs">(opcional)</span></Label>
+                  <Input id="form-whatsapp" type="tel" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} placeholder="+351 912 345 678" maxLength={20} className="bg-background/50 border-border" />
+                </div>
+
+                <div className="space-y-3">
+                  <Label className="text-foreground">Tipo de produtos ou informações *</Label>
+                  <div className="space-y-2.5">
+                    {productOptions.map((product) => (
+                      <label key={product} className="flex items-start gap-3 cursor-pointer group">
+                        <Checkbox
+                          checked={selectedProducts.includes(product)}
+                          onCheckedChange={() => toggleProduct(product)}
+                          className="mt-0.5 border-border data-[state=checked]:bg-gold data-[state=checked]:border-gold"
+                        />
+                        <span className="text-sm text-foreground/80 group-hover:text-foreground transition-colors leading-snug">{product}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="form-message" className="text-foreground">Mensagem adicional / Observações</Label>
+                  <Textarea id="form-message" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Descreve as tuas necessidades ou dúvidas..." maxLength={1000} rows={3} className="bg-background/50 border-border resize-none" />
+                </div>
+
+                <Button type="submit" variant="gold" size="lg" className="w-full">
+                  <Send className="mr-2 w-4 h-4" />
+                  Enviar Pedido
+                </Button>
+              </form>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>
