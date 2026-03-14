@@ -1,10 +1,90 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ShoppingBag, Heart, ArrowRight } from "lucide-react";
+import { ShoppingBag, Heart, ArrowRight, Star, Sparkles, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import store1 from "@/assets/store-1.jpg";
-import store2 from "@/assets/store-2.jpg";
-import store3 from "@/assets/store-3.jpg";
+import { Badge } from "@/components/ui/badge";
+
+import storeTshirt from "@/assets/store-tshirt.jpg";
+import storeHoodie from "@/assets/store-hoodie.jpg";
+import storeCap from "@/assets/store-cap.jpg";
+import storeLeather from "@/assets/store-leather.jpg";
+import storeCasual from "@/assets/store-casual.jpg";
+import storeBackpack from "@/assets/store-backpack.jpg";
+import storeHeadphones from "@/assets/store-headphones.jpg";
+import storeMic from "@/assets/store-mic.jpg";
+import storeKit from "@/assets/store-kit.jpg";
+
+const products = [
+  {
+    image: storeTshirt,
+    title: 'T-shirt "AfroSonora Vibes"',
+    desc: "Camiseta de alta qualidade, design premium, perfeita para mostrar a tua paixão pela música africana.",
+    price: "29€",
+    badge: "Novo",
+  },
+  {
+    image: storeHoodie,
+    title: 'Camisola de Capuz "Tribo AFRO"',
+    desc: "Hoodie confortável e estiloso, ideal para artistas, fãs e criadores que fazem parte da tribo AFROSONORA.",
+    price: "45€",
+    badge: "Popular",
+  },
+  {
+    image: storeCap,
+    title: 'Boné "Ritmo Urbano"',
+    desc: "Boné moderno e ajustável, com estilo urbano, perfeito para completar o teu estilo musical.",
+    price: "24€",
+    badge: null,
+  },
+  {
+    image: storeLeather,
+    title: 'Casaco Tipo Couro "Gold Beat"',
+    desc: "Casaco elegante tipo couro com detalhes sofisticados para um look premium com atitude musical.",
+    price: "129€",
+    badge: "Novo",
+  },
+  {
+    image: storeCasual,
+    title: 'Casaco Casual "AfroFlow"',
+    desc: "Casaco confortável e versátil, ideal para o dia a dia ou para eventos AFROSONORA.",
+    price: "79€",
+    badge: null,
+  },
+  {
+    image: storeBackpack,
+    title: 'Mochila "Tribo Beat"',
+    desc: "Mochila moderna e prática, ideal para transportar equipamentos, laptops ou acessórios musicais.",
+    price: "69€",
+    badge: null,
+  },
+  {
+    image: storeHeadphones,
+    title: "Auscultadores SingerPro",
+    desc: "Auscultadores ideais para gravação vocal, produção musical ou ouvir música com qualidade.",
+    price: "22€",
+    badge: "Recomendado para Artistas",
+  },
+  {
+    image: storeMic,
+    title: "Microfone Pro BM800 V8 Studio",
+    desc: "Microfone condensador de estúdio ideal para canto, gravação vocal e produção musical.",
+    price: "95€",
+    badge: "Popular",
+  },
+  {
+    image: storeKit,
+    title: "Home Studio AFROSONORA – MX10 Studio Kit",
+    desc: "Kit completo de home studio com microfone condensador profissional MX10, ideal para artistas que querem começar a gravar música em casa.",
+    price: "245€",
+    badge: "Recomendado para Artistas",
+  },
+];
+
+const badgeIcon = (badge: string) => {
+  if (badge === "Novo") return <Sparkles className="w-3 h-3" />;
+  if (badge === "Popular") return <Star className="w-3 h-3" />;
+  return <Music className="w-3 h-3" />;
+};
 
 const StorePage = () => {
   return (
@@ -40,33 +120,57 @@ const StorePage = () => {
             <div>
               <h2 className="font-display text-2xl font-bold text-foreground mb-2">A Nossa Missão</h2>
               <p className="text-muted-foreground leading-relaxed">
-                A loja é uma extensão da missão da AFROSONORA: promover talento, criar oportunidades e eventos, e fortalecer a comunidade musical africana na Europa. Ao adquirires um produto, estás a ajudar a cultura a crescer e a fazer parte da tribo.
+                Cada compra na Store AFROSONORA contribui diretamente para apoiar iniciativas, eventos e oportunidades para jovens músicos africanos. Junta-te à tribo AFROSONORA.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Products */}
+      {/* Products Grid */}
       <section className="py-20 bg-charcoal">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
             A Nossa <span className="text-gradient-gold">Coleção</span>
           </h2>
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            Explora todos os produtos AFROSONORA. Streetwear, acessórios e equipamento musical para a tribo.
+          </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { image: store1, title: "Streetwear Premium", desc: "Hoodies, bonés e jackets exclusivos com o emblema AFROSONORA. Design urbano com identidade africana autêntica." },
-              { image: store2, title: "Coleção Completa", desc: "T-shirts, bombers e acessórios para toda a tribo. Cada peça é desenhada para representar a cultura e a música." },
-              { image: store3, title: "Música & Lifestyle", desc: "Equipamento de estúdio encontra a moda. Produtos que celebram a fusão entre tecnologia musical e cultura africana." },
-            ].map((item, i) => (
-              <div key={i} className="group rounded-xl overflow-hidden border border-border hover:border-gold/40 transition-all duration-300 bg-background/50">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {products.map((item, i) => (
+              <div
+                key={i}
+                className="group rounded-xl overflow-hidden border border-border hover:border-gold/40 transition-all duration-300 bg-background/50 flex flex-col"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  {item.badge && (
+                    <Badge className="absolute top-3 left-3 bg-gold text-primary-foreground border-none gap-1 text-xs font-semibold">
+                      {badgeIcon(item.badge)}
+                      {item.badge}
+                    </Badge>
+                  )}
                 </div>
-                <div className="p-6">
-                  <h3 className="font-display text-xl font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-1 leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">
+                    {item.desc}
+                  </p>
+                  <div className="flex items-center justify-between mt-auto">
+                    <span className="font-display text-2xl font-bold text-gold">
+                      {item.price}
+                    </span>
+                    <Button variant="goldOutline" size="sm" disabled className="opacity-60 cursor-not-allowed">
+                      Ver Produto <ArrowRight className="ml-1 w-4 h-4" />
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -82,7 +186,7 @@ const StorePage = () => {
               Brevemente <span className="text-gradient-gold">Disponível</span>
             </h2>
             <p className="text-muted-foreground text-lg">
-              A loja online AFROSONORA estará disponível em breve. Regista-te para seres o primeiro a saber quando abrirmos portas, com condições especiais para membros da comunidade.
+              A loja online AFROSONORA estará totalmente disponível em breve. Regista-te para seres o primeiro a saber quando abrirmos portas, com condições especiais para membros da comunidade.
             </p>
             <a href="mailto:info@afrosonora.com?subject=Interesse%20na%20Loja%20AFROSONORA">
               <Button variant="hero" size="xl">
