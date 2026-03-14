@@ -7,6 +7,7 @@ import { Music, Users, Calendar, Globe, Mic2, Video, Award, Heart, ArrowRight, S
 import heroBg from "@/assets/hero-bg.jpg";
 import FeaturedEvents from "@/components/FeaturedEvents";
 import HomeStudioSection from "@/components/HomeStudioSection";
+import StoreSection from "@/components/StoreSection";
 
 const Index = () => {
   return (
