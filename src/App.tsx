@@ -23,6 +23,7 @@ import PartnersPage from "./pages/PartnersPage";
 import PromotersPage from "./pages/PromotersPage";
 import AdminPage from "./pages/AdminPage";
 import ComecaACriarPage from "./pages/ComecaACriarPage";
+import StorePage from "./pages/StorePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
