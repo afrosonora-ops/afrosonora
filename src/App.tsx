@@ -15,6 +15,7 @@ import ArtistsPage from "./pages/ArtistsPage";
 import ArtistInfoPage from "./pages/ArtistInfoPage";
 import PlansPage from "./pages/PlansPage";
 import EventsPage from "./pages/EventsPage";
+import EventDetailPage from "./pages/EventDetailPage";
 import ContactPage from "./pages/ContactPage";
 import BenefactorsPage from "./pages/BenefactorsPage";
 import AmbassadorsPage from "./pages/AmbassadorsPage";
