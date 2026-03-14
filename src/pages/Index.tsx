@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Music, Users, Calendar, Globe, Mic2, Video, Award, Heart, ArrowRight, Star, CheckCircle2 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import FeaturedEvents from "@/components/FeaturedEvents";
 
 const Index = () => {
   return (
@@ -224,6 +225,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Featured Events */}
+      <FeaturedEvents />
 
       {/* Plans Preview */}
       <section className="py-24 bg-background">
