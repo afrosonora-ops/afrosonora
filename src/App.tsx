@@ -15,6 +15,7 @@ import ArtistsPage from "./pages/ArtistsPage";
 import ArtistInfoPage from "./pages/ArtistInfoPage";
 import PlansPage from "./pages/PlansPage";
 import EventsPage from "./pages/EventsPage";
+import EventDetailPage from "./pages/EventDetailPage";
 import ContactPage from "./pages/ContactPage";
 import BenefactorsPage from "./pages/BenefactorsPage";
 import AmbassadorsPage from "./pages/AmbassadorsPage";
@@ -57,6 +58,7 @@ const App = () => (
             <Route path="/para-artistas" element={<ArtistInfoPage />} />
             <Route path="/planos" element={<PlansPage />} />
             <Route path="/eventos" element={<EventsPage />} />
+            <Route path="/eventos/:slug" element={<EventDetailPage />} />
             <Route path="/contacto" element={<ContactPage />} />
             <Route path="/benfeitores" element={<BenefactorsPage />} />
             <Route path="/embaixadores" element={<AmbassadorsPage />} />
