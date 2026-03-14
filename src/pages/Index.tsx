@@ -226,6 +226,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Featured Events */}
+      <FeaturedEvents />
+
       {/* Plans Preview */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
