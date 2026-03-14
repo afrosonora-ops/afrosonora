@@ -245,40 +245,40 @@ const Index = () => {
               <span className="text-gradient-gold">Planos</span> para Artistas
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Escolha o plano que melhor se adapta à sua fase de carreira.
+              Impulsione sua carreira. Escolha o plano ideal para cada fase da sua jornada artística.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Base Plan */}
+            {/* Essencial Plan */}
             <Card variant="elevated" className="relative overflow-hidden">
               <CardHeader className="pb-4">
-                <CardDescription className="text-gold font-medium">Gratuito</CardDescription>
-                <CardTitle className="text-3xl">Base</CardTitle>
+                <CardDescription className="text-gold font-medium">Iniciante</CardDescription>
+                <CardTitle className="text-3xl">Essencial</CardTitle>
                 <div className="pt-2">
-                  <span className="text-4xl font-bold text-foreground">0€</span>
+                  <span className="text-4xl font-bold text-foreground">1,50€</span>
                   <span className="text-muted-foreground">/mês</span>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-muted-foreground text-sm">Perfeito para descoberta e primeiros passos.</p>
+                <p className="text-muted-foreground text-sm">Para artistas que buscam iniciar a promoção dos seus trabalhos.</p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
-                    <span className="text-foreground">Perfil básico público</span>
+                    <span className="text-foreground">Promoção artística</span>
                   </li>
                   <li className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
-                    <span className="text-foreground">Participação em ciclos</span>
+                    <span className="text-foreground">Participação em eventos</span>
                   </li>
                   <li className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
-                    <span className="text-foreground">Destaque editorial ocasional</span>
+                    <span className="text-foreground">Destaque rotativo</span>
                   </li>
                 </ul>
                 <Link to="/registo" className="block pt-4">
                   <Button variant="outline" className="w-full">
-                    Começar Grátis
+                    Começar Agora
                   </Button>
                 </Link>
               </CardContent>
@@ -298,19 +298,19 @@ const Index = () => {
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-muted-foreground text-sm">Para artistas que levam a sério a sua carreira.</p>
+                <p className="text-muted-foreground text-sm">Para artistas sérios sobre a sua carreira.</p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
-                    <span className="text-foreground">Upload de músicas e vídeos</span>
+                    <span className="text-foreground">Upload ilimitado</span>
                   </li>
                   <li className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
-                    <span className="text-foreground">Destaque rotativo</span>
+                    <span className="text-foreground">Destaque prioritário</span>
                   </li>
                   <li className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
-                    <span className="text-foreground">Comunidade fechada</span>
+                    <span className="text-foreground">Comunidade exclusiva</span>
                   </li>
                   <li className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
@@ -348,7 +348,11 @@ const Index = () => {
                   </li>
                   <li className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
-                    <span className="text-foreground">Contacto direto promotores</span>
+                    <span className="text-foreground">Contacto com promotores</span>
+                  </li>
+                  <li className="flex items-center gap-3 text-sm">
+                    <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
+                    <span className="text-foreground">Convites VIP</span>
                   </li>
                   <li className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />

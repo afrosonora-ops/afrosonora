@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { CheckCircle2, X, AlertTriangle, ArrowRight } from "lucide-react";
+import { CheckCircle2, AlertTriangle, ArrowRight } from "lucide-react";
 
 const PlansPage = () => {
   return (
@@ -15,31 +15,31 @@ const PlansPage = () => {
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Escolha o seu <span className="text-gradient-gold">Plano</span>
+              Planos de Assinatura para <span className="text-gradient-gold">Artistas</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Planos desenhados para cada fase da sua carreira artística. 
-              Sem compromisso, cancele quando quiser.
+              Impulsione sua carreira. Escolha o plano ideal para cada fase da sua jornada artística. 
+              Nossos planos oferecem ferramentas e suporte para o seu crescimento.
             </p>
           </div>
           
           {/* Plans Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-            {/* Base Plan */}
+            {/* Essencial Plan */}
             <Card variant="elevated" className="relative overflow-hidden animate-slide-up" style={{ animationDelay: "0s" }}>
               <CardHeader className="pb-4">
                 <CardDescription className="text-gold font-medium uppercase tracking-wider text-xs">
-                  Descoberta
+                  Iniciante
                 </CardDescription>
-                <CardTitle className="text-3xl">Base</CardTitle>
+                <CardTitle className="text-3xl">Essencial</CardTitle>
                 <div className="pt-2">
-                  <span className="text-5xl font-bold text-foreground">0€</span>
+                  <span className="text-5xl font-bold text-foreground">1,50€</span>
                   <span className="text-muted-foreground">/mês</span>
                 </div>
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-muted-foreground">
-                  Perfeito para artistas que estão a começar e querem ser descobertos.
+                  Para artistas que buscam iniciar a promoção dos seus trabalhos e explorar novas ferramentas de divulgação.
                 </p>
                 
                 <div className="space-y-4">
@@ -47,40 +47,22 @@ const PlansPage = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Perfil básico público</span>
+                      <span className="text-foreground">Promoção Artística — Ferramentas básicas para divulgar seus projetos</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Participação em ciclos de seleção</span>
+                      <span className="text-foreground">Participação em Eventos — Acesso a ciclos e eventos selecionados</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Possibilidade de destaque editorial ocasional</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-muted-foreground text-sm uppercase tracking-wider">Limitações:</h4>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3 text-sm">
-                      <X className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Sem upload de vídeos</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <X className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Sem submissão direta a eventos</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <X className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Sem contacto direto com promotores</span>
+                      <span className="text-foreground">Destaque Rotativo — Visibilidade ocasional em nossas plataformas</span>
                     </li>
                   </ul>
                 </div>
                 
                 <Link to="/registo" className="block pt-4">
                   <Button variant="outline" className="w-full" size="lg">
-                    Começar Grátis
+                    Começar Agora
                   </Button>
                 </Link>
               </CardContent>
@@ -100,43 +82,32 @@ const PlansPage = () => {
                   <span className="text-5xl font-bold text-foreground">9€</span>
                   <span className="text-muted-foreground">/mês</span>
                 </div>
-                <p className="text-sm text-muted-foreground pt-1">ou 90€/ano (2 meses grátis)</p>
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-muted-foreground">
-                  Para artistas que levam a sério a sua carreira e querem crescer.
+                  Para artistas sérios sobre a sua carreira, buscando promoção avançada e acesso exclusivo.
                 </p>
                 
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-foreground text-sm uppercase tracking-wider">Inclui tudo do Base, mais:</h4>
+                  <h4 className="font-semibold text-foreground text-sm uppercase tracking-wider">Inclui tudo do Essencial, mais:</h4>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Upload de músicas e vídeos (limite definido)</span>
+                      <span className="text-foreground">Upload Ilimitado — Publique músicas e vídeos sem restrições</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Destaque rotativo no diretório</span>
+                      <span className="text-foreground">Destaque Prioritário — Maior visibilidade em todas as plataformas</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Acesso à comunidade fechada</span>
+                      <span className="text-foreground">Comunidade Exclusiva — Acesso a grupo seleto para networking</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Elegibilidade para entrevistas, lives e reportagens</span>
+                      <span className="text-foreground">Entrevistas — Elegibilidade para entrevistas em nossos canais</span>
                     </li>
                   </ul>
-                </div>
-                
-                <div className="p-4 rounded-lg bg-gold/10 border border-gold/20">
-                  <div className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                    <div className="text-sm">
-                      <p className="text-foreground font-medium">Nota importante</p>
-                      <p className="text-muted-foreground">Não garante eventos. Seleção sempre por curadoria.</p>
-                    </div>
-                  </div>
                 </div>
                 
                 <Link to="/registo" className="block pt-2">
@@ -158,11 +129,10 @@ const PlansPage = () => {
                   <span className="text-5xl font-bold text-foreground">25€</span>
                   <span className="text-muted-foreground">/mês</span>
                 </div>
-                <p className="text-sm text-muted-foreground pt-1">ou 250€/ano (2 meses grátis)</p>
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-muted-foreground">
-                  Acesso total e prioridade máxima em todas as oportunidades.
+                  Para artistas estabelecidos que buscam acesso total, prioridade máxima e oportunidades diretas com promotores.
                 </p>
                 
                 <div className="space-y-4">
@@ -170,31 +140,23 @@ const PlansPage = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Projetos ilimitados</span>
+                      <span className="text-foreground">Projetos Ilimitados — Gerencie e promova quantos projetos desejar</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Curadoria ativa da AFROSONORA</span>
+                      <span className="text-foreground">Submissão Direta — Envie trabalho diretamente para curadores de eventos</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Submissão direta a eventos</span>
+                      <span className="text-foreground">Contacto com Promotores — Facilitação de contacto direto com profissionais</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Contacto direto com promotores e agências</span>
+                      <span className="text-foreground">Convites VIP — Receba convites para eventos exclusivos</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Prioridade total em oportunidades</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Elegibilidade para eventos internacionais</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Possibilidade de apoio logístico (caso a caso)</span>
+                      <span className="text-foreground">Prioridade Total — Atendimento e suporte com a mais alta prioridade</span>
                     </li>
                   </ul>
                 </div>
@@ -203,7 +165,7 @@ const PlansPage = () => {
                   <div className="flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
                     <div className="text-sm text-muted-foreground">
-                      <p>Acesso não significa seleção automática. Não garante contratos nem eventos. Tudo depende de qualidade e adequação.</p>
+                      <p>Acesso não significa seleção automática. Tudo depende de qualidade e adequação.</p>
                     </div>
                   </div>
                 </div>
@@ -229,7 +191,7 @@ const PlansPage = () => {
                   Posso cancelar a qualquer momento?
                 </h3>
                 <p className="text-muted-foreground">
-                  Sim, pode cancelar a sua subscrição a qualquer momento. O acesso às funcionalidades premium continuará até ao final do período pago.
+                  Sim, pode cancelar a sua subscrição a qualquer momento. O acesso às funcionalidades continuará até ao final do período pago.
                 </p>
               </div>
               
