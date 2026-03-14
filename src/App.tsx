@@ -12,6 +12,7 @@ import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import DashboardPage from "./pages/DashboardPage";
 import ArtistsPage from "./pages/ArtistsPage";
+import ArtistInfoPage from "./pages/ArtistInfoPage";
 import PlansPage from "./pages/PlansPage";
 import EventsPage from "./pages/EventsPage";
 import ContactPage from "./pages/ContactPage";
