@@ -62,6 +62,11 @@ const Footer = () => {
                   Criar Perfil
                 </Link>
               </li>
+              <li>
+                <Link to="/comeca-a-criar" className="text-muted-foreground hover:text-gold transition-colors text-sm">
+                  Começa a Criar
+                </Link>
+              </li>
             </ul>
           </div>
 
