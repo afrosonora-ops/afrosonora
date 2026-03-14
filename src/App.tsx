@@ -22,6 +22,7 @@ import AmbassadorsPage from "./pages/AmbassadorsPage";
 import PartnersPage from "./pages/PartnersPage";
 import PromotersPage from "./pages/PromotersPage";
 import AdminPage from "./pages/AdminPage";
+import ComecaACriarPage from "./pages/ComecaACriarPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
