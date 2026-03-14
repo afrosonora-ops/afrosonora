@@ -54,6 +54,7 @@ const App = () => (
                 </ProtectedRoute>
               }
             />
+            <Route path="/para-artistas" element={<ArtistInfoPage />} />
             <Route path="/planos" element={<PlansPage />} />
             <Route path="/eventos" element={<EventsPage />} />
             <Route path="/contacto" element={<ContactPage />} />
