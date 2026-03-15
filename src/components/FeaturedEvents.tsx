@@ -28,7 +28,7 @@ const FeaturedEvents = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredStatic.map((event) => (
             <Link key={event.slug} to="/eventos">
-              <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300 h-full overflow-hidden">
+              <Card variant="gold" className="group hover:-translate-y-2 hover:shadow-gold transition-all duration-300 h-full overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={event.image}
