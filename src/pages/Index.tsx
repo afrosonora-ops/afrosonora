@@ -312,6 +312,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Promoters Showcase */}
+      <PromotersShowcase />
+
       {/* Home Studio */}
       <HomeStudioSection />
 
