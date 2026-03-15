@@ -15,13 +15,13 @@ const cards = [
   },
   {
     image: promotersGlobal,
-    title: "Conexão Global África–Europa",
+    title: "Conexão Global ",
     description: "Ligue talentos africanos a promotores, labels e venues internacionais.",
     link: "/promotores",
   },
   {
     image: promotersMusic,
-    title: "Showcases & Curadoria Musical",
+    title: "Showcases & Curadoria ",
     description: "Descubra novos sons através de showcases exclusivos e projetos artísticos selecionados.",
     link: "/promotores",
   },
