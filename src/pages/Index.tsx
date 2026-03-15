@@ -207,7 +207,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="flex gap-6 p-6 rounded-xl bg-background/50 border border-border hover:border-gold/30 transition-colors">
               <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center">
                 <Globe className="w-7 h-7 text-gold" />
