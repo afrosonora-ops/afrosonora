@@ -8,6 +8,10 @@ import heroBg from "@/assets/hero-bg.jpg";
 import FeaturedEvents from "@/components/FeaturedEvents";
 import HomeStudioSection from "@/components/HomeStudioSection";
 import StoreSection from "@/components/StoreSection";
+import partnerTrtwxm from "@/assets/partner-trtwxm.jpeg";
+import partnerTavares from "@/assets/partner-tavares.jpeg";
+import partnerMikondo from "@/assets/partner-mikondo.jpeg";
+import partnerAfrosonora from "@/assets/partner-afrosonora-white.png";
 
 const Index = () => {
   return (
@@ -402,6 +406,30 @@ const Index = () => {
                 </Button>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Parceiros Produção Musical */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">
+              Parceiros <span className="text-gradient-gold">Produção Musical</span>
+            </h3>
+            <p className="text-muted-foreground mt-2">Juntos a impulsionar a música africana</p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+            {[
+              { src: partnerTrtwxm, alt: "TRTWXM Production" },
+              { src: partnerTavares, alt: "Tavares Music Studio" },
+              { src: partnerMikondo, alt: "Mikondó" },
+              { src: partnerAfrosonora, alt: "AFROSONORA" },
+            ].map((partner) => (
+              <div key={partner.alt} className="w-24 h-24 md:w-28 md:h-28 rounded-xl bg-card border border-border/50 flex items-center justify-center p-3 hover:border-gold/40 transition-colors">
+                <img src={partner.src} alt={partner.alt} className="max-w-full max-h-full object-contain rounded-lg" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
