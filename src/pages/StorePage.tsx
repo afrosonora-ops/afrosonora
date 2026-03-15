@@ -1,8 +1,12 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ShoppingBag, Heart, ArrowRight, Star, Sparkles, Music } from "lucide-react";
+import { ShoppingBag, Heart, ArrowRight, Star, Sparkles, Music, Mail, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 import storeTshirt from "@/assets/store-tshirt.jpg";
 import storeHoodie from "@/assets/store-hoodie.jpg";
@@ -84,6 +88,79 @@ const badgeIcon = (badge: string) => {
   if (badge === "Novo") return <Sparkles className="w-3 h-3" />;
   if (badge === "Popular") return <Star className="w-3 h-3" />;
   return <Music className="w-3 h-3" />;
+};
+
+const NewsletterCTA = () => {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setLoading(true);
+    const { error } = await supabase
+      .from("newsletter_subscribers")
+      .insert({ email: email.trim().toLowerCase() });
+
+    setLoading(false);
+
+    if (error) {
+      if (error.code === "23505") {
+        toast({ title: "Já estás inscrito!", description: "Este email já está registado na nossa newsletter." });
+      } else {
+        toast({ title: "Erro", description: "Não foi possível registar. Tenta novamente.", variant: "destructive" });
+      }
+      return;
+    }
+
+    setSubscribed(true);
+    toast({ title: "Inscrito com sucesso! 🎉", description: "Vais receber as novidades AFROSONORA no teu email." });
+  };
+
+  return (
+    <section className="py-24 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+            Explora a Nossa Loja! <span className="text-gradient-gold">Disponível</span>
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Explora todos os produtos AFROSONORA. Streetwear, acessórios e equipamentos musicais para a tribo. Nova Coleção de 2026 em constante atualização!
+          </p>
+
+          {subscribed ? (
+            <div className="inline-flex items-center gap-2 px-6 py-4 rounded-xl bg-gold/10 border border-gold/30">
+              <CheckCircle className="w-5 h-5 text-gold" />
+              <span className="text-gold font-medium">Inscrito com sucesso! Obrigado por te juntares à tribo.</span>
+            </div>
+          ) : (
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+              <div className="relative flex-1">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <Input
+                  type="email"
+                  required
+                  placeholder="O teu email..."
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="pl-10 h-14 bg-charcoal border-border text-foreground placeholder:text-muted-foreground"
+                />
+              </div>
+              <Button variant="hero" size="xl" type="submit" disabled={loading}>
+                {loading ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : (
+                  <>Receber Novidades <ArrowRight className="ml-2 w-5 h-5" /></>
+                )}
+              </Button>
+            </form>
+          )}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 const StorePage = () => {
@@ -178,24 +255,8 @@ const StorePage = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Explora a Nossa Loja! <span className="text-gradient-gold">Disponível</span>
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Explora todos os produtos AFROSONORA. Streetwear, acessórios e equipamentos musicais para a tribo. Nova Coleção de 2026 em constante atualização!
-            </p>
-            <a href="mailto:info@afrosonora.com?subject=Interesse%20na%20Loja%20AFROSONORA">
-              <Button variant="hero" size="xl">
-                Receber Novidades <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* CTA / Newsletter */}
+      <NewsletterCTA />
 
       <Footer />
     </div>);
