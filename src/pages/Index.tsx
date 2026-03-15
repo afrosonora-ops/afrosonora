@@ -255,6 +255,30 @@ const Index = () => {
                 </p>
               </div>
             </div>
+
+            <div className="flex gap-6 p-6 rounded-xl bg-background/50 border border-border hover:border-gold/30 transition-colors">
+              <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center">
+                <Mic2 className="w-7 h-7 text-gold" />
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">Produção de Eventos</h3>
+                <p className="text-muted-foreground text-sm">
+                  Organizamos e produzimos eventos culturais, showcases e festivais que celebram a música africana na Europa.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-6 p-6 rounded-xl bg-background/50 border border-border hover:border-gold/30 transition-colors">
+              <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center">
+                <Heart className="w-7 h-7 text-gold" />
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">Apoio a Talentos Emergentes</h3>
+                <p className="text-muted-foreground text-sm">
+                  Identificamos e impulsionamos novos talentos africanos com mentoria, curadoria e acesso a uma rede de apoio profissional.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
