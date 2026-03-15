@@ -182,24 +182,8 @@ const StorePage = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Explora a Nossa Loja! <span className="text-gradient-gold">Disponível</span>
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Explora todos os produtos AFROSONORA. Streetwear, acessórios e equipamentos musicais para a tribo. Nova Coleção de 2026 em constante atualização!
-            </p>
-            <a href="mailto:info@afrosonora.com?subject=Interesse%20na%20Loja%20AFROSONORA">
-              <Button variant="hero" size="xl">
-                Receber Novidades <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* CTA / Newsletter */}
+      <NewsletterCTA />
 
       <Footer />
     </div>);
