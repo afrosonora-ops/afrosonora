@@ -156,6 +156,20 @@ const ContactPage = () => {
               </div>
             </div>
           </div>
+
+          {/* Presence & Expansion */}
+          <div className="max-w-3xl mx-auto mt-20 text-center p-8 rounded-2xl border border-gold/20 bg-gold/5 animate-fade-in">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <MapPin className="w-5 h-5 text-gold" />
+              <h3 className="font-display text-xl font-semibold text-foreground">Onde Estamos</h3>
+            </div>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+              Estamos representados na <span className="text-gold font-medium">Holanda</span>, <span className="text-gold font-medium">Luxemburgo</span>, <span className="text-gold font-medium">Portugal</span> e <span className="text-gold font-medium">França</span>.
+            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Estamos a expandir as nossas parcerias por toda a Europa. Se pretendes fazer parte deste projeto e contribuir para o crescimento da cultura africana, entra em contacto connosco e junta-te a este movimento!
+            </p>
+          </div>
         </div>
       </main>
       
