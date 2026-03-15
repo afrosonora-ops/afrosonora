@@ -50,14 +50,7 @@ const App = () => (
                 </ProtectedRoute>
               }
             />
-            <Route
-              path="/artistas"
-              element={
-                <ProtectedRoute allowedRoles={["artist", "promoter", "benefactor", "ambassador"]}>
-                  <ArtistsPage />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/artistas" element={<ArtistsPage />} />
             <Route path="/para-artistas" element={<ArtistInfoPage />} />
             <Route path="/planos" element={<PlansPage />} />
             <Route path="/eventos" element={<EventsPage />} />
