@@ -155,6 +155,7 @@ const ContactPage = () => {
                 </a>
               </div>
             </div>
+          </div>
         </div>
       </main>
       
