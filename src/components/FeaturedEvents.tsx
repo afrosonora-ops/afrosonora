@@ -3,8 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Calendar } from "lucide-react";
 import { staticEvents } from "@/data/eventsData";
+import eventosCulturaisImg from "@/assets/eventos-culturais-2026.jpg";
 
-const featuredEvents = staticEvents.slice(0, 4);
+// First 3 static events + Eventos Culturais 2026 card
+const featuredStatic = staticEvents.slice(0, 3);
 
 const FeaturedEvents = () => {
   return (
@@ -24,7 +26,7 @@ const FeaturedEvents = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredEvents.map((event) => (
+          {featuredStatic.map((event) => (
             <Link key={event.slug} to="/eventos">
               <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300 h-full overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
@@ -49,6 +51,31 @@ const FeaturedEvents = () => {
               </Card>
             </Link>
           ))}
+
+          {/* Eventos Culturais 2026 card */}
+          <Link to="/eventos-culturais-2026">
+            <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300 h-full overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={eventosCulturaisImg}
+                  alt="Eventos Culturais 2026"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <CardContent className="p-5 space-y-3">
+                <h3 className="font-display text-lg font-semibold text-foreground line-clamp-1">
+                  Eventos Culturais 2026
+                </h3>
+                <p className="text-muted-foreground text-sm line-clamp-2">
+                  Agenda de festivais e espectáculos de cultura africana na Europa.
+                </p>
+                <span className="inline-flex items-center gap-1 text-gold text-sm font-medium group-hover:gap-2 transition-all">
+                  Saber Mais <ArrowRight className="w-4 h-4" />
+                </span>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
 
         <div className="text-center mt-12">
