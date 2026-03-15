@@ -101,12 +101,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-              O que é a <span className="text-gradient-gold">AFROSONORA</span>?
+              O que é a <span className="text-gradient-gold">AfroSonora</span>?
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              A AFROSONORA é uma plataforma digital que visa criar uma ponte sólida entre músicos, artistas e bandas
-              africanas e o mercado europeu. Trabalhamos para oferecer visibilidade, oportunidades reais e ligações
-              profissionais que transformam carreiras.
+              A AFROSONORA é mais do que uma plataforma digital; somos um movimento dedicado a amplificar as vozes e os ritmos vibrantes de África no coração da Europa. Acreditamos no poder transformador da música e da arte africana
             </p>
           </div>
         </div>
