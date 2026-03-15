@@ -12,6 +12,7 @@ import partnerTrtwxm from "@/assets/partner-trtwxm.jpeg";
 import partnerTavares from "@/assets/partner-tavares.jpeg";
 import partnerMikondo from "@/assets/partner-mikondo.jpeg";
 import partnerAfrosonora from "@/assets/partner-afrosonora-white.png";
+import partnerMadeInEurope from "@/assets/partner-made-in-europe.png";
 
 const Index = () => {
   return (
@@ -450,6 +451,7 @@ const Index = () => {
               { src: partnerTavares, alt: "Tavares Music Studio" },
               { src: partnerMikondo, alt: "Mikondó" },
               { src: partnerAfrosonora, alt: "AFROSONORA" },
+              { src: partnerMadeInEurope, alt: "Made in Europe" },
             ].map((partner) => (
               <div key={partner.alt} className="w-24 h-24 md:w-28 md:h-28 rounded-xl bg-card border border-border/50 flex items-center justify-center p-3 hover:border-gold/40 transition-colors">
                 <img src={partner.src} alt={partner.alt} className="max-w-full max-h-full object-contain rounded-lg" />
