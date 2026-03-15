@@ -235,6 +235,31 @@ const Index = () => {
       {/* Featured Events */}
       <FeaturedEvents />
 
+      {/* Sons de África - YouTube Video */}
+      <section className="py-24 bg-charcoal">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
+              Sons de <span className="text-gradient-gold">África</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Descobre os ritmos, sons e energia da música africana com AFROSONORA. Sente a cultura, inspira-te e junta-te à tribo!
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative w-full rounded-xl overflow-hidden border border-border/50" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/eknwtUVQFxM?autoplay=1&mute=0&rel=0"
+                title="Sons de África"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Home Studio */}
       <HomeStudioSection />
 
