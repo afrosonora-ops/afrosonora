@@ -12,6 +12,7 @@ import partnerTrtwxm from "@/assets/partner-trtwxm.jpeg";
 import partnerTavares from "@/assets/partner-tavares.jpeg";
 import partnerMikondo from "@/assets/partner-mikondo.jpeg";
 import partnerAfrosonora from "@/assets/partner-afrosonora-white.png";
+import partnerMadeInEurope from "@/assets/partner-made-in-europe.png";
 
 const Index = () => {
   return (
