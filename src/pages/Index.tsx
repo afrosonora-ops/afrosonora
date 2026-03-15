@@ -106,6 +106,11 @@ const Index = () => {
             <p className="text-lg text-muted-foreground leading-relaxed">
               A AFROSONORA é mais do que uma plataforma digital; somos um movimento dedicado a amplificar as vozes e os ritmos vibrantes de África no coração da Europa. Acreditamos no poder transformador da música e da arte africana
             </p>
+            <a href="/quem-somos" target="_blank" rel="noopener noreferrer">
+              <Button variant="gold" size="sm" className="mt-4">
+                Saber Mais <ArrowRight className="ml-1 w-4 h-4" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
