@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/", label: "Início" },
-    { href: "/artistas", label: "Artistas" },
+    { href: "/artistas", label: "Músicos" },
     { href: "/planos", label: "Planos" },
     { href: "/eventos", label: "Eventos" },
     { href: "/comeca-a-criar", label: "Começa a Criar" },
