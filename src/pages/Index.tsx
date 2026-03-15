@@ -203,7 +203,7 @@ const Index = () => {
               O que <span className="text-gradient-gold">Fazemos</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Criamos valor real para artistas através de quatro pilares fundamentais.
+              Criamos valor real para artistas através de seis pilares fundamentais.
             </p>
           </div>
 
