@@ -130,7 +130,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Link to="/para-artistas">
-              <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300 h-full">
+              <Card variant="gold" className="group hover:-translate-y-2 hover:shadow-gold transition-all duration-300 h-full">
                 <CardHeader className="text-center pb-4">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
                     <Mic2 className="w-8 h-8 text-gold" />
