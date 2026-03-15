@@ -116,8 +116,13 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><Link to="/contacto" className="text-muted-foreground hover:text-gold transition-colors text-sm">Contacto</Link></li>
               <li><Link to="/parceiros" className="text-muted-foreground hover:text-gold transition-colors text-sm">Parceiros</Link></li>
-              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors text-sm">Termos & Condições</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-gold transition-colors text-sm">Política de Privacidade</a></li>
+              <li><Link to="/termos" className="text-muted-foreground hover:text-gold transition-colors text-sm">Termos & Condições</Link></li>
+              <li><Link to="/privacidade" className="text-muted-foreground hover:text-gold transition-colors text-sm">Política de Privacidade</Link></li>
+              <li><Link to="/cookies" className="text-muted-foreground hover:text-gold transition-colors text-sm">Política de Cookies</Link></li>
+              <li><Link to="/aviso-legal" className="text-muted-foreground hover:text-gold transition-colors text-sm">Aviso Legal</Link></li>
+              <li><Link to="/regras-conteudo" className="text-muted-foreground hover:text-gold transition-colors text-sm">Regras de Conteúdo</Link></li>
+              <li><Link to="/licenciamento-musica" className="text-muted-foreground hover:text-gold transition-colors text-sm">Licenciamento Musical</Link></li>
+              <li><Link to="/consentimento-imagem" className="text-muted-foreground hover:text-gold transition-colors text-sm">Consentimento de Imagem</Link></li>
             </ul>
           </div>
         </div>

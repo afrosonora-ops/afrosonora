@@ -72,6 +72,13 @@ const App = () => (
             <Route path="/quem-somos" element={<QuemSomosPage />} />
             <Route path="/store" element={<StorePage />} />
             <Route path="/eventos-culturais-2026" element={<EventosCulturais2026Page />} />
+            <Route path="/termos" element={<TermsPage />} />
+            <Route path="/privacidade" element={<PrivacyPage />} />
+            <Route path="/cookies" element={<CookiesPage />} />
+            <Route path="/aviso-legal" element={<LegalNoticePage />} />
+            <Route path="/regras-conteudo" element={<ContentRulesPage />} />
+            <Route path="/licenciamento-musica" element={<MusicLicensingPage />} />
+            <Route path="/consentimento-imagem" element={<ImageConsentPage />} />
             <Route
               path="/admin"
               element={
