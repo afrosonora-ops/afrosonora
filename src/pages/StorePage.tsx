@@ -15,70 +15,70 @@ import storeMic from "@/assets/store-mic.jpg";
 import storeKit from "@/assets/store-kit.jpg";
 
 const products = [
-  {
-    image: storeTshirt,
-    title: 'T-shirt "AfroSonora Vibes"',
-    desc: "Camiseta de alta qualidade, design premium, perfeita para mostrar a tua paixão pela música africana.",
-    price: "29€",
-    badge: "Novo",
-  },
-  {
-    image: storeHoodie,
-    title: 'Camisola de Capuz "Tribo AFRO"',
-    desc: "Hoodie confortável e estiloso, ideal para artistas, fãs e criadores que fazem parte da tribo AFROSONORA.",
-    price: "45€",
-    badge: "Popular",
-  },
-  {
-    image: storeCap,
-    title: 'Boné "Ritmo Urbano"',
-    desc: "Boné moderno e ajustável, com estilo urbano, perfeito para completar o teu estilo musical.",
-    price: "24€",
-    badge: null,
-  },
-  {
-    image: storeLeather,
-    title: 'Casaco Tipo Couro "Gold Beat"',
-    desc: "Casaco elegante tipo couro com detalhes sofisticados para um look premium com atitude musical.",
-    price: "129€",
-    badge: "Novo",
-  },
-  {
-    image: storeCasual,
-    title: 'Casaco Casual "AfroFlow"',
-    desc: "Casaco confortável e versátil, ideal para o dia a dia ou para eventos AFROSONORA.",
-    price: "79€",
-    badge: null,
-  },
-  {
-    image: storeBackpack,
-    title: 'Mochila "Tribo Beat"',
-    desc: "Mochila moderna e prática, ideal para transportar equipamentos, laptops ou acessórios musicais.",
-    price: "69€",
-    badge: null,
-  },
-  {
-    image: storeHeadphones,
-    title: "Auscultadores SingerPro",
-    desc: "Auscultadores ideais para gravação vocal, produção musical ou ouvir música com qualidade.",
-    price: "22€",
-    badge: "Recomendado para Artistas",
-  },
-  {
-    image: storeMic,
-    title: "Microfone Pro BM800 V8 Studio",
-    desc: "Microfone condensador de estúdio ideal para canto, gravação vocal e produção musical.",
-    price: "95€",
-    badge: "Popular",
-  },
-  {
-    image: storeKit,
-    title: "Home Studio AFROSONORA – MX10 Studio Kit",
-    desc: "Kit completo de home studio com microfone condensador profissional MX10, ideal para artistas que querem começar a gravar música em casa.",
-    price: "245€",
-    badge: "Recomendado para Artistas",
-  },
-];
+{
+  image: storeTshirt,
+  title: 'T-shirt "AfroSonora Vibes"',
+  desc: "Camiseta de alta qualidade, design premium, perfeita para mostrar a tua paixão pela música africana.",
+  price: "29€",
+  badge: "Novo"
+},
+{
+  image: storeHoodie,
+  title: 'Camisola de Capuz "Tribo AFRO"',
+  desc: "Hoodie confortável e estiloso, ideal para artistas, fãs e criadores que fazem parte da tribo AFROSONORA.",
+  price: "45€",
+  badge: "Popular"
+},
+{
+  image: storeCap,
+  title: 'Boné "Ritmo Urbano"',
+  desc: "Boné moderno e ajustável, com estilo urbano, perfeito para completar o teu estilo musical.",
+  price: "24€",
+  badge: null
+},
+{
+  image: storeLeather,
+  title: 'Casaco Tipo Couro "Gold Beat"',
+  desc: "Casaco elegante tipo couro com detalhes sofisticados para um look premium com atitude musical.",
+  price: "129€",
+  badge: "Novo"
+},
+{
+  image: storeCasual,
+  title: 'Casaco Casual "AfroFlow"',
+  desc: "Casaco confortável e versátil, ideal para o dia a dia ou para eventos AFROSONORA.",
+  price: "79€",
+  badge: null
+},
+{
+  image: storeBackpack,
+  title: 'Mochila "Tribo Beat"',
+  desc: "Mochila moderna e prática, ideal para transportar equipamentos, laptops ou acessórios musicais.",
+  price: "69€",
+  badge: null
+},
+{
+  image: storeHeadphones,
+  title: "Auscultadores SingerPro",
+  desc: "Auscultadores ideais para gravação vocal, produção musical ou ouvir música com qualidade.",
+  price: "22€",
+  badge: "Recomendado para Artistas"
+},
+{
+  image: storeMic,
+  title: "Microfone Pro BM800 V8 Studio",
+  desc: "Microfone condensador de estúdio ideal para canto, gravação vocal e produção musical.",
+  price: "95€",
+  badge: "Popular"
+},
+{
+  image: storeKit,
+  title: "Home Studio AFROSONORA – MX10 Studio Kit",
+  desc: "Kit completo de home studio com microfone condensador profissional MX10, ideal para artistas que querem começar a gravar música em casa.",
+  price: "245€",
+  badge: "Recomendado para Artistas"
+}];
+
 
 const badgeIcon = (badge: string) => {
   if (badge === "Novo") return <Sparkles className="w-3 h-3" />;
@@ -130,31 +130,31 @@ const StorePage = () => {
       {/* Products Grid */}
       <section className="py-20 bg-charcoal">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
-            A Nossa <span className="text-gradient-gold">Coleção</span>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">AfroSonora Cstore
+            <span className="text-gradient-gold">Coleção</span>
           </h2>
-          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            Explora todos os produtos AFROSONORA. Streetwear, acessórios e equipamento musical para a tribo.
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">Descobre uma seleção premium de produtos e equipamentos musicais, escolhidos com cuidado para artistas, fãs e criadores. Cada item reflete a qualidade, estilo e espírito da nossa tribo musical.
+
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {products.map((item, i) => (
-              <div
-                key={i}
-                className="group rounded-xl overflow-hidden border border-border hover:border-gold/40 transition-all duration-300 bg-background/50 flex flex-col"
-              >
+            {products.map((item, i) =>
+            <div
+              key={i}
+              className="group rounded-xl overflow-hidden border border-border hover:border-gold/40 transition-all duration-300 bg-background/50 flex flex-col">
+              
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  {item.badge && (
-                    <Badge className="absolute top-3 left-3 bg-gold text-primary-foreground border-none gap-1 text-xs font-semibold">
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                
+                  {item.badge &&
+                <Badge className="absolute top-3 left-3 bg-gold text-primary-foreground border-none gap-1 text-xs font-semibold">
                       {badgeIcon(item.badge)}
                       {item.badge}
                     </Badge>
-                  )}
+                }
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="font-display text-lg font-semibold text-foreground mb-1 leading-tight">
@@ -173,7 +173,7 @@ const StorePage = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -183,10 +183,10 @@ const StorePage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Brevemente <span className="text-gradient-gold">Disponível</span>
+              Explora a Nossa Loja! <span className="text-gradient-gold">Disponível</span>
             </h2>
             <p className="text-muted-foreground text-lg">
-              A loja online AFROSONORA estará totalmente disponível em breve. Regista-te para seres o primeiro a saber quando abrirmos portas, com condições especiais para membros da comunidade.
+              Explora todos os produtos AFROSONORA. Streetwear, acessórios e equipamentos musicais para a tribo. Nova Coleção de 2026 em constante atualização!
             </p>
             <a href="mailto:info@afrosonora.com?subject=Interesse%20na%20Loja%20AFROSONORA">
               <Button variant="hero" size="xl">
@@ -198,8 +198,8 @@ const StorePage = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default StorePage;
