@@ -54,7 +54,7 @@ const FeaturedEvents = () => {
 
           {/* Eventos Culturais 2026 card */}
           <Link to="/eventos-culturais-2026">
-            <Card variant="gold" className="group hover:-translate-y-2 transition-all duration-300 h-full overflow-hidden">
+            <Card variant="gold" className="group hover:-translate-y-2 hover:shadow-gold transition-all duration-300 h-full overflow-hidden">
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={eventosCulturaisImg}
