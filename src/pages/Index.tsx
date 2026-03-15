@@ -203,11 +203,11 @@ const Index = () => {
               O que <span className="text-gradient-gold">Fazemos</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Criamos valor real para artistas através de quatro pilares fundamentais.
+              Criamos valor real para artistas através de seis pilares fundamentais.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="flex gap-6 p-6 rounded-xl bg-background/50 border border-border hover:border-gold/30 transition-colors">
               <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center">
                 <Globe className="w-7 h-7 text-gold" />
@@ -252,6 +252,30 @@ const Index = () => {
                 <h3 className="font-display text-xl font-semibold text-foreground mb-2">Ligação com Promotores</h3>
                 <p className="text-muted-foreground text-sm">
                   Conectamos artistas diretamente com agências, promotores e organizadores de eventos europeus.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-6 p-6 rounded-xl bg-background/50 border border-border hover:border-gold/30 transition-colors">
+              <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center">
+                <Mic2 className="w-7 h-7 text-gold" />
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">Produção de Eventos</h3>
+                <p className="text-muted-foreground text-sm">
+                  Organizamos e produzimos eventos culturais, showcases e festivais que celebram a música africana na Europa.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-6 p-6 rounded-xl bg-background/50 border border-border hover:border-gold/30 transition-colors">
+              <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center">
+                <Heart className="w-7 h-7 text-gold" />
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">Apoio a Talentos Emergentes</h3>
+                <p className="text-muted-foreground text-sm">
+                  Identificamos e impulsionamos novos talentos africanos com mentoria, curadoria e acesso a uma rede de apoio profissional.
                 </p>
               </div>
             </div>
