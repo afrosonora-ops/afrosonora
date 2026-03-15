@@ -9,6 +9,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import heroBg2 from "@/assets/hero-bg-2.jpg";
 import heroBg3 from "@/assets/hero-bg-3.jpg";
 import FeaturedEvents from "@/components/FeaturedEvents";
+import PromotersShowcase from "@/components/PromotersShowcase";
 import HomeStudioSection from "@/components/HomeStudioSection";
 import StoreSection from "@/components/StoreSection";
 import partnerTrtwxm from "@/assets/partner-trtwxm.jpeg";
