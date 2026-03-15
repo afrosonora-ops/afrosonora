@@ -34,6 +34,7 @@ import LegalNoticePage from "./pages/LegalNoticePage";
 import ContentRulesPage from "./pages/ContentRulesPage";
 import MusicLicensingPage from "./pages/MusicLicensingPage";
 import ImageConsentPage from "./pages/ImageConsentPage";
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
