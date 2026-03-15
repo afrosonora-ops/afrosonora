@@ -27,6 +27,13 @@ import QuemSomosPage from "./pages/QuemSomosPage";
 import StorePage from "./pages/StorePage";
 import EventosCulturais2026Page from "./pages/EventosCulturais2026Page";
 import NotFound from "./pages/NotFound";
+import TermsPage from "./pages/TermsPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import CookiesPage from "./pages/CookiesPage";
+import LegalNoticePage from "./pages/LegalNoticePage";
+import ContentRulesPage from "./pages/ContentRulesPage";
+import MusicLicensingPage from "./pages/MusicLicensingPage";
+import ImageConsentPage from "./pages/ImageConsentPage";
 
 const queryClient = new QueryClient();
 
@@ -65,6 +72,13 @@ const App = () => (
             <Route path="/quem-somos" element={<QuemSomosPage />} />
             <Route path="/store" element={<StorePage />} />
             <Route path="/eventos-culturais-2026" element={<EventosCulturais2026Page />} />
+            <Route path="/termos" element={<TermsPage />} />
+            <Route path="/privacidade" element={<PrivacyPage />} />
+            <Route path="/cookies" element={<CookiesPage />} />
+            <Route path="/aviso-legal" element={<LegalNoticePage />} />
+            <Route path="/regras-conteudo" element={<ContentRulesPage />} />
+            <Route path="/licenciamento-musica" element={<MusicLicensingPage />} />
+            <Route path="/consentimento-imagem" element={<ImageConsentPage />} />
             <Route
               path="/admin"
               element={
