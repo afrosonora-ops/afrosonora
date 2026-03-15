@@ -1,8 +1,12 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ShoppingBag, Heart, ArrowRight, Star, Sparkles, Music } from "lucide-react";
+import { ShoppingBag, Heart, ArrowRight, Star, Sparkles, Music, Mail, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 import storeTshirt from "@/assets/store-tshirt.jpg";
 import storeHoodie from "@/assets/store-hoodie.jpg";
