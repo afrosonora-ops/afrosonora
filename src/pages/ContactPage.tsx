@@ -115,48 +115,8 @@ const ContactPage = () => {
             
             {/* Contact Info */}
             <div className="animate-slide-up" style={{ animationDelay: "0.1s" }}>
-              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
-                Informações de Contacto
-              </h2>
               
               <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-gold" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <a href="mailto:info@afrosonora.com" className="text-muted-foreground hover:text-gold transition-colors">
-                      info@afrosonora.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-gold" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Localização</h3>
-                    <p className="text-muted-foreground">
-                      Lisboa, Portugal<br />
-                      (Escritórios virtuais em várias cidades europeias)
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-gold" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Telefone</h3>
-                    <p className="text-muted-foreground">
-                      Contacto disponível mediante marcação
-                    </p>
-                  </div>
-                </div>
-              </div>
               
               {/* Social Media */}
               <div className="mt-12">
