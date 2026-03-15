@@ -8,6 +8,10 @@ import heroBg from "@/assets/hero-bg.jpg";
 import FeaturedEvents from "@/components/FeaturedEvents";
 import HomeStudioSection from "@/components/HomeStudioSection";
 import StoreSection from "@/components/StoreSection";
+import partnerTrtwxm from "@/assets/partner-trtwxm.jpeg";
+import partnerTavares from "@/assets/partner-tavares.jpeg";
+import partnerMikondo from "@/assets/partner-mikondo.jpeg";
+import partnerAfrosonora from "@/assets/partner-afrosonora-white.png";
 
 const Index = () => {
   return (
