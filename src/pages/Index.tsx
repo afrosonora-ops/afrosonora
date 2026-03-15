@@ -322,7 +322,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              <span className="text-gradient-gold">Planos</span> para Artistas
+              <span className="text-gradient-gold">Planos</span> para  para Músicos, Artistas ...
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Impulsione sua carreira. Escolha o plano ideal para cada fase da sua jornada artística.
