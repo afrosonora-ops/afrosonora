@@ -115,71 +115,20 @@ const ContactPage = () => {
             
             {/* Contact Info */}
             <div className="animate-slide-up" style={{ animationDelay: "0.1s" }}>
-              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
-                Informações de Contacto
-              </h2>
-              
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-gold" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <a href="mailto:info@afrosonora.com" className="text-muted-foreground hover:text-gold transition-colors">
-                      info@afrosonora.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-gold" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Localização</h3>
-                    <p className="text-muted-foreground">
-                      Lisboa, Portugal<br />
-                      (Escritórios virtuais em várias cidades europeias)
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-gold" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Telefone</h3>
-                    <p className="text-muted-foreground">
-                      Contacto disponível mediante marcação
-                    </p>
-                  </div>
-                </div>
-              </div>
               
               {/* Social Media */}
-              <div className="mt-12">
+              <div>
                 <h3 className="font-display text-xl font-semibold text-foreground mb-4">
                   Siga-nos
                 </h3>
                 <div className="flex gap-4">
-                  <a 
-                    href="#" 
-                    className="w-12 h-12 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/50 transition-colors"
-                  >
+                  <a href="#" className="w-12 h-12 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/50 transition-colors">
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a 
-                    href="#" 
-                    className="w-12 h-12 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/50 transition-colors"
-                  >
+                  <a href="#" className="w-12 h-12 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/50 transition-colors">
                     <Youtube className="w-5 h-5" />
                   </a>
-                  <a 
-                    href="#" 
-                    className="w-12 h-12 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/50 transition-colors"
-                  >
+                  <a href="#" className="w-12 h-12 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/50 transition-colors">
                     <Facebook className="w-5 h-5" />
                   </a>
                 </div>
@@ -191,27 +140,19 @@ const ContactPage = () => {
                   Links Rápidos
                 </h3>
                 <ul className="space-y-3">
-                  <li>
-                    <a href="/benfeitores" className="text-muted-foreground hover:text-gold transition-colors text-sm">
-                      → Quero apoiar como Benfeitor
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/embaixadores" className="text-muted-foreground hover:text-gold transition-colors text-sm">
-                      → Quero ser Embaixador
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/parceiros" className="text-muted-foreground hover:text-gold transition-colors text-sm">
-                      → Parcerias comerciais
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/promotores" className="text-muted-foreground hover:text-gold transition-colors text-sm">
-                      → Sou promotor/agência
-                    </a>
-                  </li>
+                  <li><a href="/benfeitores" className="text-muted-foreground hover:text-gold transition-colors text-sm">→ Quero apoiar como Benfeitor</a></li>
+                  <li><a href="/embaixadores" className="text-muted-foreground hover:text-gold transition-colors text-sm">→ Quero ser Embaixador</a></li>
+                  <li><a href="/parceiros" className="text-muted-foreground hover:text-gold transition-colors text-sm">→ Parcerias comerciais</a></li>
+                  <li><a href="/promotores" className="text-muted-foreground hover:text-gold transition-colors text-sm">→ Sou promotor/agência</a></li>
                 </ul>
+              </div>
+
+              {/* Email */}
+              <div className="mt-12 flex items-center gap-3">
+                <Mail className="w-5 h-5 text-gold" />
+                <a href="mailto:info@afrosonora.com" className="text-muted-foreground hover:text-gold transition-colors text-sm">
+                  info@afrosonora.com
+                </a>
               </div>
             </div>
           </div>
