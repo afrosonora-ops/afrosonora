@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { Music, Users, Calendar, Globe, Mic2, Video, Award, Heart, ArrowRight, Star, CheckCircle2 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroBg2 from "@/assets/hero-bg-2.jpg";
+import heroBg3 from "@/assets/hero-bg-3.jpg";
 import FeaturedEvents from "@/components/FeaturedEvents";
 import HomeStudioSection from "@/components/HomeStudioSection";
 import StoreSection from "@/components/StoreSection";
@@ -16,7 +17,7 @@ import partnerMikondo from "@/assets/partner-mikondo.jpeg";
 import partnerAfrosonora from "@/assets/partner-afrosonora-white.png";
 import partnerMadeInEurope from "@/assets/partner-made-in-europe.png";
 
-const heroImages = [heroBg, heroBg2];
+const heroImages = [heroBg, heroBg2, heroBg3];
 
 const Index = () => {
   const [currentHero, setCurrentHero] = useState(0);
