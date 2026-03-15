@@ -27,6 +27,13 @@ import QuemSomosPage from "./pages/QuemSomosPage";
 import StorePage from "./pages/StorePage";
 import EventosCulturais2026Page from "./pages/EventosCulturais2026Page";
 import NotFound from "./pages/NotFound";
+import TermsPage from "./pages/TermsPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import CookiesPage from "./pages/CookiesPage";
+import LegalNoticePage from "./pages/LegalNoticePage";
+import ContentRulesPage from "./pages/ContentRulesPage";
+import MusicLicensingPage from "./pages/MusicLicensingPage";
+import ImageConsentPage from "./pages/ImageConsentPage";
 
 const queryClient = new QueryClient();
 
