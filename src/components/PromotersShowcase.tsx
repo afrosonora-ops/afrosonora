@@ -10,13 +10,13 @@ const cards = [
   {
     image: promotersConcert,
     title: "Festivais & Eventos ao Vivo",
-    description: "Programação de artistas africanos para festivais, concertos e eventos culturais em toda a Europa.",
+    description: "Programação de artistas africanos para festivais, concertos e eventos culturais ..",
     link: "/promotores",
   },
   {
     image: promotersGlobal,
     title: "Conexão Global ",
-    description: "Ligue talentos africanos a promotores, labels e venues internacionais.",
+    description: "Crie pontes entre talentos africanos e oportunidades internacionais na música.",
     link: "/promotores",
   },
   {
