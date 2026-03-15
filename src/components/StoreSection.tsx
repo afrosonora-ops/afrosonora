@@ -43,7 +43,7 @@ const StoreSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
           {storeItems.map((item, index) => (
             <div key={index} className="group">
-              <div className="relative overflow-hidden rounded-xl border border-border hover:border-gold/40 transition-all duration-500">
+              <div className="relative overflow-hidden rounded-xl border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-500">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={item.image}
