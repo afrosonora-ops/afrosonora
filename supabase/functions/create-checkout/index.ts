@@ -37,7 +37,7 @@ serve(async (req) => {
     const { planSlug, billingPeriod } = await req.json();
 
     const plans: Record<string, { name: string; monthlyPrice: number; annualPrice: number }> = {
-      essencial: { name: "Essencial", monthlyPrice: 150, annualPrice: 1500 },
+      essencial: { name: "Cartão de Membro AFROSONORA", monthlyPrice: 400, annualPrice: 4000 },
       premium: { name: "Premium", monthlyPrice: 900, annualPrice: 9000 },
       pro: { name: "Pro", monthlyPrice: 2500, annualPrice: 25000 },
     };
