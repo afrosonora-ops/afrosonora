@@ -10,6 +10,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { staticEvents } from "@/data/eventsData";
 import { ArrowLeft, Mail, CheckCircle, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendFormEmail } from "@/lib/sendFormEmail";
 
 const EventDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -25,23 +26,37 @@ const EventDetailPage = () => {
     link: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
   if (!event) return <Navigate to="/eventos" replace />;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const subject = encodeURIComponent(event.emailSubject);
-    const body = encodeURIComponent(
-      `Nome artístico: ${formData.artistName}\nPaís/Cidade: ${formData.country}\nGénero musical: ${formData.genre}\nLink da música/vídeo: ${formData.link}\n\nMensagem:\n${formData.message}`
-    );
-
-    window.location.href = `mailto:info@afrosonora.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
-    toast({
-      title: "Candidatura preparada!",
-      description: "O teu cliente de email foi aberto com os dados preenchidos.",
-    });
+    setSending(true);
+    try {
+      await sendFormEmail({
+        formType: `Candidatura – ${event.title}`,
+        subject: event.emailSubject,
+        name: formData.artistName,
+        email: user?.email || "no-reply@afrosonora.com",
+        fields: {
+          "Nome artístico": formData.artistName,
+          "País/Cidade": formData.country,
+          "Género musical": formData.genre,
+          "Link da música/vídeo": formData.link,
+          Mensagem: formData.message,
+        },
+      });
+      setSubmitted(true);
+      toast({
+        title: "Candidatura enviada!",
+        description: "Recebemos a tua candidatura e entraremos em contacto.",
+      });
+    } catch (err: any) {
+      toast({ title: "Erro ao enviar", description: err.message, variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
   };
 
   if (loading) {

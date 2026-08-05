@@ -10,6 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Headphones, Mic2, Music, Cable, MonitorSpeaker, CheckCircle2, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendFormEmail } from "@/lib/sendFormEmail";
 import setupImg from "@/assets/home-studio-setup.jpg";
 import packImg from "@/assets/home-studio-pack.jpg";
 
@@ -41,7 +42,9 @@ const ComecaACriarPage = () => {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!name.trim() || !email.trim() || selectedProducts.length === 0) {
@@ -49,23 +52,25 @@ const ComecaACriarPage = () => {
       return;
     }
 
-    const body = [
-      `Nome: ${name.trim()}`,
-      `Email: ${email.trim()}`,
-      whatsapp.trim() ? `WhatsApp: ${whatsapp.trim()}` : "",
-      "",
-      "Produtos / Informações:",
-      ...selectedProducts.map((p) => `• ${p}`),
-      "",
-      message.trim() ? `Mensagem adicional:\n${message.trim()}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    const mailtoLink = `mailto:info@afrosonora.com?subject=${encodeURIComponent("Pedido de Informações – Home Studio AFROSONORA")}&body=${encodeURIComponent(body)}`;
-    window.open(mailtoLink, "_blank");
-
-    setSubmitted(true);
+    setSending(true);
+    try {
+      await sendFormEmail({
+        formType: "Home Studio",
+        subject: "Pedido de Informações – Home Studio AFROSONORA",
+        name: name.trim(),
+        email: email.trim(),
+        fields: {
+          WhatsApp: whatsapp.trim(),
+          "Produtos / Informações": selectedProducts.map((p) => `• ${p}`).join("\n"),
+          "Mensagem adicional": message.trim(),
+        },
+      });
+      setSubmitted(true);
+    } catch (err: any) {
+      toast({ title: "Erro ao enviar", description: err.message, variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
   };
 
   const resetForm = () => {
