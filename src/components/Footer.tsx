@@ -4,6 +4,8 @@ import { Instagram, Youtube, Facebook, Mail, ArrowRight, CheckCircle, Loader2 } 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
+import { openCookieSettings } from "@/components/CookieConsent";
+
 import { toast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
 
