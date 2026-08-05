@@ -123,7 +123,9 @@ const Footer = () => {
               <li><Link to="/regras-conteudo" className="text-muted-foreground hover:text-gold transition-colors text-sm">Regras de Conteúdo</Link></li>
               <li><Link to="/licenciamento-musica" className="text-muted-foreground hover:text-gold transition-colors text-sm">Licenciamento Musical</Link></li>
               <li><Link to="/consentimento-imagem" className="text-muted-foreground hover:text-gold transition-colors text-sm">Consentimento de Imagem</Link></li>
+              <li><button onClick={openCookieSettings} className="text-muted-foreground hover:text-gold transition-colors text-sm">Preferências de Cookies</button></li>
             </ul>
+
           </div>
         </div>
 
