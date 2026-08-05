@@ -38,7 +38,7 @@ const EventDetailPage = () => {
         formType: `Candidatura – ${event.title}`,
         subject: event.emailSubject,
         name: formData.artistName,
-        email: user?.email ?? "",
+        email: user?.email || "no-reply@afrosonora.com",
         fields: {
           "Nome artístico": formData.artistName,
           "País/Cidade": formData.country,

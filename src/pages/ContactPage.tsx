@@ -126,8 +126,8 @@ const ContactPage = () => {
                   />
                 </div>
                 
-                <Button type="submit" variant="gold" size="lg" className="w-full">
-                  Enviar Mensagem <Send className="ml-2 w-4 h-4" />
+                <Button type="submit" variant="gold" size="lg" className="w-full" disabled={sending}>
+                  {sending ? "A enviar..." : "Enviar Mensagem"} <Send className="ml-2 w-4 h-4" />
                 </Button>
               </form>
             </div>
