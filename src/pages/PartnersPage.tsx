@@ -8,9 +8,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Handshake, Building2, Megaphone, Palette, Music, Send, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendFormEmail } from "@/lib/sendFormEmail";
 
 const PartnersPage = () => {
   const { toast } = useToast();
+  const [sending, setSending] = useState(false);
   const [formData, setFormData] = useState({
     company: "",
     name: "",
@@ -19,13 +21,31 @@ const PartnersPage = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Proposta enviada!",
-      description: "Analisaremos a sua proposta e entraremos em contacto.",
-    });
-    setFormData({ company: "", name: "", email: "", type: "", message: "" });
+    setSending(true);
+    try {
+      await sendFormEmail({
+        formType: "Parcerias",
+        subject: `[Parceria] ${formData.company}`,
+        name: formData.name,
+        email: formData.email,
+        fields: {
+          "Empresa / Organização": formData.company,
+          "Tipo de Parceiro": formData.type,
+          Proposta: formData.message,
+        },
+      });
+      toast({
+        title: "Proposta enviada!",
+        description: "Analisaremos a sua proposta e entraremos em contacto.",
+      });
+      setFormData({ company: "", name: "", email: "", type: "", message: "" });
+    } catch (err: any) {
+      toast({ title: "Erro ao enviar", description: err.message, variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
   };
 
   const partnerTypes = [

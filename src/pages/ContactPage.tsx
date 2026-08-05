@@ -6,9 +6,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, MapPin, Phone, Send, Instagram, Youtube, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendFormEmail } from "@/lib/sendFormEmail";
 
 const ContactPage = () => {
   const { toast } = useToast();
+  const [sending, setSending] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,13 +18,30 @@ const ContactPage = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contacto consigo em breve.",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setSending(true);
+    try {
+      await sendFormEmail({
+        formType: "Contacto",
+        subject: `[Contacto] ${formData.subject}`,
+        name: formData.name,
+        email: formData.email,
+        fields: {
+          Assunto: formData.subject,
+          Mensagem: formData.message,
+        },
+      });
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contacto consigo em breve.",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (err: any) {
+      toast({ title: "Erro ao enviar", description: err.message, variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
