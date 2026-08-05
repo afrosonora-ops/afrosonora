@@ -4,6 +4,8 @@ import { Instagram, Youtube, Facebook, Mail, ArrowRight, CheckCircle, Loader2 } 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
+import { openCookieSettings } from "@/components/CookieConsent";
+
 import { toast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
 
@@ -123,7 +125,9 @@ const Footer = () => {
               <li><Link to="/regras-conteudo" className="text-muted-foreground hover:text-gold transition-colors text-sm">Regras de Conteúdo</Link></li>
               <li><Link to="/licenciamento-musica" className="text-muted-foreground hover:text-gold transition-colors text-sm">Licenciamento Musical</Link></li>
               <li><Link to="/consentimento-imagem" className="text-muted-foreground hover:text-gold transition-colors text-sm">Consentimento de Imagem</Link></li>
+              <li><button onClick={openCookieSettings} className="text-muted-foreground hover:text-gold transition-colors text-sm">Preferências de Cookies</button></li>
             </ul>
+
           </div>
         </div>
 
