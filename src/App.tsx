@@ -39,14 +39,17 @@ import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
-const App = () => {
+const ScrollToTop = () => {
   const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  return (
+  return null;
+};
+
+const App = () => (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
