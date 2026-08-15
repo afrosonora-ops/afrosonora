@@ -16,25 +16,28 @@ const FooterNewsletter = () => {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    const parsed = emailSchema.safeParse(email);
+    if (!parsed.success) {
+      toast({ title: "Email inválido", description: firstError(parsed.error), variant: "destructive" });
+      return;
+    }
     setLoading(true);
     const { error } = await supabase
       .from("newsletter_subscribers")
-      .insert({ email: email.trim().toLowerCase() });
+      .insert({ email: parsed.data.toLowerCase() });
     setLoading(false);
-    if (error) {
+    if (error && error.code !== "23505") {
       toast({
-        title: error.code === "23505" ? "Já estás inscrito!" : "Erro",
-        description: error.code === "23505"
-          ? "Este email já está registado na nossa newsletter."
-          : "Não foi possível registar. Tenta novamente.",
-        ...(error.code !== "23505" && { variant: "destructive" as const }),
+        title: "Erro",
+        description: "Não foi possível registar. Tenta novamente.",
+        variant: "destructive",
       });
       return;
     }
     setSubscribed(true);
-    toast({ title: "Inscrito com sucesso! 🎉", description: "Vais receber as novidades AFROSONORA no teu email." });
+    toast({ title: "Inscrição confirmada 🎉", description: "Vais receber as novidades AFROSONORA no teu email." });
   };
+
 
   if (subscribed) {
     return (
