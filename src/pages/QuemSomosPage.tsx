@@ -13,7 +13,7 @@ const QuemSomosPage = () => {
 
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <img src={img1} alt="Artistas em palco" className="absolute inset-0 w-full h-full object-cover" />
+        <img decoding="async" src={img1} alt="Artistas em palco" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/70" />
         <div className="relative z-10 text-center px-4">
           <h1 className="font-display text-4xl md:text-6xl font-bold mb-4">
@@ -52,7 +52,7 @@ const QuemSomosPage = () => {
 
         {/* Image break */}
         <div className="rounded-xl overflow-hidden border border-border">
-          <img src={img2} alt="AfroSonora conceito" className="w-full h-auto object-cover" />
+          <img decoding="async" loading="lazy" src={img2} alt="AfroSonora conceito" className="w-full h-auto object-cover" />
         </div>
 
         {/* 3. O que é */}

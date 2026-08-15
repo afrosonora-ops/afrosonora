@@ -36,6 +36,7 @@ import ContentRulesPage from "./pages/ContentRulesPage";
 import MusicLicensingPage from "./pages/MusicLicensingPage";
 import ImageConsentPage from "./pages/ImageConsentPage";
 import CookieConsent from "./components/CookieConsent";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
@@ -57,6 +58,7 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <AuthProvider>
+            <ErrorBoundary>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/login" element={<LoginPage />} />
@@ -102,6 +104,7 @@ const App = () => (
               />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            </ErrorBoundary>
             <CookieConsent />
           </AuthProvider>
         </BrowserRouter>

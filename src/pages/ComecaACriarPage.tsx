@@ -105,7 +105,7 @@ const ComecaACriarPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="space-y-4">
               <div className="aspect-[4/3] overflow-hidden rounded-xl border border-border">
-                <img src={setupImg} alt="Setup básico de home studio" className="w-full h-full object-cover" />
+                <img decoding="async" loading="lazy" src={setupImg} alt="Setup básico de home studio" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground">Setup Básico / Start</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -114,7 +114,7 @@ const ComecaACriarPage = () => {
             </div>
             <div className="space-y-4">
               <div className="aspect-[4/3] overflow-hidden rounded-xl border border-border">
-                <img src={packImg} alt="Pacote Home Studio AFROSONORA" className="w-full h-full object-cover" />
+                <img decoding="async" loading="lazy" src={packImg} alt="Pacote Home Studio AFROSONORA" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground">Pacote Home Studio AFROSONORA</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">

@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo2} alt="AfroSonora" className="h-10 w-auto" />
+            <img decoding="async" src={logo2} alt="AfroSonora" className="h-10 w-auto" />
             <span className="font-display text-xl font-bold text-foreground">AfroSonora</span>
           </Link>
 

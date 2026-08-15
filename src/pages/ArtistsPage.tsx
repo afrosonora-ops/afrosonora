@@ -77,7 +77,7 @@ const ArtistsPage = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {highlightImages.map((img, i) => (
                 <div key={i} className="relative overflow-hidden rounded-xl aspect-[4/3] group">
-                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img decoding="async" loading="lazy" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                 </div>
               ))}
@@ -123,7 +123,7 @@ const ArtistsPage = () => {
                   <Card variant="elevated" className="group overflow-hidden hover:-translate-y-2 transition-all duration-300">
                     <div className="aspect-square relative overflow-hidden bg-secondary">
                       {artist.avatar_url ? (
-                        <img src={artist.avatar_url} alt={artist.artist_name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <img decoding="async" loading="lazy" src={artist.avatar_url} alt={artist.artist_name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
                           <User className="w-16 h-16 text-muted-foreground" />

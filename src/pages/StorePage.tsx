@@ -224,7 +224,7 @@ const StorePage = () => {
               className="group rounded-xl overflow-hidden border border-border hover:border-gold/40 transition-all duration-300 bg-background/50 flex flex-col">
               
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
+                  <img decoding="async" loading="lazy"
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />

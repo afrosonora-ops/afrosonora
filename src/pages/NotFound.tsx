@@ -1,22 +1,40 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Home, Search } from "lucide-react";
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
-
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
-        </a>
-      </div>
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navbar />
+      <main className="flex-1 flex items-center justify-center px-4 pt-32 pb-24">
+        <div className="max-w-lg text-center animate-fade-in">
+          <p className="font-display text-7xl md:text-8xl font-bold text-gradient-gold mb-4">404</p>
+          <h1 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
+            Página não encontrada
+          </h1>
+          <p className="text-muted-foreground mb-8">
+            A página que procura não existe ou foi movida. Volte ao início ou explore os nossos músicos e eventos.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              to="/"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gold text-background font-semibold hover:opacity-90 transition-opacity"
+            >
+              <Home className="w-4 h-4" />
+              Voltar ao início
+            </Link>
+            <Link
+              to="/eventos"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-border text-foreground hover:bg-muted transition-colors"
+            >
+              <Search className="w-4 h-4" />
+              Ver eventos
+            </Link>
+          </div>
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 };
