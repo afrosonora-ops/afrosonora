@@ -7,6 +7,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { openCookieSettings } from "@/components/CookieConsent";
 
 import { toast } from "@/hooks/use-toast";
+import { emailSchema, firstError } from "@/lib/formSchemas";
+
 import logo from "@/assets/logo.png";
 
 const FooterNewsletter = () => {
@@ -53,7 +55,8 @@ const FooterNewsletter = () => {
       <Input
         type="email"
         required
-        placeholder="O teu email..."
+        maxLength={255}
+
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className="h-10 bg-background/50 border-border text-foreground placeholder:text-muted-foreground text-sm"
