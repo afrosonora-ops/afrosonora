@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { Mail, MapPin, Phone, Send, Instagram, Youtube, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendFormEmail } from "@/lib/sendFormEmail";
+import { contactSchema, firstError } from "@/lib/formSchemas";
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -20,16 +21,21 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const parsed = contactSchema.safeParse(formData);
+    if (!parsed.success) {
+      toast({ title: "Dados inválidos", description: firstError(parsed.error), variant: "destructive" });
+      return;
+    }
     setSending(true);
     try {
       await sendFormEmail({
         formType: "Contacto",
-        subject: `[Contacto] ${formData.subject}`,
-        name: formData.name,
-        email: formData.email,
+        subject: `[Contacto] ${parsed.data.subject}`,
+        name: parsed.data.name,
+        email: parsed.data.email,
         fields: {
-          Assunto: formData.subject,
-          Mensagem: formData.message,
+          Assunto: parsed.data.subject,
+          Mensagem: parsed.data.message,
         },
       });
       toast({
@@ -77,6 +83,7 @@ const ContactPage = () => {
                     <Input
                       type="text"
                       placeholder="O seu nome"
+                      maxLength={120}
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
@@ -90,6 +97,7 @@ const ContactPage = () => {
                     <Input
                       type="email"
                       placeholder="seu@email.com"
+                      maxLength={255}
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
@@ -105,6 +113,7 @@ const ContactPage = () => {
                   <Input
                     type="text"
                     placeholder="Qual é o assunto?"
+                    maxLength={150}
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     required
@@ -118,6 +127,7 @@ const ContactPage = () => {
                   </label>
                   <Textarea
                     placeholder="Escreva a sua mensagem aqui..."
+                    maxLength={2000}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required

@@ -17,6 +17,7 @@ import storeBackpack from "@/assets/store-backpack.jpg";
 import storeHeadphones from "@/assets/store-headphones.jpg";
 import storeMic from "@/assets/store-mic.jpg";
 import storeKit from "@/assets/store-kit.jpg";
+import { emailSchema, firstError } from "@/lib/formSchemas";
 
 const products = [
 {
@@ -97,27 +98,28 @@ const NewsletterCTA = () => {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    const parsed = emailSchema.safeParse(email);
+    if (!parsed.success) {
+      toast({ title: "Email inválido", description: firstError(parsed.error), variant: "destructive" });
+      return;
+    }
 
     setLoading(true);
     const { error } = await supabase
       .from("newsletter_subscribers")
-      .insert({ email: email.trim().toLowerCase() });
+      .insert({ email: parsed.data.toLowerCase() });
 
     setLoading(false);
 
-    if (error) {
-      if (error.code === "23505") {
-        toast({ title: "Já estás inscrito!", description: "Este email já está registado na nossa newsletter." });
-      } else {
-        toast({ title: "Erro", description: "Não foi possível registar. Tenta novamente.", variant: "destructive" });
-      }
+    if (error && error.code !== "23505") {
+      toast({ title: "Erro", description: "Não foi possível registar. Tenta novamente.", variant: "destructive" });
       return;
     }
 
     setSubscribed(true);
-    toast({ title: "Inscrito com sucesso! 🎉", description: "Vais receber as novidades AFROSONORA no teu email." });
+    toast({ title: "Inscrição confirmada 🎉", description: "Vais receber as novidades AFROSONORA no teu email." });
   };
+
 
   return (
     <section className="py-24 bg-background">
@@ -142,6 +144,7 @@ const NewsletterCTA = () => {
                 <Input
                   type="email"
                   required
+                  maxLength={255}
                   placeholder="O teu email..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}

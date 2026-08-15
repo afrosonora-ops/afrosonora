@@ -65,10 +65,22 @@ const AdminPage = () => {
   const fetchAll = async () => {
     setLoading(true);
     const [profilesRes, rolesRes, artistsRes, eventsRes] = await Promise.all([
-      supabase.from("profiles").select("*").order("created_at", { ascending: false }),
-      supabase.from("user_roles").select("*"),
-      supabase.from("artists").select("*").order("created_at", { ascending: false }),
-      supabase.from("events").select("*").order("created_at", { ascending: false }),
+      supabase
+        .from("profiles")
+        .select("id, user_id, full_name, avatar_url, country, city, created_at")
+        .order("created_at", { ascending: false })
+        .limit(500),
+      supabase.from("user_roles").select("user_id, role").limit(2000),
+      supabase
+        .from("artists")
+        .select("id, user_id, artist_name, genre, country, city, avatar_url, is_featured, plan, created_at")
+        .order("created_at", { ascending: false })
+        .limit(500),
+      supabase
+        .from("events")
+        .select("id, title, location, event_date, is_published, organizer_id, created_at")
+        .order("created_at", { ascending: false })
+        .limit(500),
     ]);
 
     const rolesMap: Record<string, string[]> = {};

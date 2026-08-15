@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import { Handshake, Building2, Megaphone, Palette, Music, Send, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendFormEmail } from "@/lib/sendFormEmail";
+import { partnerSchema, firstError } from "@/lib/formSchemas";
 
 const PartnersPage = () => {
   const { toast } = useToast();
@@ -23,17 +24,22 @@ const PartnersPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const parsed = partnerSchema.safeParse(formData);
+    if (!parsed.success) {
+      toast({ title: "Dados inválidos", description: firstError(parsed.error), variant: "destructive" });
+      return;
+    }
     setSending(true);
     try {
       await sendFormEmail({
         formType: "Parcerias",
-        subject: `[Parceria] ${formData.company}`,
-        name: formData.name,
-        email: formData.email,
+        subject: `[Parceria] ${parsed.data.company}`,
+        name: parsed.data.name,
+        email: parsed.data.email,
         fields: {
-          "Empresa / Organização": formData.company,
-          "Tipo de Parceiro": formData.type,
-          Proposta: formData.message,
+          "Empresa / Organização": parsed.data.company,
+          "Tipo de Parceiro": parsed.data.type ?? "",
+          Proposta: parsed.data.message,
         },
       });
       toast({
@@ -164,6 +170,7 @@ const PartnersPage = () => {
                       <Input
                         type="text"
                         placeholder="Nome da empresa"
+                        maxLength={150}
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         required
@@ -177,6 +184,7 @@ const PartnersPage = () => {
                       <Input
                         type="text"
                         placeholder="O seu nome"
+                        maxLength={120}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
@@ -193,6 +201,7 @@ const PartnersPage = () => {
                       <Input
                         type="email"
                         placeholder="email@empresa.com"
+                        maxLength={255}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
@@ -225,6 +234,7 @@ const PartnersPage = () => {
                     </label>
                     <Textarea
                       placeholder="Conte-nos como gostaria de colaborar com a AFROSONORA..."
+                        maxLength={2000}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
