@@ -168,80 +168,51 @@ const ArtistsPage = () => {
           <div className="max-w-4xl mx-auto mb-12">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <Input type="text" placeholder="Pesquisar músicos..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="pl-10 bg-card border-border" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" aria-hidden="true" />
+                <Input type="text" aria-label="Pesquisar músicos" placeholder="Pesquisar músicos..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="pl-10 min-h-11 bg-card border-border" />
               </div>
               <div className="relative">
-                <Music className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
-                <select value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)} className="w-full md:w-48 h-10 pl-10 pr-4 rounded-md bg-card border border-border text-foreground appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring">
+                <Music className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" aria-hidden="true" />
+                <select aria-label="Filtrar por género musical" value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)} className="w-full md:w-48 min-h-11 pl-10 pr-4 rounded-md bg-card border border-border text-foreground appearance-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                   {genres.map((g) => <option key={g} value={g}>{g}</option>)}
                 </select>
               </div>
               <div className="relative">
-                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
-                <select value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)} className="w-full md:w-48 h-10 pl-10 pr-4 rounded-md bg-card border border-border text-foreground appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring">
+                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" aria-hidden="true" />
+                <select aria-label="Filtrar por país" value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)} className="w-full md:w-48 min-h-11 pl-10 pr-4 rounded-md bg-card border border-border text-foreground appearance-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                   {countries.map((c) => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
             </div>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-8" aria-live="polite">
             <p className="text-muted-foreground">
               <span className="text-gold font-semibold">{filteredArtists.length}</span> músicos encontrados
             </p>
           </div>
 
           {loading ? (
-            <div className="flex justify-center py-16">
-              <div className="w-8 h-8 border-2 border-gold border-t-transparent rounded-full animate-spin" />
-            </div>
+            <ArtistsSkeleton />
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {filteredArtists.map((artist, index) => (
-                <div key={artist.id} className="block animate-slide-up" style={{ animationDelay: `${index * 0.05}s` }}>
-                  <Card variant="elevated" className="group overflow-hidden hover:-translate-y-2 transition-all duration-300">
-                    <div className="aspect-square relative overflow-hidden bg-secondary">
-                      {artist.avatar_url ? (
-                        <img decoding="async" loading="lazy" src={artist.avatar_url} alt={artist.artist_name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center">
-                          <User className="w-16 h-16 text-muted-foreground" />
-                        </div>
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
-                    <CardContent className="p-4">
-                      <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-gold transition-colors">
-                        {artist.artist_name}
-                      </h3>
-                      <div className="flex items-center justify-between text-sm text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Music className="w-4 h-4" />
-                          {artist.genre || "—"}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {artist.country || "—"}
-                        </span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                <ArtistCard key={artist.id} artist={artist} index={index} />
               ))}
             </div>
           )}
 
           {!loading && filteredArtists.length === 0 && (
             <div className="text-center py-16">
-              <Filter className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+              <Filter className="w-12 h-12 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
               <h3 className="font-display text-xl font-semibold text-foreground mb-2">Nenhum músico encontrado</h3>
               <p className="text-muted-foreground mb-6">Tente ajustar os seus filtros ou seja o primeiro a registar-se!</p>
-              <Button variant="goldOutline" onClick={() => { setSearchQuery(""); setSelectedGenre("Todos"); setSelectedCountry("Todos"); }}>
+              <Button variant="goldOutline" onClick={clearFilters}>
                 Limpar Filtros
               </Button>
             </div>
           )}
+
 
           <div className="text-center mt-16 p-8 rounded-xl bg-charcoal border border-border">
             <h3 className="font-display text-2xl font-bold text-foreground mb-3">É músico e quer aparecer aqui?</h3>
