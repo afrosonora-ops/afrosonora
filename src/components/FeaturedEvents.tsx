@@ -30,7 +30,7 @@ const FeaturedEvents = () => {
             <Link key={event.slug} to="/eventos">
               <Card variant="gold" className="group hover:-translate-y-2 hover:shadow-gold transition-all duration-300 h-full overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img
+                  <img decoding="async"
                     src={event.image}
                     alt={event.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -56,7 +56,7 @@ const FeaturedEvents = () => {
           <Link to="/eventos-culturais-2026">
             <Card variant="gold" className="group hover:-translate-y-2 hover:shadow-gold transition-all duration-300 h-full overflow-hidden">
               <div className="aspect-[4/3] overflow-hidden">
-                <img
+                <img decoding="async"
                   src={eventosCulturaisImg}
                   alt="Eventos Culturais 2026"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

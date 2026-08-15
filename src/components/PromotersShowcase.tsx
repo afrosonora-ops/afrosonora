@@ -49,7 +49,7 @@ const PromotersShowcase = () => {
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="relative h-52 overflow-hidden">
-                <img
+                <img decoding="async"
                   src={card.image}
                   alt={card.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

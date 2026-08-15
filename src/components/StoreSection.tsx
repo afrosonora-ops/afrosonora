@@ -45,7 +45,7 @@ const StoreSection = () => {
             <div key={index} className="group">
               <div className="relative overflow-hidden rounded-xl border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-500">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img
+                  <img decoding="async" loading="lazy"
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

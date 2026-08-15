@@ -79,7 +79,7 @@ const EventDetailPage = () => {
 
           {/* Hero image */}
           <div className="rounded-xl overflow-hidden mb-10 h-64 md:h-80">
-            <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
+            <img decoding="async" loading="lazy" src={event.image} alt={event.title} className="w-full h-full object-cover" />
           </div>
 
           {/* Title */}

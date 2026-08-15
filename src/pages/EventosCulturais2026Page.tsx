@@ -79,7 +79,7 @@ const EventosCulturais2026Page = () => {
       {/* Hero */}
       <section className="relative pt-24">
         <div className="h-72 md:h-96 overflow-hidden">
-          <img src={heroImg} alt="Eventos Culturais 2026" className="w-full h-full object-cover" />
+          <img decoding="async" src={heroImg} alt="Eventos Culturais 2026" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         </div>
         <div className="container mx-auto px-4 relative -mt-32 z-10 text-center pb-8">

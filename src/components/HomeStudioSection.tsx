@@ -24,7 +24,7 @@ const HomeStudioSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="group space-y-4">
             <div className="aspect-[4/3] overflow-hidden rounded-xl border border-border group-hover:border-gold/30 transition-colors">
-              <img
+              <img decoding="async"
                 src={setupImg}
                 alt="Setup básico de home studio"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -39,7 +39,7 @@ const HomeStudioSection = () => {
 
           <div className="group space-y-4">
             <div className="aspect-[4/3] overflow-hidden rounded-xl border border-border group-hover:border-gold/30 transition-colors">
-              <img
+              <img decoding="async"
                 src={packImg}
                 alt="Pacote Home Studio AFROSONORA"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

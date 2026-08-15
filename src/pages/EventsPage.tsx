@@ -35,7 +35,7 @@ const EventsPage = () => {
               >
                 <Card variant="elevated" className="h-full overflow-hidden hover:shadow-gold/20 hover:shadow-lg transition-all duration-500 hover:-translate-y-1">
                   <div className="h-52 overflow-hidden">
-                    <img
+                    <img decoding="async" loading="lazy"
                       src={event.image}
                       alt={event.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
