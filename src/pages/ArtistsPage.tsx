@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback, memo } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Search, MapPin, Music, Filter, User } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 import type { Tables } from "@/integrations/supabase/types";
 import musicosDestaque1 from "@/assets/musicos-destaque-1.jpg";
 import musicosDestaque2 from "@/assets/musicos-destaque-2.jpg";
@@ -24,34 +26,110 @@ const highlightImages = [
   { src: musicosDestaque4, alt: "Conexão África-Europa" },
 ];
 
+type Artist = Tables<"artists">;
+
+const ArtistCard = memo(({ artist, index }: { artist: Artist; index: number }) => (
+  <div className="block animate-slide-up" style={{ animationDelay: `${index * 0.05}s` }}>
+    <Card variant="elevated" className="group overflow-hidden hover:-translate-y-2 transition-all duration-300">
+      <div className="aspect-square relative overflow-hidden bg-secondary">
+        {artist.avatar_url ? (
+          <img decoding="async" loading="lazy" src={artist.avatar_url} alt={artist.artist_name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <User className="w-16 h-16 text-muted-foreground" aria-hidden="true" />
+          </div>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      </div>
+      <CardContent className="p-4">
+        <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-gold transition-colors">
+          {artist.artist_name}
+        </h3>
+        <div className="flex items-center justify-between text-sm text-muted-foreground">
+          <span className="flex items-center gap-1">
+            <Music className="w-4 h-4" aria-hidden="true" />
+            {artist.genre || "—"}
+          </span>
+          <span className="flex items-center gap-1">
+            <MapPin className="w-4 h-4" aria-hidden="true" />
+            {artist.country || "—"}
+          </span>
+        </div>
+      </CardContent>
+    </Card>
+  </div>
+));
+ArtistCard.displayName = "ArtistCard";
+
+const ArtistsSkeleton = () => (
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    {Array.from({ length: 8 }).map((_, i) => (
+      <div key={i} className="rounded-xl overflow-hidden border border-border bg-card">
+        <Skeleton className="aspect-square w-full rounded-none" />
+        <div className="p-4 space-y-3">
+          <Skeleton className="h-5 w-2/3" />
+          <Skeleton className="h-4 w-full" />
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
 const ArtistsPage = () => {
-  const [artists, setArtists] = useState<Tables<"artists">[]>([]);
+  const [artists, setArtists] = useState<Artist[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("Todos");
   const [selectedCountry, setSelectedCountry] = useState("Todos");
+  const { toast } = useToast();
 
   useEffect(() => {
+    let active = true;
     const fetchArtists = async () => {
-      const { data } = await supabase
-        .from("artists")
-        .select(
-          "id, user_id, artist_name, genre, country, city, bio, avatar_url, cover_url, is_featured, plan, spotify_url, youtube_url, instagram_url, portfolio_url, created_at, updated_at"
-        )
-        .order("created_at", { ascending: false })
-        .limit(200);
-      setArtists(data || []);
-      setLoading(false);
+      try {
+        const { data, error } = await supabase
+          .from("artists")
+          .select(
+            "id, user_id, artist_name, genre, country, city, bio, avatar_url, cover_url, is_featured, plan, spotify_url, youtube_url, instagram_url, portfolio_url, created_at, updated_at"
+          )
+          .order("created_at", { ascending: false })
+          .limit(200);
+        if (error) throw error;
+        if (active) setArtists(data || []);
+      } catch {
+        if (active) {
+          toast({
+            title: "Não foi possível carregar os músicos",
+            description: "Verifique a sua ligação à internet e tente novamente.",
+            variant: "destructive",
+          });
+        }
+      } finally {
+        if (active) setLoading(false);
+      }
     };
     fetchArtists();
+    return () => {
+      active = false;
+    };
+  }, [toast]);
+
+  const filteredArtists = useMemo(() => {
+    const q = searchQuery.toLowerCase();
+    return artists.filter((artist) => {
+      const matchesSearch = artist.artist_name.toLowerCase().includes(q);
+      const matchesGenre = selectedGenre === "Todos" || artist.genre === selectedGenre;
+      const matchesCountry = selectedCountry === "Todos" || artist.country === selectedCountry;
+      return matchesSearch && matchesGenre && matchesCountry;
+    });
+  }, [artists, searchQuery, selectedGenre, selectedCountry]);
+
+  const clearFilters = useCallback(() => {
+    setSearchQuery("");
+    setSelectedGenre("Todos");
+    setSelectedCountry("Todos");
   }, []);
 
-  const filteredArtists = artists.filter((artist) => {
-    const matchesSearch = artist.artist_name.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesGenre = selectedGenre === "Todos" || artist.genre === selectedGenre;
-    const matchesCountry = selectedCountry === "Todos" || artist.country === selectedCountry;
-    return matchesSearch && matchesGenre && matchesCountry;
-  });
 
   return (
     <div className="min-h-screen bg-background">
