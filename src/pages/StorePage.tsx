@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { ShoppingBag, Heart, ArrowRight, Star, Sparkles, Music, Mail, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -170,6 +171,7 @@ const StorePage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Store | AfroSonora"} description={"Merchandising e produtos oficiais AfroSonora que apoiam músicos e projetos culturais africanos."} path="/store" />
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 bg-charcoal overflow-hidden">

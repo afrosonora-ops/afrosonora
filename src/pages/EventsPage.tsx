@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Calendar, ArrowRight, Mail } from "lucide-react";
 import { staticEvents } from "@/data/eventsData";
@@ -9,6 +10,7 @@ const EventsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Eventos & Oportunidades | AfroSonora"} description={"Iniciativas e eventos AfroSonora para descobrir novos talentos, promover artistas e divulgar a cultura africana na Europa."} path="/eventos" />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           {/* Header */}

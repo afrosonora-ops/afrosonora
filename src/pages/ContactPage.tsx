@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Mail, MapPin, Phone, Send, Instagram, Youtube, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -53,6 +54,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Contacto | AfroSonora"} description={"Fale com a equipa AfroSonora: dúvidas, parcerias, imprensa e apoio a músicos africanos na Europa."} path="/contacto" />
       
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">

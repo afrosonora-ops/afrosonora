@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Search, MapPin, Music, Filter, User } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -55,6 +56,7 @@ const ArtistsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Músicos Africanos | AfroSonora"} description={"Descubra músicos, cantores e bandas africanas na AfroSonora. Filtre por género musical, país ou nome e ligue-se a promotores europeus."} path="/artistas" />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
