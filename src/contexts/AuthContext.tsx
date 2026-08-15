@@ -42,11 +42,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const fetchProfile = async (userId: string) => {
     const { data } = await supabase
       .from("profiles")
-      .select("*")
+      .select("id, user_id, full_name, avatar_url, bio, phone, country, city")
       .eq("user_id", userId)
-      .single();
+      .maybeSingle();
     setProfile(data);
   };
+
 
   const fetchRoles = async (userId: string) => {
     const { data } = await supabase

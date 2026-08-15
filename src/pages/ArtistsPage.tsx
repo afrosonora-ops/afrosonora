@@ -32,7 +32,13 @@ const ArtistsPage = () => {
 
   useEffect(() => {
     const fetchArtists = async () => {
-      const { data } = await supabase.from("artists").select("*").order("created_at", { ascending: false });
+      const { data } = await supabase
+        .from("artists")
+        .select(
+          "id, user_id, artist_name, genre, country, city, bio, avatar_url, cover_url, is_featured, plan, spotify_url, youtube_url, instagram_url, portfolio_url, created_at, updated_at"
+        )
+        .order("created_at", { ascending: false })
+        .limit(200);
       setArtists(data || []);
       setLoading(false);
     };

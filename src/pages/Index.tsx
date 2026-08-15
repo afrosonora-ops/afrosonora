@@ -25,10 +25,12 @@ const Index = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
+      if (document.hidden) return;
       setCurrentHero((prev) => (prev + 1) % heroImages.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
 
   return (
     <div className="min-h-screen bg-background">
