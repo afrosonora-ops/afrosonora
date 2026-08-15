@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -86,6 +87,7 @@ const ComecaACriarPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Começa a Criar | AfroSonora"} description={"Recursos, home studio e apoio para músicos africanos começarem a criar e gravar com qualidade profissional."} path="/comeca-a-criar" />
 
       {/* Hero */}
       <section className="pt-32 pb-16 bg-charcoal">

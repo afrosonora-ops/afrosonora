@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { useAuth } from "@/contexts/AuthContext";
 import { staticEvents } from "@/data/eventsData";
@@ -70,6 +71,11 @@ const EventDetailPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo
+        title={`${event.title} | AfroSonora`}
+        description={event.shortDescription}
+        path={`/eventos/${event.slug}`}
+      />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-4xl">
           {/* Back link */}

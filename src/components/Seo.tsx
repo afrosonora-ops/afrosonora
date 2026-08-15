@@ -1,0 +1,58 @@
+import { useEffect } from "react";
+
+const SITE_URL = "https://afrosonora.lovable.app";
+const DEFAULT_IMAGE =
+  "https://storage.googleapis.com/gpt-engineer-file-uploads/ZI7Zx4L0GMXfEHzDy466NYNogmn2/social-images/social-1774086687145-Logo_branco.webp";
+
+interface SeoProps {
+  title: string;
+  description: string;
+  path: string;
+  image?: string;
+}
+
+const setMeta = (attr: "name" | "property", key: string, content: string) => {
+  let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+};
+
+const setLink = (rel: string, href: string) => {
+  let el = document.head.querySelector<HTMLLinkElement>(`link[rel="${rel}"]`);
+  if (!el) {
+    el = document.createElement("link");
+    el.setAttribute("rel", rel);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("href", href);
+};
+
+/**
+ * Updates the document head (title, description, canonical, Open Graph, Twitter)
+ * for the current route. Client-side only — crawlers that execute JS read it.
+ */
+const Seo = ({ title, description, path, image = DEFAULT_IMAGE }: SeoProps) => {
+  useEffect(() => {
+    const url = `${SITE_URL}${path}`;
+    document.title = title;
+    setMeta("name", "description", description);
+    setLink("canonical", url);
+    setMeta("property", "og:title", title);
+    setMeta("property", "og:description", description);
+    setMeta("property", "og:url", url);
+    setMeta("property", "og:type", "website");
+    setMeta("property", "og:image", image);
+    setMeta("name", "twitter:card", "summary_large_image");
+    setMeta("name", "twitter:title", title);
+    setMeta("name", "twitter:description", description);
+    setMeta("name", "twitter:image", image);
+  }, [title, description, path, image]);
+
+  return null;
+};
+
+export default Seo;

@@ -167,3 +167,10 @@
   background-size: 200% 100%;
   animation: shimmer 3s infinite;
 }
+
+@layer base {
+  /* Global keyboard focus indicator */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}

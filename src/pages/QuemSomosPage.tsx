@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import img1 from "@/assets/quem-somos-1.jpg";
 import img2 from "@/assets/quem-somos-2.jpg";
@@ -10,6 +11,7 @@ const QuemSomosPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <Seo title={"Quem Somos | AfroSonora"} description={"Conheça a missão da AfroSonora: amplificar as vozes e ritmos africanos no coração da Europa."} path="/quem-somos" />
 
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">

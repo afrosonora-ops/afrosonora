@@ -36,7 +36,7 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-sm font-medium transition-colors hover:text-gold ${isActive(link.href) ? "text-gold" : "text-foreground/80"}`}
+                className={`text-sm font-medium transition-colors hover:text-gold inline-flex items-center min-h-11 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${isActive(link.href) ? "text-gold" : "text-foreground/80"}`}
               >
                 {link.label}
               </Link>
@@ -77,8 +77,14 @@ const Navbar = () => {
             )}
           </div>
 
-          <button className="md:hidden text-foreground p-2" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          <button
+            type="button"
+            className="md:hidden text-foreground p-2 min-h-11 min-w-11 flex items-center justify-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
 
@@ -89,7 +95,7 @@ const Navbar = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`text-lg font-medium transition-colors hover:text-gold ${isActive(link.href) ? "text-gold" : "text-foreground/80"}`}
+                  className={`text-lg font-medium transition-colors hover:text-gold inline-flex items-center min-h-11 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${isActive(link.href) ? "text-gold" : "text-foreground/80"}`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
