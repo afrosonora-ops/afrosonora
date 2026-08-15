@@ -11,10 +11,17 @@ interface SitemapEntry {
   priority?: string;
 }
 
+// Keep in sync with src/data/eventsData.ts
 const eventSlugs = [
-  "afrosonora-talent-hunt",
+  "afrosonora-spotlight",
   "afrosonora-live-sessions",
-  "afrosonora-connect",
+  "music-clip-challenge",
+  "cultural-exchange",
+  "producers-desk",
+  "monthly-drop",
+  "video-spotlight",
+  "fan-collaboration",
+  "event-prep",
 ];
 
 const entries: SitemapEntry[] = [
