@@ -17,6 +17,7 @@ import storeBackpack from "@/assets/store-backpack.jpg";
 import storeHeadphones from "@/assets/store-headphones.jpg";
 import storeMic from "@/assets/store-mic.jpg";
 import storeKit from "@/assets/store-kit.jpg";
+import { emailSchema, firstError } from "@/lib/formSchemas";
 
 const products = [
 {
@@ -143,6 +144,7 @@ const NewsletterCTA = () => {
                 <Input
                   type="email"
                   required
+                  maxLength={255}
                   placeholder="O teu email..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}

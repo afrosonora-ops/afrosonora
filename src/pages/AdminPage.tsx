@@ -78,7 +78,7 @@ const AdminPage = () => {
         .limit(500),
       supabase
         .from("events")
-        .select("id, title, description, location, venue, event_date, image_url, is_published, created_at")
+        .select("id, title, location, event_date, is_published, organizer_id, created_at")
         .order("created_at", { ascending: false })
         .limit(500),
     ]);
