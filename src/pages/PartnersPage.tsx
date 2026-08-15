@@ -170,6 +170,7 @@ const PartnersPage = () => {
                       <Input
                         type="text"
                         placeholder="Nome da empresa"
+                        maxLength={150}
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         required
@@ -183,6 +184,7 @@ const PartnersPage = () => {
                       <Input
                         type="text"
                         placeholder="O seu nome"
+                        maxLength={120}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
@@ -199,6 +201,7 @@ const PartnersPage = () => {
                       <Input
                         type="email"
                         placeholder="email@empresa.com"
+                        maxLength={255}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
@@ -231,6 +234,7 @@ const PartnersPage = () => {
                     </label>
                     <Textarea
                       placeholder="Conte-nos como gostaria de colaborar com a AFROSONORA..."
+                        maxLength={2000}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
