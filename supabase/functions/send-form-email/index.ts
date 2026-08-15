@@ -18,10 +18,68 @@ const escapeHtml = (value: string) =>
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 
+// --- Controlo de origem ---
+const ALLOWED_HOST_SUFFIXES = ['afrosonora.com', 'lovable.app', 'lovableproject.com', 'localhost'];
+
+const isAllowedOrigin = (origin: string | null) => {
+  if (!origin) return false;
+  try {
+    const host = new URL(origin).hostname;
+    return ALLOWED_HOST_SUFFIXES.some((s) => host === s || host.endsWith(`.${s}`));
+  } catch {
+    return false;
+  }
+};
+
+// --- Rate limiting em memória (por IP): 5 pedidos / 10 min ---
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_REQUESTS = 5;
+const hits = new Map<string, number[]>();
+
+const isRateLimited = (ip: string) => {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
+  if (recent.length >= MAX_REQUESTS) {
+    hits.set(ip, recent);
+    return true;
+  }
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5000) hits.clear();
+  return false;
+};
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders });
   }
+
+  if (req.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Método não permitido' }), {
+      status: 405,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
+  if (!isAllowedOrigin(req.headers.get('origin'))) {
+    return new Response(JSON.stringify({ error: 'Origem não autorizada' }), {
+      status: 403,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
+  const ip =
+    req.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
+    req.headers.get('cf-connecting-ip') ??
+    'unknown';
+
+  if (isRateLimited(ip)) {
+    return new Response(JSON.stringify({ error: 'Demasiados pedidos. Tente novamente mais tarde.' }), {
+      status: 429,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
 
   try {
     const apiKey = Deno.env.get('RESEND_API_KEY');
