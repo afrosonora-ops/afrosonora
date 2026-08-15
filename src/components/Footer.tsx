@@ -56,6 +56,7 @@ const FooterNewsletter = () => {
         type="email"
         required
         maxLength={255}
+        placeholder="O teu email..."
 
         value={email}
         onChange={(e) => setEmail(e.target.value)}
