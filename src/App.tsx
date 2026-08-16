@@ -26,6 +26,8 @@ import AdminPage from "./pages/AdminPage";
 import ComecaACriarPage from "./pages/ComecaACriarPage";
 import QuemSomosPage from "./pages/QuemSomosPage";
 import SobrePage from "./pages/SobrePage";
+import GuidesPage from "./pages/GuidesPage";
+import GuideArticlePage from "./pages/GuideArticlePage";
 
 import StorePage from "./pages/StorePage";
 import EventosCulturais2026Page from "./pages/EventosCulturais2026Page";
@@ -88,6 +90,8 @@ const App = () => (
               <Route path="/comeca-a-criar" element={<ComecaACriarPage />} />
               <Route path="/quem-somos" element={<QuemSomosPage />} />
               <Route path="/sobre" element={<SobrePage />} />
+              <Route path="/guias" element={<GuidesPage />} />
+              <Route path="/guias/:slug" element={<GuideArticlePage />} />
 
               <Route path="/store" element={<StorePage />} />
               <Route path="/eventos-culturais-2026" element={<EventosCulturais2026Page />} />

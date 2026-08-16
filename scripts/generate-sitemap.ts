@@ -24,6 +24,14 @@ const eventSlugs = [
   "event-prep",
 ];
 
+// Keep in sync with src/data/guidesData.ts
+const guideSlugs = [
+  "o-que-e-musica-afro-contemporanea",
+  "como-descobrir-novos-artistas-afro",
+  "afrobeat-afropop-diaspora-diferencas",
+  "onde-ouvir-musica-afro",
+];
+
 const entries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/artistas", changefreq: "weekly", priority: "0.9" },
@@ -34,6 +42,8 @@ const entries: SitemapEntry[] = [
   { path: "/comeca-a-criar", changefreq: "monthly", priority: "0.8" },
   { path: "/store", changefreq: "monthly", priority: "0.7" },
   { path: "/sobre", changefreq: "monthly", priority: "0.9" },
+  { path: "/guias", changefreq: "monthly", priority: "0.8" },
+  ...guideSlugs.map((slug) => ({ path: `/guias/${slug}`, changefreq: "monthly" as const, priority: "0.8" })),
   { path: "/quem-somos", changefreq: "monthly", priority: "0.7" },
   { path: "/contacto", changefreq: "monthly", priority: "0.7" },
   { path: "/promotores", changefreq: "monthly", priority: "0.6" },
