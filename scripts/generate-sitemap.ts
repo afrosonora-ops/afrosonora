@@ -33,6 +33,7 @@ const entries: SitemapEntry[] = [
   { path: "/eventos-culturais-2026", changefreq: "monthly", priority: "0.7" },
   { path: "/comeca-a-criar", changefreq: "monthly", priority: "0.8" },
   { path: "/store", changefreq: "monthly", priority: "0.7" },
+  { path: "/sobre", changefreq: "monthly", priority: "0.9" },
   { path: "/quem-somos", changefreq: "monthly", priority: "0.7" },
   { path: "/contacto", changefreq: "monthly", priority: "0.7" },
   { path: "/promotores", changefreq: "monthly", priority: "0.6" },

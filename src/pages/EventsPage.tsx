@@ -6,11 +6,28 @@ import Footer from "@/components/Footer";
 import { Calendar, ArrowRight, Mail } from "lucide-react";
 import { staticEvents } from "@/data/eventsData";
 
+const eventsJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  url: "https://afrosonora.lovable.app/eventos",
+  name: "Eventos e oportunidades AfroSonora",
+  inLanguage: "pt-PT",
+  description:
+    "Iniciativas, showcases e oportunidades para músicos africanos e da diáspora promovidas pela AfroSonora na Europa.",
+  isPartOf: { "@id": "https://afrosonora.lovable.app/#website" },
+  publisher: { "@id": "https://afrosonora.lovable.app/#organization" },
+};
+
 const EventsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Seo title={"Eventos & Oportunidades | AfroSonora"} description={"Iniciativas e eventos AfroSonora para descobrir novos talentos, promover artistas e divulgar a cultura africana na Europa."} path="/eventos" />
+      <Seo
+        title={"Eventos e Oportunidades de Música Afro | AfroSonora"}
+        description={"Showcases, concursos e iniciativas AfroSonora para artistas de música afro: candidata-te, ganha visibilidade e liga-te a promotores e público europeu."}
+        path="/eventos"
+        jsonLd={eventsJsonLd}
+      />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           {/* Header */}

@@ -75,6 +75,33 @@ const EventDetailPage = () => {
         title={`${event.title} | AfroSonora`}
         description={event.shortDescription}
         path={`/eventos/${event.slug}`}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            name: event.title,
+            headline: event.title,
+            description: event.shortDescription,
+            url: `https://afrosonora.lovable.app/eventos/${event.slug}`,
+            inLanguage: "pt-PT",
+            publisher: { "@id": "https://afrosonora.lovable.app/#organization" },
+            about: "Música afro e cultura africana na Europa",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Início", item: "https://afrosonora.lovable.app/" },
+              { "@type": "ListItem", position: 2, name: "Eventos", item: "https://afrosonora.lovable.app/eventos" },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: event.title,
+                item: `https://afrosonora.lovable.app/eventos/${event.slug}`,
+              },
+            ],
+          },
+        ]}
       />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-4xl">

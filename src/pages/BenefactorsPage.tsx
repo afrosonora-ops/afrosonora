@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Heart, ArrowRight } from "lucide-react";
 
@@ -8,6 +9,7 @@ const BenefactorsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Benfeitores | Apoia a Música Afro e a Cultura Africana"} description={"Apoia projetos de música afro e cultura africana na Europa como benfeitor AfroSonora e financia oportunidades reais para talentos emergentes."} path="/benfeitores" />
 
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">

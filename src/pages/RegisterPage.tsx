@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "sonner";
@@ -61,6 +62,7 @@ const RegisterPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Criar Perfil de Artista | AfroSonora"} description={"Cria gratuitamente o teu perfil de músico africano na AfroSonora e fica visível para promotores, agências e público na Europa."} path="/registo" />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto animate-fade-in">

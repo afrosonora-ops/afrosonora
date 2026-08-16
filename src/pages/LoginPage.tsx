@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "sonner";
@@ -39,6 +40,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Entrar | AfroSonora"} description={"Acede à tua conta AfroSonora para gerir o teu perfil de artista, candidaturas e eventos."} path="/login" />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-md mx-auto animate-fade-in">

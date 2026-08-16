@@ -75,6 +75,18 @@ const ArtistsSkeleton = () => (
   </div>
 );
 
+const artistsJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  url: "https://afrosonora.lovable.app/artistas",
+  name: "Músicos africanos e da diáspora na AfroSonora",
+  inLanguage: "pt-PT",
+  description:
+    "Diretório de músicos, bandas e DJs de música afro — afrobeat, kizomba, semba, kuduro, afro house e amapiano — disponíveis para eventos e colaborações na Europa.",
+  isPartOf: { "@id": "https://afrosonora.lovable.app/#website" },
+  publisher: { "@id": "https://afrosonora.lovable.app/#organization" },
+};
+
 const ArtistsPage = () => {
   const [artists, setArtists] = useState<Artist[]>([]);
   const [loading, setLoading] = useState(true);
@@ -134,7 +146,12 @@ const ArtistsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Seo title={"Músicos Africanos | AfroSonora"} description={"Descubra músicos, cantores e bandas africanas na AfroSonora. Filtre por género musical, país ou nome e ligue-se a promotores europeus."} path="/artistas" />
+      <Seo
+        title={"Músicos Africanos e da Diáspora | Diretório AfroSonora"}
+        description={"Descobre músicos, cantores, DJs e bandas de música afro na AfroSonora — afrobeat, kizomba, semba, afro house e mais. Filtra por género, país ou nome e liga-te a promotores europeus."}
+        path="/artistas"
+        jsonLd={artistsJsonLd}
+      />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
