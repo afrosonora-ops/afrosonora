@@ -9,6 +9,8 @@ interface SeoProps {
   description: string;
   path: string;
   image?: string;
+  /** Structured data (JSON-LD) specific to this route. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const setMeta = (attr: "name" | "property", key: string, content: string) => {
@@ -35,7 +37,7 @@ const setLink = (rel: string, href: string) => {
  * Updates the document head (title, description, canonical, Open Graph, Twitter)
  * for the current route. Client-side only — crawlers that execute JS read it.
  */
-const Seo = ({ title, description, path, image = DEFAULT_IMAGE }: SeoProps) => {
+const Seo = ({ title, description, path, image = DEFAULT_IMAGE, jsonLd }: SeoProps) => {
   useEffect(() => {
     const url = `${SITE_URL}${path}`;
     document.title = title;
@@ -51,6 +53,16 @@ const Seo = ({ title, description, path, image = DEFAULT_IMAGE }: SeoProps) => {
     setMeta("name", "twitter:description", description);
     setMeta("name", "twitter:image", image);
   }, [title, description, path, image]);
+
+  useEffect(() => {
+    if (!jsonLd) return;
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.dataset.seoRoute = "true";
+    script.textContent = JSON.stringify(jsonLd);
+    document.head.appendChild(script);
+    return () => script.remove();
+  }, [jsonLd]);
 
   return null;
 };
