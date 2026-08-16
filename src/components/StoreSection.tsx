@@ -4,20 +4,26 @@ import { ArrowRight, ShoppingBag } from "lucide-react";
 import store1 from "@/assets/store-1.webp";
 import store2 from "@/assets/store-2.webp";
 import store3 from "@/assets/store-3.webp";
+import store1Sm from "@/assets/store-1-640.webp";
+import store2Sm from "@/assets/store-2-640.webp";
+import store3Sm from "@/assets/store-3-640.webp";
 
 const storeItems = [
   {
     image: store1,
+    imageSmall: store1Sm,
     title: "Streetwear Premium",
     description: "Hoodies, bonés e jackets com o emblema AFROSONORA. Estilo urbano, identidade africana.",
   },
   {
     image: store2,
+    imageSmall: store2Sm,
     title: "Coleção Completa",
     description: "T-shirts, bombers e acessórios para toda a tribo. Cada peça conta uma história.",
   },
   {
     image: store3,
+    imageSmall: store3Sm,
     title: "Música & Lifestyle",
     description: "Onde o equipamento de estúdio encontra a moda. Cultura africana em cada detalhe.",
   },
@@ -47,8 +53,12 @@ const StoreSection = () => {
                 <div className="aspect-[4/3] overflow-hidden">
                   <img decoding="async" loading="lazy"
                     src={item.image}
+                    srcSet={`${item.imageSmall} 640w, ${item.image} 1200w`}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    width={1200}
+                    height={900}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover bg-[#1A1A1A] group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
