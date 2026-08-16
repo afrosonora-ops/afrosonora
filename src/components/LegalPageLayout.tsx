@@ -1,16 +1,26 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
+import { useLocation } from "react-router-dom";
 
 interface LegalPageLayoutProps {
   title: string;
   lastUpdated: string;
   children: React.ReactNode;
+  /** Meta description for this legal page. */
+  description?: string;
 }
 
-const LegalPageLayout = ({ title, lastUpdated, children }: LegalPageLayoutProps) => {
+const LegalPageLayout = ({ title, lastUpdated, children, description }: LegalPageLayoutProps) => {
+  const { pathname } = useLocation();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <Seo
+        title={`${title} | AfroSonora`}
+        description={description ?? `${title} da AfroSonora, a plataforma europeia de música afro e cultura africana.`}
+        path={pathname}
+      />
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">{title}</h1>
