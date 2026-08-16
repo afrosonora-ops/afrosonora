@@ -8,11 +8,22 @@ import eventVideoSpotlight from "@/assets/event-video-spotlight.webp";
 import eventFanCollab from "@/assets/event-fan-collab.webp";
 import eventEventPrep from "@/assets/event-event-prep.webp";
 
+import eventSpotlightSm from "@/assets/event-spotlight-640.webp";
+import eventLiveSessionsSm from "@/assets/event-live-sessions-640.webp";
+import eventMusicClipSm from "@/assets/event-music-clip-640.webp";
+import eventCulturalExchangeSm from "@/assets/event-cultural-exchange-640.webp";
+import eventProducersDeskSm from "@/assets/event-producers-desk-640.webp";
+import eventMonthlyDropSm from "@/assets/event-monthly-drop-640.webp";
+import eventVideoSpotlightSm from "@/assets/event-video-spotlight-640.webp";
+import eventFanCollabSm from "@/assets/event-fan-collab-640.webp";
+import eventEventPrepSm from "@/assets/event-event-prep-640.webp";
+
 export interface StaticEvent {
   slug: string;
   title: string;
   shortDescription: string;
   image: string;
+  imageSmall: string;
   emailSubject: string;
   intro: string;
   sections: { heading: string; content: string }[];
@@ -26,6 +37,7 @@ export const staticEvents: StaticEvent[] = [
     title: "AfroSonora Spotlight – Envio de Maquetes",
     shortDescription: "Envia as tuas maquetes, demos ou músicas originais e conquista destaque na comunidade AFROSONORA.",
     image: eventSpotlight,
+    imageSmall: eventSpotlightSm,
     emailSubject: "Participação – AfroSonora Spotlight",
     intro: "O AfroSonora Spotlight é uma iniciativa dedicada à descoberta de novos talentos. Este evento permite que artistas emergentes enviem maquetes, demos ou músicas originais, que poderão ser analisadas e destacadas pela equipa AFROSONORA.\n\nO objetivo é dar visibilidade a artistas com potencial e apresentar novos sons ao público europeu.",
     sections: [
@@ -46,6 +58,7 @@ export const staticEvents: StaticEvent[] = [
     title: "AfroSonora Live Sessions",
     shortDescription: "Apresenta performances musicais ao vivo ou gravadas e promove o teu trabalho para uma audiência internacional.",
     image: eventLiveSessions,
+    imageSmall: eventLiveSessionsSm,
     emailSubject: "Participação – AfroSonora Live Sessions",
     intro: "As AfroSonora Live Sessions são eventos digitais onde artistas podem apresentar performances musicais ao vivo ou gravadas, promovendo o seu trabalho para uma audiência internacional.\n\nEstas sessões permitem criar uma ligação direta entre artistas e público.",
     sections: [
@@ -66,6 +79,7 @@ export const staticEvents: StaticEvent[] = [
     title: "AfroSonora Music Clip Challenge",
     shortDescription: "Transforma as tuas músicas promissoras em videoclipes e conteúdos visuais profissionais.",
     image: eventMusicClip,
+    imageSmall: eventMusicClipSm,
     emailSubject: "Participação – Music Clip Challenge",
     intro: "O Music Clip Challenge é uma iniciativa criada para transformar músicas promissoras em conteúdos visuais e videoclipes, ajudando os artistas a promover o seu trabalho de forma profissional.",
     sections: [
@@ -86,6 +100,7 @@ export const staticEvents: StaticEvent[] = [
     title: "AfroSonora Cultural Exchange",
     shortDescription: "Partilha ritmos, tradições, instrumentos e expressões artísticas da rica cultura africana.",
     image: eventCulturalExchange,
+    imageSmall: eventCulturalExchangeSm,
     emailSubject: "Participação – Cultural Exchange",
     intro: "O Cultural Exchange promove a diversidade cultural africana, incentivando artistas a partilhar ritmos, tradições, instrumentos e expressões artísticas.\n\nEste evento tem como objetivo mostrar a riqueza cultural africana ao público internacional.",
     sections: [
@@ -106,6 +121,7 @@ export const staticEvents: StaticEvent[] = [
     title: "AfroSonora Producer's Desk",
     shortDescription: "Colabora com produtores musicais e cria novas oportunidades criativas para os teus projetos.",
     image: eventProducersDesk,
+    imageSmall: eventProducersDeskSm,
     emailSubject: "Participação – Producer's Desk",
     intro: "O Producer's Desk foi criado para incentivar colaborações entre artistas e produtores musicais, criando novas oportunidades criativas.",
     sections: [
@@ -126,6 +142,7 @@ export const staticEvents: StaticEvent[] = [
     title: "AfroSonora Monthly Drop",
     shortDescription: "Evento mensal de lançamento musical que destaca novas músicas de artistas da comunidade.",
     image: eventMonthlyDrop,
+    imageSmall: eventMonthlyDropSm,
     emailSubject: "Participação – Monthly Drop",
     intro: "O Monthly Drop é um evento mensal de lançamento musical que destaca novas músicas de artistas da comunidade AFROSONORA.",
     sections: [
@@ -146,6 +163,7 @@ export const staticEvents: StaticEvent[] = [
     title: "AfroSonora Video Spotlight",
     shortDescription: "Destaca as tuas performances musicais e artísticas em vídeo e ganha visibilidade.",
     image: eventVideoSpotlight,
+    imageSmall: eventVideoSpotlightSm,
     emailSubject: "Participação – Video Spotlight",
     intro: "O Video Spotlight é um evento que destaca performances musicais e artísticas em vídeo, dando visibilidade a talentos criativos.",
     sections: [
@@ -166,6 +184,7 @@ export const staticEvents: StaticEvent[] = [
     title: "AfroSonora Fan Collaboration",
     shortDescription: "Aproxima artistas e fãs através de projetos musicais colaborativos e criativos.",
     image: eventFanCollab,
+    imageSmall: eventFanCollabSm,
     emailSubject: "Participação – Fan Collaboration",
     intro: "O Fan Collaboration é um evento que aproxima artistas e fãs, criando projetos musicais colaborativos.",
     sections: [
@@ -186,6 +205,7 @@ export const staticEvents: StaticEvent[] = [
     title: "AfroSonora Event Prep – Envie a Sua Música",
     shortDescription: "Submete músicas que poderão ser consideradas para eventos futuros da AFROSONORA.",
     image: eventEventPrep,
+    imageSmall: eventEventPrepSm,
     emailSubject: "Participação – Event Prep",
     intro: "O Event Prep é uma oportunidade para artistas submeterem músicas que poderão ser consideradas para eventos futuros da AFROSONORA.",
     sections: [
