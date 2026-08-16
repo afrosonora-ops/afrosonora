@@ -8,14 +8,12 @@ import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { Search, MapPin, Music, Filter, User } from "lucide-react";
+import { Search, MapPin, Music, Filter, User, Lock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import type { Tables } from "@/integrations/supabase/types";
 import musicosDestaque1 from "@/assets/musicos-destaque-1.webp";
 import musicosDestaque2 from "@/assets/musicos-destaque-2.webp";
-import musicosDestaque3 from "@/assets/musicos-destaque-3.webp";
-import musicosDestaque4 from "@/assets/musicos-destaque-4.webp";
 
 const genres = ["Todos", "Afrobeat", "Afrobeats", "Afropop", "Highlife", "Mbalax", "Mandingue", "World Music", "Kizomba", "Semba", "Kuduro"];
 const countries = ["Todos", "Angola", "Benim", "Cabo Verde", "Gana", "Mali", "Moçambique", "Nigéria", "Senegal", "Guiné-Bissau"];
@@ -23,8 +21,6 @@ const countries = ["Todos", "Angola", "Benim", "Cabo Verde", "Gana", "Mali", "Mo
 const highlightImages = [
   { src: musicosDestaque1, alt: "Artistas AfroSonora ao vivo" },
   { src: musicosDestaque2, alt: "Sessão de estúdio" },
-  { src: musicosDestaque3, alt: "Palco AfroSonora" },
-  { src: musicosDestaque4, alt: "Conexão África-Europa" },
 ];
 
 type Artist = Tables<"artists">;
@@ -83,7 +79,7 @@ const artistsJsonLd = {
   name: "Músicos africanos e da diáspora na AfroSonora",
   inLanguage: "pt-PT",
   description:
-    "Diretório de músicos, bandas e DJs de música afro — afrobeat, kizomba, semba, kuduro, afro house e amapiano — disponíveis para eventos e colaborações na Europa.",
+    "Diretório exclusivo de músicos, bandas e DJs de música afro. Os perfis e contactos dos artistas estão disponíveis apenas para promotores e agências credenciadas durante a fase de lançamento.",
   isPartOf: { "@id": "https://afrosonora.lovable.app/#website" },
   publisher: { "@id": "https://afrosonora.lovable.app/#organization" },
 };
@@ -150,32 +146,32 @@ const ArtistsPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <Seo
-        title={"Músicos Africanos e da Diáspora | Diretório AfroSonora"}
-        description={"Descobre músicos, cantores, DJs e bandas de música afro na AfroSonora — afrobeat, kizomba, semba, afro house e mais. Filtra por género, país ou nome e liga-te a promotores europeus."}
+        title={"Músicos Afro | Acesso Exclusivo para Promotores e Agências | AfroSonora"}
+        description={"Diretório exclusivo de músicos africanos e da diáspora na AfroSonora. Durante a fase de lançamento, os perfis e contactos dos artistas estão disponíveis apenas para promotores e agências credenciadas."}
         path="/artistas"
         jsonLd={artistsJsonLd}
       />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           <Breadcrumbs />
-          <div className="text-center mb-12 animate-fade-in">
+          <div className="text-center mb-10 animate-fade-in">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Descubra os Nossos <span className="text-gradient-gold">Músicos</span>
+              Músicos Afro <span className="text-gradient-gold">em Curadoria</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Esta página é dedicada a <span className="text-gold font-semibold">músicos, cantores, artistas e potenciais ídolos musicais</span>. 
-              Explore o talento africano autêntico por género, país ou nome. Nós acreditamos no vosso talento!
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
+              A AfroSonora está a construir uma comunidade exclusiva de artistas africanos e da diáspora.
+              Durante esta fase de lançamento, os perfis e contactos dos músicos só estão disponíveis para
+              <span className="text-gold font-semibold"> promotores e agências credenciadas</span>.
             </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30 text-gold text-sm font-medium">
+              <Lock className="w-4 h-4" aria-hidden="true" />
+              Acesso exclusivo para promotores e agências neste momento
+            </div>
           </div>
 
-          {/* Highlight images – page in update */}
-          <div className="max-w-5xl mx-auto mb-14">
-            <div className="text-center mb-6">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-sm font-medium">
-                🎶 Página em atualização — novos músicos em breve!
-              </span>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {/* Highlight images — two only, curated preview */}
+          <div className="max-w-4xl mx-auto mb-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {highlightImages.map((img, i) => (
                 <div key={i} className="relative overflow-hidden rounded-xl aspect-[4/3] group">
                   <img decoding="async" loading="lazy" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -226,19 +222,39 @@ const ArtistsPage = () => {
           {!loading && filteredArtists.length === 0 && (
             <div className="text-center py-16">
               <Filter className="w-12 h-12 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">Nenhum músico encontrado</h3>
-              <p className="text-muted-foreground mb-6">Tente ajustar os seus filtros ou seja o primeiro a registar-se!</p>
+              <h3 className="font-display text-xl font-semibold text-foreground mb-2">Ainda não existem perfis públicos</h3>
+              <p className="text-muted-foreground mb-2">
+                Estamos a preparar e validar os primeiros artistas. Os perfis serão publicados em breve.
+              </p>
+              <p className="text-muted-foreground mb-6">
+                Se é promotor ou agência, registe-se abaixo para aceder antecipadamente às informações.
+              </p>
               <Button variant="goldOutline" onClick={clearFilters}>
                 Limpar Filtros
               </Button>
             </div>
           )}
 
+          <div className="grid md:grid-cols-2 gap-6 mt-16">
+            <div className="text-center p-8 rounded-xl bg-charcoal border border-border">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-3">É músico e quer aparecer aqui?</h3>
+              <p className="text-muted-foreground mb-6">
+                Crie o seu perfil na AFROSONORA e conecte-se com promotores europeus. Será analisado antes de ser publicado.
+              </p>
+              <Link to="/registo">
+                <Button variant="goldOutline" size="lg">Criar Perfil de Músico</Button>
+              </Link>
+            </div>
 
-          <div className="text-center mt-16 p-8 rounded-xl bg-charcoal border border-border">
-            <h3 className="font-display text-2xl font-bold text-foreground mb-3">É músico e quer aparecer aqui?</h3>
-            <p className="text-muted-foreground mb-6">Crie o seu perfil na AFROSONORA e conecte-se com promotores europeus.</p>
-            <Link to="/registo"><Button variant="gold" size="lg">Criar Perfil de Músico</Button></Link>
+            <div className="text-center p-8 rounded-xl bg-card border border-gold/30">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-3">É promotor ou agência?</h3>
+              <p className="text-muted-foreground mb-6">
+                Registe-se na AFROSONORA para aceder antecipadamente aos perfis, contactos e portefólios dos artistas afro.
+              </p>
+              <Link to="/registo">
+                <Button variant="gold" size="lg">Registar como Promotor</Button>
+              </Link>
+            </div>
           </div>
         </div>
       </main>
