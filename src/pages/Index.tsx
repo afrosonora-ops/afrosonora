@@ -533,12 +533,13 @@ const Index = () => {
               Pronto para dar o próximo passo na sua <span className="text-gradient-gold">carreira</span>?
             </h2>
             <p className="text-lg text-muted-foreground">
-              Junte-se à comunidade AFROSONORA e comece a construir a sua presença no mercado europeu hoje.
+              Crie o seu perfil de artista na AfroSonora, mostre a sua música e comece hoje a construir a sua presença
+              no mercado europeu.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/registo">
                 <Button variant="hero" size="xl">
-                  Criar Perfil Agora <ArrowRight className="ml-2 w-5 h-5" />
+                  Criar perfil de artista grátis <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/contacto">
