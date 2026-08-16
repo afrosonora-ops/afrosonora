@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Headphones, ArrowRight } from "lucide-react";
-import setupImg from "@/assets/home-studio-setup.jpg";
-import packImg from "@/assets/home-studio-pack.jpg";
+import setupImg from "@/assets/home-studio-setup.webp";
+import packImg from "@/assets/home-studio-pack.webp";
 
 const HomeStudioSection = () => {
   return (

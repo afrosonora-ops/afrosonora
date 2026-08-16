@@ -4,9 +4,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, ArrowRight, Mail, Globe, Music, Mic2, Send, Headphones, CalendarDays, Eye, Sparkles, Trophy, Star } from "lucide-react";
-import promotersConcert from "@/assets/promoters-concert.jpg";
-import promotersGlobal from "@/assets/promoters-global.jpg";
-import promotersMusic from "@/assets/promoters-music.jpg";
+import promotersConcert from "@/assets/promoters-concert.webp";
+import promotersGlobal from "@/assets/promoters-global.webp";
+import promotersMusic from "@/assets/promoters-music.webp";
 
 const showcaseCards = [
   {

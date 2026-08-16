@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, User, LogOut, Shield } from "lucide-react";
 import { useState } from "react";
-import logo2 from "@/assets/logo2.png";
+import logo2 from "@/assets/logo2.webp";
 import { useAuth } from "@/contexts/AuthContext";
 
 const Navbar = () => {

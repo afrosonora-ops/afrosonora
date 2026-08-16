@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShoppingBag } from "lucide-react";
-import store1 from "@/assets/store-1.jpg";
-import store2 from "@/assets/store-2.jpg";
-import store3 from "@/assets/store-3.jpg";
+import store1 from "@/assets/store-1.webp";
+import store2 from "@/assets/store-2.webp";
+import store3 from "@/assets/store-3.webp";
 
 const storeItems = [
   {

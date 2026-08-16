@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Calendar } from "lucide-react";
 import { staticEvents } from "@/data/eventsData";
-import eventosCulturaisImg from "@/assets/eventos-culturais-2026.jpg";
+import eventosCulturaisImg from "@/assets/eventos-culturais-2026.webp";
 
 // First 3 static events + Eventos Culturais 2026 card
 const featuredStatic = staticEvents.slice(0, 3);

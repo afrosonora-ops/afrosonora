@@ -9,7 +9,7 @@ import { openCookieSettings } from "@/components/CookieConsent";
 import { toast } from "@/hooks/use-toast";
 import { emailSchema, firstError } from "@/lib/formSchemas";
 
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const FooterNewsletter = () => {
   const [email, setEmail] = useState("");

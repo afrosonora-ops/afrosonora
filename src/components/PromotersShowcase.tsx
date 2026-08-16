@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
-import promotersConcert from "@/assets/promoters-concert.jpg";
-import promotersGlobal from "@/assets/promoters-global.jpg";
-import promotersMusic from "@/assets/promoters-music.jpg";
+import promotersConcert from "@/assets/promoters-concert.webp";
+import promotersGlobal from "@/assets/promoters-global.webp";
+import promotersMusic from "@/assets/promoters-music.webp";
 
 const cards = [
   {

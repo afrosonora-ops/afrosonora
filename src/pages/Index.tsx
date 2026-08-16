@@ -6,18 +6,18 @@ import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Music, Users, Calendar, Globe, Mic2, Video, Award, Heart, ArrowRight, Star, CheckCircle2 } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
-import heroBg2 from "@/assets/hero-bg-2.jpg";
-import heroBg3 from "@/assets/hero-bg-3.jpg";
+import heroBg from "@/assets/hero-bg.webp";
+import heroBg2 from "@/assets/hero-bg-2.webp";
+import heroBg3 from "@/assets/hero-bg-3.webp";
 import FeaturedEvents from "@/components/FeaturedEvents";
 import PromotersShowcase from "@/components/PromotersShowcase";
 import HomeStudioSection from "@/components/HomeStudioSection";
 import StoreSection from "@/components/StoreSection";
-import partnerTrtwxm from "@/assets/partner-trtwxm.jpeg";
-import partnerTavares from "@/assets/partner-tavares.jpeg";
-import partnerMikondo from "@/assets/partner-mikondo.jpeg";
-import partnerAfrosonora from "@/assets/partner-afrosonora-white.png";
-import partnerMadeInEurope from "@/assets/partner-made-in-europe.png";
+import partnerTrtwxm from "@/assets/partner-trtwxm.webp";
+import partnerTavares from "@/assets/partner-tavares.webp";
+import partnerMikondo from "@/assets/partner-mikondo.webp";
+import partnerAfrosonora from "@/assets/partner-afrosonora-white.webp";
+import partnerMadeInEurope from "@/assets/partner-made-in-europe.webp";
 
 const heroImages = [heroBg, heroBg2, heroBg3];
 

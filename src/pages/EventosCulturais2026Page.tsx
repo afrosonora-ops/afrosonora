@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, MapPin, Globe, ExternalLink } from "lucide-react";
-import heroImg from "@/assets/eventos-culturais-2026.jpg";
+import heroImg from "@/assets/eventos-culturais-2026.webp";
 
 interface CulturalEvent {
   name: string;

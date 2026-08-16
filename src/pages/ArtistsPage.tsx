@@ -11,10 +11,10 @@ import { Search, MapPin, Music, Filter, User } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import type { Tables } from "@/integrations/supabase/types";
-import musicosDestaque1 from "@/assets/musicos-destaque-1.jpg";
-import musicosDestaque2 from "@/assets/musicos-destaque-2.jpg";
-import musicosDestaque3 from "@/assets/musicos-destaque-3.png";
-import musicosDestaque4 from "@/assets/musicos-destaque-4.png";
+import musicosDestaque1 from "@/assets/musicos-destaque-1.webp";
+import musicosDestaque2 from "@/assets/musicos-destaque-2.webp";
+import musicosDestaque3 from "@/assets/musicos-destaque-3.webp";
+import musicosDestaque4 from "@/assets/musicos-destaque-4.webp";
 
 const genres = ["Todos", "Afrobeat", "Afrobeats", "Afropop", "Highlife", "Mbalax", "Mandingue", "World Music", "Kizomba", "Semba", "Kuduro"];
 const countries = ["Todos", "Angola", "Benim", "Cabo Verde", "Gana", "Mali", "Moçambique", "Nigéria", "Senegal", "Guiné-Bissau"];

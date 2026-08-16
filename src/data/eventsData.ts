@@ -1,12 +1,12 @@
-import eventSpotlight from "@/assets/event-spotlight.jpg";
-import eventLiveSessions from "@/assets/event-live-sessions.png";
-import eventMusicClip from "@/assets/event-music-clip.jpg";
-import eventCulturalExchange from "@/assets/event-cultural-exchange.jpg";
-import eventProducersDesk from "@/assets/event-producers-desk.jpg";
-import eventMonthlyDrop from "@/assets/event-monthly-drop.png";
-import eventVideoSpotlight from "@/assets/event-video-spotlight.jpg";
-import eventFanCollab from "@/assets/event-fan-collab.jpg";
-import eventEventPrep from "@/assets/event-event-prep.jpg";
+import eventSpotlight from "@/assets/event-spotlight.webp";
+import eventLiveSessions from "@/assets/event-live-sessions.webp";
+import eventMusicClip from "@/assets/event-music-clip.webp";
+import eventCulturalExchange from "@/assets/event-cultural-exchange.webp";
+import eventProducersDesk from "@/assets/event-producers-desk.webp";
+import eventMonthlyDrop from "@/assets/event-monthly-drop.webp";
+import eventVideoSpotlight from "@/assets/event-video-spotlight.webp";
+import eventFanCollab from "@/assets/event-fan-collab.webp";
+import eventEventPrep from "@/assets/event-event-prep.webp";
 
 export interface StaticEvent {
   slug: string;
