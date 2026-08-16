@@ -157,47 +157,19 @@ const ArtistsPage = () => {
             </div>
           </div>
 
-          {/* Filters */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" aria-hidden="true" />
-                <Input type="text" aria-label="Pesquisar músicos" placeholder="Pesquisar músicos..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="pl-10 min-h-11 bg-card border-border" />
-              </div>
-              <div className="relative">
-                <Music className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" aria-hidden="true" />
-                <select aria-label="Filtrar por género musical" value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)} className="w-full md:w-48 min-h-11 pl-10 pr-4 rounded-md bg-card border border-border text-foreground appearance-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                  {genres.map((g) => <option key={g} value={g}>{g}</option>)}
-                </select>
-              </div>
-              <div className="relative">
-                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" aria-hidden="true" />
-                <select aria-label="Filtrar por país" value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)} className="w-full md:w-48 min-h-11 pl-10 pr-4 rounded-md bg-card border border-border text-foreground appearance-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                  {countries.map((c) => <option key={c} value={c}>{c}</option>)}
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-8" aria-live="polite">
-            <p className="text-muted-foreground">
-              <span className="text-gold font-semibold">{filteredArtists.length}</span> músicos encontrados
-            </p>
-          </div>
-
           {loading ? (
             <ArtistsSkeleton />
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filteredArtists.map((artist, index) => (
+              {artists.map((artist, index) => (
                 <ArtistCard key={artist.id} artist={artist} index={index} />
               ))}
             </div>
           )}
 
-          {!loading && filteredArtists.length === 0 && (
+          {!loading && artists.length === 0 && (
             <div className="text-center py-16">
-              <Filter className="w-12 h-12 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
+              <Lock className="w-12 h-12 text-gold mx-auto mb-4" aria-hidden="true" />
               <h3 className="font-display text-xl font-semibold text-foreground mb-2">Ainda não existem perfis públicos</h3>
               <p className="text-muted-foreground mb-2">
                 Estamos a preparar e validar os primeiros artistas. Os perfis serão publicados em breve.
@@ -205,9 +177,6 @@ const ArtistsPage = () => {
               <p className="text-muted-foreground mb-6">
                 Se é promotor ou agência, registe-se abaixo para aceder antecipadamente às informações.
               </p>
-              <Button variant="goldOutline" onClick={clearFilters}>
-                Limpar Filtros
-              </Button>
             </div>
           )}
 
