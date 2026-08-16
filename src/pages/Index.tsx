@@ -50,19 +50,19 @@ const heroImages = [
 const homeJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://afrosonora.lovable.app/#webpage",
-  url: "https://afrosonora.lovable.app/",
+  "@id": "https://afrosonora.com/#webpage",
+  url: "https://afrosonora.com/",
   name: "AfroSonora | Música Afro e Cultura Africana na Europa",
   inLanguage: "pt-PT",
-  isPartOf: { "@id": "https://afrosonora.lovable.app/#website" },
-  about: { "@id": "https://afrosonora.lovable.app/#organization" },
+  isPartOf: { "@id": "https://afrosonora.com/#website" },
+  about: { "@id": "https://afrosonora.com/#organization" },
   description:
     "Plataforma europeia de música afro e cultura africana: perfis de artistas de África e da diáspora, eventos, showcases e ligação direta a promotores.",
   significantLink: [
-    "https://afrosonora.lovable.app/sobre",
-    "https://afrosonora.lovable.app/artistas",
-    "https://afrosonora.lovable.app/eventos",
-    "https://afrosonora.lovable.app/planos",
+    "https://afrosonora.com/sobre",
+    "https://afrosonora.com/artistas",
+    "https://afrosonora.com/eventos",
+    "https://afrosonora.com/planos",
   ],
 };
 
