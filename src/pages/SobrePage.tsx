@@ -167,7 +167,10 @@ const SobrePage = () => {
             <img
               src={estudioTrofeus.url}
               alt="Sessões de gravação em estúdio e troféus AfroSonora: Talento Revelação, Promotor do Ano e Impacto Cultural"
-              className="w-full h-auto"
+              width={1137}
+              height={928}
+              sizes="100vw"
+              className="w-full h-auto aspect-[1137/928] object-cover bg-[#1A1A1A]"
               loading="lazy"
               decoding="async"
             />
