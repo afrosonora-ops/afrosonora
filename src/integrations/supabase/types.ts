@@ -361,6 +361,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      admin_set_artist_flags: {
+        Args: { _artist_id: string; _is_featured?: boolean; _plan?: string }
+        Returns: undefined
+      }
       has_any_role: { Args: { _user_id: string }; Returns: boolean }
       has_role: {
         Args: {
