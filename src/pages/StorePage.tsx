@@ -9,15 +9,15 @@ import { Badge } from "@/components/ui/badge";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 
-import storeTshirt from "@/assets/store-tshirt.jpg";
-import storeHoodie from "@/assets/store-hoodie.jpg";
-import storeCap from "@/assets/store-cap.jpg";
-import storeLeather from "@/assets/store-leather.jpg";
-import storeCasual from "@/assets/store-casual.jpg";
-import storeBackpack from "@/assets/store-backpack.jpg";
-import storeHeadphones from "@/assets/store-headphones.jpg";
-import storeMic from "@/assets/store-mic.jpg";
-import storeKit from "@/assets/store-kit.jpg";
+import storeTshirt from "@/assets/store-tshirt.webp";
+import storeHoodie from "@/assets/store-hoodie.webp";
+import storeCap from "@/assets/store-cap.webp";
+import storeLeather from "@/assets/store-leather.webp";
+import storeCasual from "@/assets/store-casual.webp";
+import storeBackpack from "@/assets/store-backpack.webp";
+import storeHeadphones from "@/assets/store-headphones.webp";
+import storeMic from "@/assets/store-mic.webp";
+import storeKit from "@/assets/store-kit.webp";
 import { emailSchema, firstError } from "@/lib/formSchemas";
 
 const products = [

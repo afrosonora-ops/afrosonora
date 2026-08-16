@@ -9,7 +9,7 @@ import { openCookieSettings } from "@/components/CookieConsent";
 import { toast } from "@/hooks/use-toast";
 import { emailSchema, firstError } from "@/lib/formSchemas";
 
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const FooterNewsletter = () => {
   const [email, setEmail] = useState("");
@@ -77,7 +77,7 @@ const Footer = () => {
           {/* Brand + Newsletter */}
           <div className="space-y-4">
             <Link to="/" className="inline-block">
-              <img decoding="async" loading="lazy" src={logo} alt="AfroSonora" className="h-14 w-auto brightness-0 invert" />
+              <img decoding="async" loading="lazy" src={logo} alt="AfroSonora" width={585} height={427} className="h-14 w-auto brightness-0 invert" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               A ponte entre artistas africanos e o mercado europeu. Promoção, oportunidades e ligação profissional.

@@ -6,23 +6,44 @@ import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Music, Users, Calendar, Globe, Mic2, Video, Award, Heart, ArrowRight, Star, CheckCircle2 } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
-import heroBg2 from "@/assets/hero-bg-2.jpg";
-import heroBg3 from "@/assets/hero-bg-3.jpg";
+import heroBg from "@/assets/hero-bg.webp";
+import heroBg2 from "@/assets/hero-bg-2.webp";
+import heroBg3 from "@/assets/hero-bg-3.webp";
 import FeaturedEvents from "@/components/FeaturedEvents";
 import PromotersShowcase from "@/components/PromotersShowcase";
 import HomeStudioSection from "@/components/HomeStudioSection";
 import StoreSection from "@/components/StoreSection";
-import partnerTrtwxm from "@/assets/partner-trtwxm.jpeg";
-import partnerTavares from "@/assets/partner-tavares.jpeg";
-import partnerMikondo from "@/assets/partner-mikondo.jpeg";
-import partnerAfrosonora from "@/assets/partner-afrosonora-white.png";
-import partnerMadeInEurope from "@/assets/partner-made-in-europe.png";
+import partnerTrtwxm from "@/assets/partner-trtwxm.webp";
+import partnerTavares from "@/assets/partner-tavares.webp";
+import partnerMikondo from "@/assets/partner-mikondo.webp";
+import partnerAfrosonora from "@/assets/partner-afrosonora-white.webp";
+import partnerMadeInEurope from "@/assets/partner-made-in-europe.webp";
 
 const heroImages = [heroBg, heroBg2, heroBg3];
 
 const Index = () => {
   const [currentHero, setCurrentHero] = useState(0);
+  const [heroReady, setHeroReady] = useState(false);
+
+  // Preload apenas a imagem principal do hero (LCP)
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = heroBg;
+    link.setAttribute("fetchpriority", "high");
+    document.head.appendChild(link);
+    return () => link.remove();
+  }, []);
+
+  // As restantes imagens do carrossel só carregam depois do primeiro paint
+  useEffect(() => {
+    const w = window as Window & { requestIdleCallback?: (cb: () => void) => number };
+    const id = w.requestIdleCallback
+      ? w.requestIdleCallback(() => setHeroReady(true))
+      : window.setTimeout(() => setHeroReady(true), 1500);
+    return () => window.clearTimeout(id as number);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -46,7 +67,8 @@ const Index = () => {
             key={i}
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
             style={{
-              backgroundImage: `url(${img})`,
+              backgroundColor: "#1A1A1A",
+              backgroundImage: i === 0 || heroReady ? `url(${img})` : undefined,
               opacity: currentHero === i ? 1 : 0,
             }}
           >
@@ -513,7 +535,7 @@ const Index = () => {
               { src: partnerMadeInEurope, alt: "Made in Europe" },
             ].map((partner) => (
               <div key={partner.alt} className="w-24 h-24 md:w-28 md:h-28 rounded-xl bg-card border border-border/50 flex items-center justify-center p-3 hover:border-gold/40 transition-colors">
-                <img decoding="async" loading="lazy" src={partner.src} alt={partner.alt} className="max-w-full max-h-full object-contain rounded-lg" />
+                <img decoding="async" loading="lazy" src={partner.src} alt={partner.alt} width={200} height={200} className="max-w-full max-h-full object-contain rounded-lg" />
               </div>
             ))}
           </div>

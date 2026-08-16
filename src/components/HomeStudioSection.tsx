@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Headphones, ArrowRight } from "lucide-react";
-import setupImg from "@/assets/home-studio-setup.jpg";
-import packImg from "@/assets/home-studio-pack.jpg";
+import setupImg from "@/assets/home-studio-setup.webp";
+import packImg from "@/assets/home-studio-pack.webp";
+import setupImgSm from "@/assets/home-studio-setup-640.webp";
+import packImgSm from "@/assets/home-studio-pack-640.webp";
 
 const HomeStudioSection = () => {
   return (
@@ -26,8 +28,12 @@ const HomeStudioSection = () => {
             <div className="aspect-[4/3] overflow-hidden rounded-xl border border-border group-hover:border-gold/30 transition-colors">
               <img decoding="async"
                 src={setupImg}
+                srcSet={`${setupImgSm} 640w, ${setupImg} 1200w`}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                width={1200}
+                height={900}
                 alt="Setup básico de home studio"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover bg-[#1A1A1A] group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
@@ -41,8 +47,12 @@ const HomeStudioSection = () => {
             <div className="aspect-[4/3] overflow-hidden rounded-xl border border-border group-hover:border-gold/30 transition-colors">
               <img decoding="async"
                 src={packImg}
+                srcSet={`${packImgSm} 640w, ${packImg} 1200w`}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                width={1200}
+                height={900}
                 alt="Pacote Home Studio AFROSONORA"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover bg-[#1A1A1A] group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
             </div>

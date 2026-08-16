@@ -2,25 +2,31 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
-import promotersConcert from "@/assets/promoters-concert.jpg";
-import promotersGlobal from "@/assets/promoters-global.jpg";
-import promotersMusic from "@/assets/promoters-music.jpg";
+import promotersConcert from "@/assets/promoters-concert.webp";
+import promotersGlobal from "@/assets/promoters-global.webp";
+import promotersMusic from "@/assets/promoters-music.webp";
+import promotersConcertSm from "@/assets/promoters-concert-640.webp";
+import promotersGlobalSm from "@/assets/promoters-global-640.webp";
+import promotersMusicSm from "@/assets/promoters-music-640.webp";
 
 const cards = [
   {
     image: promotersConcert,
+    imageSmall: promotersConcertSm,
     title: "Festivais & Eventos ao Vivo",
     description: "Programação de artistas africanos para festivais, concertos e eventos culturais ..",
     link: "/promotores",
   },
   {
     image: promotersGlobal,
+    imageSmall: promotersGlobalSm,
     title: "Conexão Global ",
     description: "Crie pontes entre talentos africanos e oportunidades internacionais na música.",
     link: "/promotores",
   },
   {
     image: promotersMusic,
+    imageSmall: promotersMusicSm,
     title: "Showcases & Curadoria ",
     description: "Descubra novos sons através de showcases exclusivos e projetos artísticos selecionados.",
     link: "/promotores",
@@ -51,8 +57,12 @@ const PromotersShowcase = () => {
               <div className="relative h-52 overflow-hidden">
                 <img decoding="async"
                   src={card.image}
+                  srcSet={`${card.imageSmall} 640w, ${card.image} 1200w`}
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  width={1200}
+                  height={675}
                   alt={card.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover bg-[#1A1A1A] group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-card/20 to-transparent" />

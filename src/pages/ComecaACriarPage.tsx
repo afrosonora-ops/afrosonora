@@ -12,8 +12,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Headphones, Mic2, Music, Cable, MonitorSpeaker, CheckCircle2, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendFormEmail } from "@/lib/sendFormEmail";
-import setupImg from "@/assets/home-studio-setup.jpg";
-import packImg from "@/assets/home-studio-pack.jpg";
+import setupImg from "@/assets/home-studio-setup.webp";
+import packImg from "@/assets/home-studio-pack.webp";
 
 const productOptions = [
   "Quero saber as condições do Pacote Home Studio AFROSONORA",

@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Calendar } from "lucide-react";
 import { staticEvents } from "@/data/eventsData";
-import eventosCulturaisImg from "@/assets/eventos-culturais-2026.jpg";
+import eventosCulturaisImg from "@/assets/eventos-culturais-2026.webp";
+import eventosCulturaisImgSm from "@/assets/eventos-culturais-2026-640.webp";
 
 // First 3 static events + Eventos Culturais 2026 card
 const featuredStatic = staticEvents.slice(0, 3);
@@ -32,8 +33,12 @@ const FeaturedEvents = () => {
                 <div className="aspect-[4/3] overflow-hidden">
                   <img decoding="async"
                     src={event.image}
+                    srcSet={`${event.imageSmall} 640w, ${event.image} 1200w`}
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                     alt={event.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={1200}
+                    height={900}
+                    className="w-full h-full object-cover bg-[#1A1A1A] group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
                 </div>
@@ -58,8 +63,12 @@ const FeaturedEvents = () => {
               <div className="aspect-[4/3] overflow-hidden">
                 <img decoding="async"
                   src={eventosCulturaisImg}
+                  srcSet={`${eventosCulturaisImgSm} 640w, ${eventosCulturaisImg} 832w`}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   alt="Eventos Culturais 2026"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  width={832}
+                  height={624}
+                  className="w-full h-full object-cover bg-[#1A1A1A] group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
