@@ -82,12 +82,17 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm leading-relaxed">
               A ponte entre artistas africanos e o mercado europeu. Promoção, oportunidades e ligação profissional.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-gold transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="text-muted-foreground hover:text-gold transition-colors"><Youtube size={20} /></a>
-              <a href="#" className="text-muted-foreground hover:text-gold transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="text-muted-foreground hover:text-gold transition-colors"><Mail size={20} /></a>
+            <div className="flex items-center gap-1 -ml-3">
+              <SocialLinks size={20} />
+              <a
+                href="mailto:info@afrosonora.com"
+                aria-label="Enviar email para a AfroSonora"
+                className="inline-flex items-center justify-center min-h-11 min-w-11 rounded-full text-muted-foreground hover:text-gold hover:bg-gold/10 transition-colors"
+              >
+                <Mail size={20} aria-hidden="true" />
+              </a>
             </div>
+
             <div className="pt-2">
               <h4 className="font-display text-sm font-semibold text-foreground mb-2">Newsletter</h4>
               <FooterNewsletter />
