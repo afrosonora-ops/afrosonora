@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -79,6 +80,7 @@ const DashboardPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Painel do Artista | AfroSonora"} description={"Gere o teu perfil de músico, candidaturas e definições na AfroSonora."} path="/painel" noindex />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto space-y-8 animate-fade-in">
