@@ -44,16 +44,19 @@ const Index = () => {
   const [currentHero, setCurrentHero] = useState(0);
   const [heroReady, setHeroReady] = useState(false);
 
-  // Preload apenas a imagem principal do hero (LCP)
+  // Preload apenas a imagem principal do hero (LCP), no tamanho certo para o ecrã
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "preload";
     link.as = "image";
-    link.href = heroBg;
+    link.href = heroImages[0].src;
+    link.setAttribute("imagesrcset", heroImages[0].srcSet);
+    link.setAttribute("imagesizes", "100vw");
     link.setAttribute("fetchpriority", "high");
     document.head.appendChild(link);
     return () => link.remove();
   }, []);
+
 
   // As restantes imagens do carrossel só carregam depois do primeiro paint
   useEffect(() => {
