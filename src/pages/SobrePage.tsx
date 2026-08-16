@@ -16,10 +16,10 @@ import {
   Music,
   GraduationCap,
 } from "lucide-react";
-import logo3d from "@/assets/sobre-logo-3d.png.asset.json";
-import infografia from "@/assets/sobre-infografia.png.asset.json";
-import estudioTrofeus from "@/assets/sobre-estudio-trofeus.png.asset.json";
-import projetoEstudio from "@/assets/sobre-projeto.png.asset.json";
+import logo3d from "@/assets/sobre-logo-3d.webp.asset.json";
+import infografia from "@/assets/sobre-infografia.webp.asset.json";
+import estudioTrofeus from "@/assets/sobre-estudio-trofeus.webp.asset.json";
+import projetoEstudio from "@/assets/sobre-projeto.webp.asset.json";
 
 const pilares = [
   { icon: Megaphone, title: "Divulgação de Artistas", text: "Promoção de talentos africanos junto de audiências europeias." },
