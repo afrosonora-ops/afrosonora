@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,10 +17,10 @@ import {
   Music,
   GraduationCap,
 } from "lucide-react";
-import logo3d from "@/assets/sobre-logo-3d.png.asset.json";
-import infografia from "@/assets/sobre-infografia.png.asset.json";
-import estudioTrofeus from "@/assets/sobre-estudio-trofeus.png.asset.json";
-import projetoEstudio from "@/assets/sobre-projeto.png.asset.json";
+import logo3d from "@/assets/sobre-logo-3d.webp.asset.json";
+import infografia from "@/assets/sobre-infografia.webp.asset.json";
+import estudioTrofeus from "@/assets/sobre-estudio-trofeus.webp.asset.json";
+import projetoEstudio from "@/assets/sobre-projeto.webp.asset.json";
 
 const pilares = [
   { icon: Megaphone, title: "Divulgação de Artistas", text: "Promoção de talentos africanos junto de audiências europeias." },
@@ -38,6 +39,18 @@ const publicos = [
 ];
 
 const SobrePage = () => {
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = logo3d.url;
+    link.setAttribute("fetchpriority", "high");
+    document.head.appendChild(link);
+    return () => {
+      link.remove();
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
@@ -61,8 +74,12 @@ const SobrePage = () => {
             <img
               src={logo3d.url}
               alt="Logótipo AfroSonora em relevo dourado"
-              className="mx-auto w-40 md:w-56 rounded-2xl border border-gold/20 shadow-lg"
-              decoding="async"
+              width={1137}
+              height={928}
+              className="mx-auto w-40 md:w-56 h-auto aspect-[1137/928] object-cover rounded-2xl border border-gold/20 shadow-lg bg-[#1A1A1A]"
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
             />
             <h1 className="font-display text-4xl md:text-6xl font-bold">
               Sobre a <span className="text-gradient-gold">AfroSonora</span>
@@ -125,7 +142,10 @@ const SobrePage = () => {
               <img
                 src={infografia.url}
                 alt="Infografia do ecossistema AfroSonora: showcase de artistas, ligação global, editorial, prémios, dashboard e comunidade"
-                className="w-full h-auto"
+                width={1137}
+                height={928}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full h-auto aspect-[1137/928] object-cover bg-[#1A1A1A]"
                 loading="lazy"
                 decoding="async"
               />
@@ -160,7 +180,10 @@ const SobrePage = () => {
             <img
               src={estudioTrofeus.url}
               alt="Sessões de gravação em estúdio e troféus AfroSonora: Talento Revelação, Promotor do Ano e Impacto Cultural"
-              className="w-full h-auto"
+              width={1137}
+              height={928}
+              sizes="100vw"
+              className="w-full h-auto aspect-[1137/928] object-cover bg-[#1A1A1A]"
               loading="lazy"
               decoding="async"
             />
@@ -190,7 +213,10 @@ const SobrePage = () => {
               <img
                 src={projetoEstudio.url}
                 alt="Artistas e produtores africanos em estúdio, representando a comunidade AfroSonora"
-                className="w-full h-auto"
+                width={1136}
+                height={928}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full h-auto aspect-[1136/928] object-cover bg-[#1A1A1A]"
                 loading="lazy"
                 decoding="async"
               />
