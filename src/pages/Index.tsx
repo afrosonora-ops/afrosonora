@@ -6,9 +6,13 @@ import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Music, Users, Calendar, Globe, Mic2, Video, Award, Heart, ArrowRight, Star, CheckCircle2 } from "lucide-react";
-import heroBg from "@/assets/hero-bg.webp";
-import heroBg2 from "@/assets/hero-bg-2.webp";
-import heroBg3 from "@/assets/hero-bg-3.webp";
+import heroBg from "@/assets/hero-bg-1920.webp";
+import heroBg1280 from "@/assets/hero-bg-1280.webp";
+import heroBg640 from "@/assets/hero-bg-640.webp";
+import heroBg2 from "@/assets/hero-bg-2-1280.webp";
+import heroBg2Sm from "@/assets/hero-bg-2-640.webp";
+import heroBg3 from "@/assets/hero-bg-3-1280.webp";
+import heroBg3Sm from "@/assets/hero-bg-3-640.webp";
 import FeaturedEvents from "@/components/FeaturedEvents";
 import PromotersShowcase from "@/components/PromotersShowcase";
 import HomeStudioSection from "@/components/HomeStudioSection";
@@ -19,7 +23,29 @@ import partnerMikondo from "@/assets/partner-mikondo.webp";
 import partnerAfrosonora from "@/assets/partner-afrosonora-white.webp";
 import partnerMadeInEurope from "@/assets/partner-made-in-europe.webp";
 
-const heroImages = [heroBg, heroBg2, heroBg3];
+const heroImages = [
+  {
+    src: heroBg,
+    srcSet: `${heroBg640} 640w, ${heroBg1280} 1280w, ${heroBg} 1920w`,
+    width: 1920,
+    height: 1080,
+    alt: "Artista de música afro em palco durante um concerto AfroSonora na Europa",
+  },
+  {
+    src: heroBg2,
+    srcSet: `${heroBg2Sm} 640w, ${heroBg2} 1280w`,
+    width: 1280,
+    height: 720,
+    alt: "Público a dançar num evento de cultura africana promovido pela AfroSonora",
+  },
+  {
+    src: heroBg3,
+    srcSet: `${heroBg3Sm} 640w, ${heroBg3} 1280w`,
+    width: 1376,
+    height: 700,
+    alt: "Músicos africanos em sessão de gravação de música afro",
+  },
+];
 
 const homeJsonLd = {
   "@context": "https://schema.org",
@@ -92,13 +118,24 @@ const Index = () => {
         {heroImages.map((img, i) => (
           <div
             key={i}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
-            style={{
-              backgroundColor: "#1A1A1A",
-              backgroundImage: i === 0 || heroReady ? `url(${img})` : undefined,
-              opacity: currentHero === i ? 1 : 0,
-            }}
+            className="absolute inset-0 transition-opacity duration-1000"
+            style={{ backgroundColor: "#1A1A1A", opacity: currentHero === i ? 1 : 0 }}
+            aria-hidden={currentHero !== i}
           >
+            {(i === 0 || heroReady) && (
+              <img
+                src={img.src}
+                srcSet={img.srcSet}
+                sizes="100vw"
+                width={img.width}
+                height={img.height}
+                alt={img.alt}
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                loading={i === 0 ? "eager" : "lazy"}
+                fetchPriority={i === 0 ? "high" : "low"}
+                decoding={i === 0 ? "sync" : "async"}
+              />
+            )}
             <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
           </div>
         ))}
