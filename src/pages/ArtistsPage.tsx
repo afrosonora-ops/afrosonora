@@ -84,11 +84,6 @@ const artistsJsonLd = {
 const ArtistsPage = () => {
   const [artists, setArtists] = useState<Artist[]>([]);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState(
-    () => new URLSearchParams(window.location.search).get("q") ?? ""
-  );
-  const [selectedGenre, setSelectedGenre] = useState("Todos");
-  const [selectedCountry, setSelectedCountry] = useState("Todos");
   const { toast } = useToast();
 
   useEffect(() => {
@@ -121,22 +116,6 @@ const ArtistsPage = () => {
       active = false;
     };
   }, [toast]);
-
-  const filteredArtists = useMemo(() => {
-    const q = searchQuery.toLowerCase();
-    return artists.filter((artist) => {
-      const matchesSearch = artist.artist_name.toLowerCase().includes(q);
-      const matchesGenre = selectedGenre === "Todos" || artist.genre === selectedGenre;
-      const matchesCountry = selectedCountry === "Todos" || artist.country === selectedCountry;
-      return matchesSearch && matchesGenre && matchesCountry;
-    });
-  }, [artists, searchQuery, selectedGenre, selectedCountry]);
-
-  const clearFilters = useCallback(() => {
-    setSearchQuery("");
-    setSelectedGenre("Todos");
-    setSelectedCountry("Todos");
-  }, []);
 
 
   return (
