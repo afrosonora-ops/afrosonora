@@ -7,6 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Search, MapPin, Music, Filter, User } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -154,6 +155,7 @@ const ArtistsPage = () => {
       />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
+          <Breadcrumbs />
           <div className="text-center mb-12 animate-fade-in">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
               Descubra os Nossos <span className="text-gradient-gold">Músicos</span>

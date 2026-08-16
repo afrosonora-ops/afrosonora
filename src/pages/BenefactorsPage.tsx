@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Heart, ArrowRight } from "lucide-react";
 
 const BenefactorsPage = () => {
@@ -13,6 +14,7 @@ const BenefactorsPage = () => {
 
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
+          <Breadcrumbs />
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30 mb-6">

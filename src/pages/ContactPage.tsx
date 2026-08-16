@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Mail, MapPin, Phone, Send, Instagram, Youtube, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendFormEmail } from "@/lib/sendFormEmail";
@@ -58,6 +59,7 @@ const ContactPage = () => {
       
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
+          <Breadcrumbs />
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">

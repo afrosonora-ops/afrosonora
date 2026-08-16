@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -50,6 +51,7 @@ const PlansPage = () => {
       <Seo title={"Planos e Preços | AfroSonora"} description={"Escolha o plano AfroSonora certo para si e ganhe visibilidade junto de promotores e público europeu."} path="/planos" />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
+          <Breadcrumbs />
           <div className="text-center mb-12 animate-fade-in">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
               Planos de Assinatura para <span className="text-gradient-gold">Artistas</span>
