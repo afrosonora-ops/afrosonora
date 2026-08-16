@@ -1,19 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ChevronRight, Home } from "lucide-react";
-import type { Crumb } from "@/components/Seo";
+import { getTrail, type Crumb } from "@/lib/breadcrumbTrails";
 
 interface BreadcrumbsProps {
-  /** Trail without the "Início" root — it is added automatically. */
-  items: Crumb[];
+  /** Trail without the "Início" root. Defaults to the trail of the current route. */
+  items?: Crumb[];
   className?: string;
 }
 
 /**
- * Visual breadcrumb trail. Pair it with <Seo breadcrumbs={items} /> so the
- * same trail is also emitted as BreadcrumbList structured data.
+ * Visual breadcrumb trail. The matching BreadcrumbList structured data is
+ * emitted by <Seo /> for the same route.
  */
 const Breadcrumbs = ({ items, className = "" }: BreadcrumbsProps) => {
-  if (!items.length) return null;
+  const { pathname } = useLocation();
+  const trail = items ?? getTrail(pathname);
+  if (!trail.length) return null;
 
   return (
     <nav aria-label="Caminho de navegação" className={`mb-6 ${className}`}>
@@ -24,8 +26,8 @@ const Breadcrumbs = ({ items, className = "" }: BreadcrumbsProps) => {
             <span>Início</span>
           </Link>
         </li>
-        {items.map((item, i) => {
-          const isLast = i === items.length - 1;
+        {trail.map((item, i) => {
+          const isLast = i === trail.length - 1;
           return (
             <li key={item.path} className="flex items-center gap-1.5">
               <ChevronRight className="h-3.5 w-3.5 opacity-60" aria-hidden="true" />
