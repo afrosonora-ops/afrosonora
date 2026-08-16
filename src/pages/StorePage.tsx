@@ -126,12 +126,12 @@ const NewsletterCTA = () => {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center space-y-6">
+      <div className="max-w-3xl mx-auto text-center space-y-6">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-            Explora a Nossa Loja! <span className="text-gradient-gold">Disponível</span>
+            Explora a Nossa Loja! <span className="text-gradient-gold">Em Breve</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Explora todos os produtos AFROSONORA. Streetwear, acessórios e equipamentos musicais para a tribo. Nova Coleção de 2026 em constante atualização!
+            Explora todos os produtos AFROSONORA. Streetwear, acessórios e equipamentos musicais para a tribo. A loja online estará disponível em breve.
           </p>
 
           {subscribed ? (
@@ -251,8 +251,8 @@ const StorePage = () => {
                     <span className="font-display text-2xl font-bold text-gold">
                       {item.price}
                     </span>
-                    <Button variant="goldOutline" size="sm" disabled className="opacity-60 cursor-not-allowed">
-                      Ver Produto <ArrowRight className="ml-1 w-4 h-4" />
+                    <Button variant="goldOutline" size="sm" disabled className="opacity-60 cursor-not-allowed" aria-label="Produto disponível em breve">
+                      Em Breve <ArrowRight className="ml-1 w-4 h-4" />
                     </Button>
                   </div>
                 </div>
