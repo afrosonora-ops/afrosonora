@@ -200,7 +200,10 @@ const SobrePage = () => {
               <img
                 src={projetoEstudio.url}
                 alt="Artistas e produtores africanos em estúdio, representando a comunidade AfroSonora"
-                className="w-full h-auto"
+                width={1136}
+                height={928}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full h-auto aspect-[1136/928] object-cover bg-[#1A1A1A]"
                 loading="lazy"
                 decoding="async"
               />
