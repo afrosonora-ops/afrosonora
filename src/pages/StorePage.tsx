@@ -128,10 +128,10 @@ const NewsletterCTA = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-            Explora a Nossa Loja! <span className="text-gradient-gold">Disponível</span>
+            Explora a Nossa Loja! <span className="text-gradient-gold">Em Breve</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Explora todos os produtos AFROSONORA. Streetwear, acessórios e equipamentos musicais para a tribo. Nova Coleção de 2026 em constante atualização!
+            Explora todos os produtos AFROSONORA. Streetwear, acessórios e equipamentos musicais para a tribo. A loja online estará disponível em breve.
           </p>
 
           {subscribed ? (
@@ -214,11 +214,24 @@ const StorePage = () => {
       {/* Products Grid */}
       <section className="py-20 bg-charcoal">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">AfroSonora Cstore
-            <span className="text-gradient-gold">Coleção</span>
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="p-6 md:p-8 rounded-2xl border border-gold/30 bg-gold/5 text-center">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 text-gold text-xs font-semibold uppercase tracking-wide mb-3">
+                <Sparkles className="w-3 h-3" /> Lançamento em breve
+              </span>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
+                Store AFROSONORA <span className="text-gradient-gold">Em Breve</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Os produtos apresentados estão em exposição. A loja online será lançada em breve — fica atento às novidades para seres dos primeiros a comprar.
+              </p>
+            </div>
+          </div>
+
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+            AfroSonora Store <span className="text-gradient-gold">Coleção</span>
           </h2>
           <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">Descobre uma seleção premium de produtos e equipamentos musicais, escolhidos com cuidado para artistas, fãs e criadores. Cada item reflete a qualidade, estilo e espírito da nossa tribo musical.
-
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -251,8 +264,8 @@ const StorePage = () => {
                     <span className="font-display text-2xl font-bold text-gold">
                       {item.price}
                     </span>
-                    <Button variant="goldOutline" size="sm" disabled className="opacity-60 cursor-not-allowed">
-                      Ver Produto <ArrowRight className="ml-1 w-4 h-4" />
+                    <Button variant="goldOutline" size="sm" disabled className="opacity-60 cursor-not-allowed" aria-label="Produto disponível em breve">
+                      Em Breve <ArrowRight className="ml-1 w-4 h-4" />
                     </Button>
                   </div>
                 </div>
