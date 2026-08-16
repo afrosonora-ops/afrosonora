@@ -14,8 +14,6 @@ import type { Tables } from "@/integrations/supabase/types";
 import musicosDestaque1 from "@/assets/musicos-destaque-1.webp";
 import musicosDestaque2 from "@/assets/musicos-destaque-2.webp";
 
-const genres = ["Todos", "Afrobeat", "Afrobeats", "Afropop", "Highlife", "Mbalax", "Mandingue", "World Music", "Kizomba", "Semba", "Kuduro"];
-const countries = ["Todos", "Angola", "Benim", "Cabo Verde", "Gana", "Mali", "Moçambique", "Nigéria", "Senegal", "Guiné-Bissau"];
 
 const highlightImages = [
   { src: musicosDestaque1, alt: "Artistas AfroSonora ao vivo" },
