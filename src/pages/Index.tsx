@@ -363,7 +363,7 @@ const Index = () => {
             <div className="relative w-full rounded-xl overflow-hidden border border-gold/30 hover:border-gold/60 hover:shadow-gold transition-all duration-500" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/eknwtUVQFxM?autoplay=1&mute=0&rel=0"
+                src="https://www.youtube.com/embed/eknwtUVQFxM?autoplay=0&mute=0&rel=0"
                 title="Sons de África"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
