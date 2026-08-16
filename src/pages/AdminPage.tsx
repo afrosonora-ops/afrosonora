@@ -103,7 +103,10 @@ const AdminPage = () => {
   }, []);
 
   const toggleFeatured = async (artistId: string, current: boolean | null) => {
-    const { error } = await supabase.from("artists").update({ is_featured: !current }).eq("id", artistId);
+    const { error } = await supabase.rpc("admin_set_artist_flags", {
+      _artist_id: artistId,
+      _is_featured: !current,
+    });
     if (error) toast.error("Erro ao atualizar destaque.");
     else { toast.success("Destaque atualizado!"); fetchAll(); }
   };
