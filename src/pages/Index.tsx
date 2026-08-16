@@ -158,11 +158,15 @@ const Index = () => {
               O que é a <span className="text-gradient-gold">AfroSonora</span>?
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              A AFROSONORA é mais do que uma plataforma digital; somos um movimento dedicado a amplificar as vozes e os ritmos vibrantes de África no coração da Europa. Acreditamos no poder transformador da música e da arte africana
+              A AfroSonora é uma plataforma de promoção e ligação profissional para a música afro na Europa — não é um
+              serviço de streaming. Reunimos num só lugar perfis de artistas de África e da diáspora, agenda de eventos
+              culturais, showcases e um canal direto com promotores e agências. Para os artistas, é visibilidade e
+              oportunidades reais; para promotores e público, é a forma mais simples de encontrar talento africano
+              autêntico para palcos, festas e festivais.
             </p>
             <Link to="/sobre">
               <Button variant="gold" size="sm" className="mt-4">
-                Saber Mais <ArrowRight className="ml-1 w-4 h-4" />
+                Saber mais sobre a AfroSonora <ArrowRight className="ml-1 w-4 h-4" />
               </Button>
             </Link>
 
@@ -175,11 +179,13 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Para <span className="text-gradient-gold">Quem</span>?
+              Para <span className="text-gradient-gold">quem</span> é a AfroSonora?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Uma plataforma desenhada para todos os intervenientes do ecossistema musical africano.
+              Uma plataforma desenhada para todo o ecossistema da música africana na Europa: artistas, promotores,
+              apoiantes e comunidades.
             </p>
+
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
