@@ -32,7 +32,7 @@ const HomeStudioSection = () => {
                 sizes="(min-width: 768px) 50vw, 100vw"
                 width={1200}
                 height={900}
-                alt="Setup básico de home studio"
+                alt="Setup básico de home studio com microfone, interface áudio e auscultadores"
                 className="w-full h-full object-cover bg-[#1A1A1A] group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
@@ -51,7 +51,7 @@ const HomeStudioSection = () => {
                 sizes="(min-width: 768px) 50vw, 100vw"
                 width={1200}
                 height={900}
-                alt="Pacote Home Studio AFROSONORA"
+                alt="Pacote Home Studio AfroSonora com equipamento de gravação para músicos"
                 className="w-full h-full object-cover bg-[#1A1A1A] group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />

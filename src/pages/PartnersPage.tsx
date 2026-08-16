@@ -91,7 +91,7 @@ const PartnersPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Seo title={"Parcerias | AfroSonora"} description={"Marcas, instituições e media que querem associar-se à música afro e à cultura africana na Europa: propõe uma parceria à AfroSonora."} path="/parceiros" />
+      <Seo title={"Parcerias de Marca e Cultura Africana | AfroSonora"} description={"Marcas, instituições culturais e media podem associar-se à música afro na Europa através de parcerias AfroSonora: visibilidade, eventos e projetos conjuntos."} path="/parceiros" />
       
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">

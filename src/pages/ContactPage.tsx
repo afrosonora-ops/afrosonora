@@ -55,7 +55,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Seo title={"Contacto | AfroSonora"} description={"Fale com a equipa AfroSonora: dúvidas, parcerias, imprensa e apoio a músicos africanos na Europa."} path="/contacto" />
+      <Seo title={"Contactar a AfroSonora | Apoio a Artistas e Promotores"} description={"Fale com a equipa AfroSonora por email ou formulário: apoio a músicos, propostas de promotores, parcerias, imprensa e questões sobre planos."} path="/contacto" />
       
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">

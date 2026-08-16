@@ -172,7 +172,7 @@ const StorePage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Seo title={"Store | AfroSonora"} description={"Merchandising e produtos oficiais AfroSonora que apoiam músicos e projetos culturais africanos."} path="/store" />
+      <Seo title={"Store Oficial AfroSonora | Merch de Cultura Africana"} description={"Merch oficial AfroSonora: t-shirts, hoodies e acessórios inspirados na música afro. Cada compra apoia músicos africanos e projetos culturais na Europa."} path="/store" />
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 bg-charcoal overflow-hidden">
