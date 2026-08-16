@@ -54,15 +54,16 @@ const Seo = ({ title, description, path, image = DEFAULT_IMAGE, jsonLd }: SeoPro
     setMeta("name", "twitter:image", image);
   }, [title, description, path, image]);
 
+  const serialized = jsonLd ? JSON.stringify(jsonLd) : null;
   useEffect(() => {
-    if (!jsonLd) return;
+    if (!serialized) return;
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.dataset.seoRoute = "true";
-    script.textContent = JSON.stringify(jsonLd);
+    script.textContent = serialized;
     document.head.appendChild(script);
     return () => script.remove();
-  }, [jsonLd]);
+  }, [serialized]);
 
   return null;
 };
