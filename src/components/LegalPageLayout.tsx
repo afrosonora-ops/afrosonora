@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
+
 import { useLocation } from "react-router-dom";
 
 interface LegalPageLayoutProps {
