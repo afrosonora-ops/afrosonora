@@ -4,6 +4,11 @@ const SITE_URL = "https://afrosonora.lovable.app";
 const DEFAULT_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/ZI7Zx4L0GMXfEHzDy466NYNogmn2/social-images/social-1774086687145-Logo_branco.webp";
 
+export interface Crumb {
+  name: string;
+  path: string;
+}
+
 interface SeoProps {
   title: string;
   description: string;
@@ -11,7 +16,12 @@ interface SeoProps {
   image?: string;
   /** Structured data (JSON-LD) specific to this route. */
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Breadcrumb trail (without "Início"), emitted as BreadcrumbList JSON-LD. */
+  breadcrumbs?: Crumb[];
+  /** Keep the route out of search results (private/utility pages). */
+  noindex?: boolean;
 }
+
 
 const setMeta = (attr: "name" | "property", key: string, content: string) => {
   let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
