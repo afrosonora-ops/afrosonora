@@ -110,7 +110,7 @@ const DashboardPage = () => {
                   <div className="flex items-center gap-4">
                     <div className="w-20 h-20 rounded-full bg-secondary flex items-center justify-center overflow-hidden">
                       {profile?.avatar_url ? (
-                        <img decoding="async" loading="lazy" src={profile.avatar_url} alt="Avatar" className="w-full h-full object-cover" />
+                        <img decoding="async" loading="lazy" src={profile.avatar_url} alt={`Fotografia de perfil de ${profile.full_name || "utilizador AfroSonora"}`} className="w-full h-full object-cover" />
                       ) : (
                         <User className="w-8 h-8 text-muted-foreground" />
                       )}
