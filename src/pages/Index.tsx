@@ -21,6 +21,25 @@ import partnerMadeInEurope from "@/assets/partner-made-in-europe.webp";
 
 const heroImages = [heroBg, heroBg2, heroBg3];
 
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://afrosonora.lovable.app/#webpage",
+  url: "https://afrosonora.lovable.app/",
+  name: "AfroSonora | Música Afro e Cultura Africana na Europa",
+  inLanguage: "pt-PT",
+  isPartOf: { "@id": "https://afrosonora.lovable.app/#website" },
+  about: { "@id": "https://afrosonora.lovable.app/#organization" },
+  description:
+    "Plataforma europeia de música afro e cultura africana: perfis de artistas de África e da diáspora, eventos, showcases e ligação direta a promotores.",
+  significantLink: [
+    "https://afrosonora.lovable.app/sobre",
+    "https://afrosonora.lovable.app/artistas",
+    "https://afrosonora.lovable.app/eventos",
+    "https://afrosonora.lovable.app/planos",
+  ],
+};
+
 const Index = () => {
   const [currentHero, setCurrentHero] = useState(0);
   const [heroReady, setHeroReady] = useState(false);
@@ -57,7 +76,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Seo title={"AfroSonora | A Ponte Musical entre África e Europa"} description={"Plataforma que liga músicos, artistas e bandas africanas ao mercado europeu: promoção artística, eventos e oportunidades reais."} path="/" />
+      <Seo
+        title={"AfroSonora | Música Afro e Cultura Africana na Europa"}
+        description={"AfroSonora é a plataforma que liga músicos, bandas e DJs de África e da diáspora ao mercado europeu: afrobeat, kizomba, semba, afro house, eventos culturais e ligação direta a promotores."}
+        path="/"
+        jsonLd={homeJsonLd}
+      />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
