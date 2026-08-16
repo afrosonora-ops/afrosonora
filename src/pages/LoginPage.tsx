@@ -40,7 +40,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Seo title={"Entrar | AfroSonora"} description={"Acede à tua conta AfroSonora para gerir o teu perfil de artista, candidaturas e eventos."} path="/login" />
+      <Seo title={"Entrar na Conta AfroSonora"} description={"Acede à tua conta AfroSonora para gerir o teu perfil de músico, candidaturas a eventos e definições do plano."} path="/login" />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-md mx-auto animate-fade-in">

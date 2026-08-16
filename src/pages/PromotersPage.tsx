@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Users, ArrowRight, Mail, Globe, Music, Mic2, Send, Headphones, CalendarDays, Eye, Sparkles, Trophy, Star } from "lucide-react";
 import promotersConcert from "@/assets/promoters-concert.webp";
 import promotersGlobal from "@/assets/promoters-global.webp";
@@ -72,6 +73,7 @@ const PromotersPage = () => {
 
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
+          <Breadcrumbs />
           {/* Hero Header */}
           <div className="text-center mb-20 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30 mb-6">

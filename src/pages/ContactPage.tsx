@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Mail, MapPin, Phone, Send, Instagram, Youtube, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendFormEmail } from "@/lib/sendFormEmail";
@@ -54,10 +55,11 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Seo title={"Contacto | AfroSonora"} description={"Fale com a equipa AfroSonora: dúvidas, parcerias, imprensa e apoio a músicos africanos na Europa."} path="/contacto" />
+      <Seo title={"Contactar a AfroSonora | Apoio a Artistas e Promotores"} description={"Fale com a equipa AfroSonora por email ou formulário: apoio a músicos, propostas de promotores, parcerias, imprensa e questões sobre planos."} path="/contacto" />
       
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
+          <Breadcrumbs />
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">

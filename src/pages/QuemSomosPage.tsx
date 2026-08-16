@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import img1 from "@/assets/quem-somos-1.webp";
 import img2 from "@/assets/quem-somos-2.webp";
 import { Link } from "react-router-dom";
@@ -11,11 +12,11 @@ const QuemSomosPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <Seo title={"Quem Somos | AfroSonora"} description={"Conheça a missão da AfroSonora: amplificar as vozes e ritmos africanos no coração da Europa."} path="/quem-somos" />
+      <Seo title={"Quem Somos: A Equipa e a Visão da AfroSonora"} description={"A história, a visão e a forma de trabalhar da AfroSonora — a plataforma que liga músicos africanos e da diáspora a promotores, palcos e público na Europa."} path="/quem-somos" />
 
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <img decoding="async" src={img1} alt="Artistas em palco" className="absolute inset-0 w-full h-full object-cover" />
+        <img decoding="async" src={img1} alt="Artistas africanos em palco durante um concerto AfroSonora na Europa" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/70" />
         <div className="relative z-10 text-center px-4">
           <h1 className="font-display text-4xl md:text-6xl font-bold mb-4">
@@ -25,6 +26,7 @@ const QuemSomosPage = () => {
       </section>
 
       <div className="container mx-auto px-4 py-16 max-w-4xl space-y-16">
+        <Breadcrumbs />
         {/* 1. Introdução */}
         <section className="space-y-4">
           <h2 className="font-display text-3xl font-bold text-foreground">1. Introdução</h2>
@@ -54,7 +56,7 @@ const QuemSomosPage = () => {
 
         {/* Image break */}
         <div className="rounded-xl overflow-hidden border border-border">
-          <img decoding="async" loading="lazy" src={img2} alt="AfroSonora conceito" className="w-full h-auto object-cover" />
+          <img decoding="async" loading="lazy" src={img2} alt="Colagem visual do conceito AfroSonora: música, cultura africana e ligação à Europa" className="w-full h-auto object-cover" />
         </div>
 
         {/* 3. O que é */}

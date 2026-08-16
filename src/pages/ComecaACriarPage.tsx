@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -87,11 +88,12 @@ const ComecaACriarPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Seo title={"Começa a Criar | AfroSonora"} description={"Recursos, home studio e apoio para músicos africanos começarem a criar e gravar com qualidade profissional."} path="/comeca-a-criar" />
+      <Seo title={"Home Studio para Músicos Afro | Começa a Criar"} description={"Monta o teu home studio e grava música com qualidade profissional: equipamento essencial, pacotes AfroSonora e apoio para artistas em início de carreira."} path="/comeca-a-criar" />
 
       {/* Hero */}
       <section className="pt-32 pb-16 bg-charcoal">
         <div className="container mx-auto px-4 text-center space-y-6">
+          <Breadcrumbs className="text-left" />
           <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground">
             Começa a <span className="text-gradient-gold">Criar</span>
           </h1>
@@ -107,7 +109,7 @@ const ComecaACriarPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="space-y-4">
               <div className="aspect-[4/3] overflow-hidden rounded-xl border border-border">
-                <img decoding="async" loading="lazy" src={setupImg} alt="Setup básico de home studio" className="w-full h-full object-cover" />
+                <img decoding="async" loading="lazy" src={setupImg} alt="Setup básico de home studio com microfone, interface áudio e auscultadores" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground">Setup Básico / Start</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -116,7 +118,7 @@ const ComecaACriarPage = () => {
             </div>
             <div className="space-y-4">
               <div className="aspect-[4/3] overflow-hidden rounded-xl border border-border">
-                <img decoding="async" loading="lazy" src={packImg} alt="Pacote Home Studio AFROSONORA" className="w-full h-full object-cover" />
+                <img decoding="async" loading="lazy" src={packImg} alt="Pacote Home Studio AfroSonora com equipamento de gravação para músicos" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground">Pacote Home Studio AFROSONORA</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">

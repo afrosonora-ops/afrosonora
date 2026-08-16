@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { ShoppingBag, Heart, ArrowRight, Star, Sparkles, Music, Mail, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -171,12 +172,13 @@ const StorePage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Seo title={"Store | AfroSonora"} description={"Merchandising e produtos oficiais AfroSonora que apoiam músicos e projetos culturais africanos."} path="/store" />
+      <Seo title={"Store Oficial AfroSonora | Merch de Cultura Africana"} description={"Merch oficial AfroSonora: t-shirts, hoodies e acessórios inspirados na música afro. Cada compra apoia músicos africanos e projetos culturais na Europa."} path="/store" />
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 bg-charcoal overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
+          <Breadcrumbs />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30">
               <ShoppingBag className="w-4 h-4 text-gold" />

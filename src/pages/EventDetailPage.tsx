@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { useAuth } from "@/contexts/AuthContext";
 import { staticEvents } from "@/data/eventsData";
 import { ArrowLeft, Mail, CheckCircle, Send } from "lucide-react";
@@ -105,6 +106,13 @@ const EventDetailPage = () => {
       />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-4xl">
+          <Breadcrumbs
+            items={[
+              { name: "Eventos", path: "/eventos" },
+              { name: event.title, path: `/eventos/${event.slug}` },
+            ]}
+          />
+
           {/* Back link */}
           <Link to="/eventos" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8">
             <ArrowLeft className="w-4 h-4" /> Voltar aos Eventos

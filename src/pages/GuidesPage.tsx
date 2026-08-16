@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Seo from "@/components/Seo";
 import { guides } from "@/data/guidesData";
 import { ArrowRight, Clock } from "lucide-react";
@@ -45,6 +46,7 @@ const GuidesPage = () => {
 
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-5xl">
+          <Breadcrumbs />
           <header className="mb-14 max-w-3xl">
             <p className="text-gold text-sm font-semibold tracking-widest uppercase mb-4">Guias & Conhecimento</p>
             <h1 className="font-display text-4xl md:text-5xl font-bold mb-6">

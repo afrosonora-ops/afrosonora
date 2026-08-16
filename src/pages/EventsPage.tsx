@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Calendar, ArrowRight, Mail } from "lucide-react";
 import { staticEvents } from "@/data/eventsData";
 
@@ -30,6 +31,7 @@ const EventsPage = () => {
       />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
+          <Breadcrumbs />
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">

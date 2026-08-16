@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "sonner";
@@ -162,6 +163,7 @@ const AdminPage = () => {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
+      <Seo title={"Administração | AfroSonora"} description={"Área de administração da plataforma AfroSonora."} path="/admin" noindex />
         <main className="pt-32 pb-24 flex items-center justify-center">
           <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
         </main>

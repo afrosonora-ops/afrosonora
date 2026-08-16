@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -79,6 +80,7 @@ const DashboardPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Painel do Artista | AfroSonora"} description={"Gere o teu perfil de músico, candidaturas e definições na AfroSonora."} path="/painel" noindex />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto space-y-8 animate-fade-in">
@@ -108,7 +110,7 @@ const DashboardPage = () => {
                   <div className="flex items-center gap-4">
                     <div className="w-20 h-20 rounded-full bg-secondary flex items-center justify-center overflow-hidden">
                       {profile?.avatar_url ? (
-                        <img decoding="async" loading="lazy" src={profile.avatar_url} alt="Avatar" className="w-full h-full object-cover" />
+                        <img decoding="async" loading="lazy" src={profile.avatar_url} alt={`Fotografia de perfil de ${profile.full_name || "utilizador AfroSonora"}`} className="w-full h-full object-cover" />
                       ) : (
                         <User className="w-8 h-8 text-muted-foreground" />
                       )}

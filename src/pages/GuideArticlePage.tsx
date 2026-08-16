@@ -1,6 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Seo from "@/components/Seo";
 import { getGuide, guides } from "@/data/guidesData";
 import { ArrowLeft, ArrowRight, Clock, Check } from "lucide-react";
@@ -52,6 +53,13 @@ const GuideArticlePage = () => {
 
       <main className="pt-32 pb-24">
         <article className="container mx-auto px-4 max-w-3xl">
+          <Breadcrumbs
+            items={[
+              { name: "Guias", path: "/guias" },
+              { name: guide.title, path: `/guias/${guide.slug}` },
+            ]}
+          />
+
           <nav aria-label="Navegação estrutural" className="mb-8">
             <Link to="/guias" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors">
               <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Todos os guias

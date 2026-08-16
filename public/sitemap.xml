@@ -46,6 +46,31 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://afrosonora.lovable.app/guias</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://afrosonora.lovable.app/guias/o-que-e-musica-afro-contemporanea</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://afrosonora.lovable.app/guias/como-descobrir-novos-artistas-afro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://afrosonora.lovable.app/guias/afrobeat-afropop-diaspora-diferencas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://afrosonora.lovable.app/guias/onde-ouvir-musica-afro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://afrosonora.lovable.app/quem-somos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

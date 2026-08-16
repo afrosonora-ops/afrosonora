@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { Home, Search } from "lucide-react";
 
 const NotFound = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
+      <Seo title={"Página não encontrada (404) | AfroSonora"} description={"A página que procura não existe. Volte ao início ou explore músicos e eventos de música afro na AfroSonora."} path="/404" noindex />
       <main className="flex-1 flex items-center justify-center px-4 pt-32 pb-24">
         <div className="max-w-lg text-center animate-fade-in">
           <p className="font-display text-7xl md:text-8xl font-bold text-gradient-gold mb-4">404</p>

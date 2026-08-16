@@ -65,7 +65,7 @@ const FeaturedEvents = () => {
                   src={eventosCulturaisImg}
                   srcSet={`${eventosCulturaisImgSm} 640w, ${eventosCulturaisImg} 832w`}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  alt="Eventos Culturais 2026"
+                  alt="Cartaz dos Eventos Culturais Africanos 2026 promovidos pela AfroSonora"
                   width={832}
                   height={624}
                   className="w-full h-full object-cover bg-[#1A1A1A] group-hover:scale-105 transition-transform duration-500"
