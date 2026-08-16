@@ -16,6 +16,7 @@ import {
   Handshake,
   Music,
   GraduationCap,
+  Check,
 } from "lucide-react";
 import logo3d from "@/assets/sobre-logo-3d.webp.asset.json";
 import infografia from "@/assets/sobre-infografia.webp.asset.json";
@@ -45,53 +46,83 @@ const valores = [
   { title: "Comunidade", text: "Artistas, promotores, benfeitores e embaixadores constroem a plataforma em conjunto." },
 ];
 
+const diferenciais = [
+  "Ponte direta entre artistas africanos e promotores europeus, sem intermediários desnecessários.",
+  "Preservação dos direitos dos artistas: a música permanece nas plataformas oficiais do próprio.",
+  "Curadoria editorial e cultural que valoriza a autenticidade em vez da viralização superficial.",
+  "Foco na música africana, na música negra contemporânea e na diáspora como ecossistema único.",
+  "Iniciativas concretas: showcases, Home Studio, eventos culturais e ligações profissionais mensuráveis.",
+];
+
 const faqs = [
   {
-    q: "O que é a AfroSonora?",
-    a: "A AfroSonora é uma plataforma digital europeia dedicada à música afro e à cultura africana. Reúne perfis profissionais de músicos, bandas e DJs de África e da diáspora, uma agenda de eventos culturais, conteúdo editorial e ligação direta a promotores, agências e espaços na Europa. O objetivo é simples: transformar talento em oportunidades de palco e de carreira.",
+    q: "O que é o AfroSonora?",
+    a: "O AfroSonora é uma plataforma digital europeia dedicada à música afro e à cultura africana. Liga artistas africanos e da diáspora — músicos, bandas e DJs — a promotores, agências e espaços na Europa, através de perfis profissionais, uma agenda de eventos, conteúdo editorial e iniciativas de visibilidade como o Home Studio AFROSONORA.",
   },
   {
-    q: "Para que serve a AfroSonora e quem a usa?",
-    a: "Serve três grupos. Artistas criam um perfil com biografia, ligações ao Spotify e YouTube, fotografias e histórico, ficando visíveis para quem contrata. Promotores e agências pesquisam talento por género e país e contactam diretamente. Benfeitores e embaixadores apoiam iniciativas culturais e ajudam a expandir o movimento em novos países.",
+    q: "O AfroSonora é uma plataforma de streaming?",
+    a: "Não. O AfroSonora não aloja nem reproduz música diretamente. Cada artista mantém a sua música nas plataformas oficiais — Spotify, YouTube e outras. O AfroSonora funciona como vitrine e ponte profissional: ajuda os artistas a serem descobertos, contactados e contratados, preservando a gestão dos seus próprios direitos e streams.",
   },
   {
-    q: "Que géneros de música afro estão representados?",
-    a: "Afrobeat e afrobeats, kizomba, semba, kuduro, afro house, amapiano, coladeira, morna, highlife, soukous, rumba congolesa, funaná e fusões contemporâneas com jazz, R&B, hip-hop e eletrónica. A curadoria cobre tanto sonoridades tradicionais como música negra contemporânea produzida na diáspora europeia.",
+    q: "Que tipo de música posso encontrar no AfroSonora?",
+    a: "A curadoria abrange afrobeat e afrobeats, kizomba, semba, kuduro, afro house, amapiano, coladeira, morna, highlife, soukous, rumba congolesa, funaná e fusões contemporâneas com jazz, R&B, hip-hop e eletrónica. Inclui tanto sonoridades tradicionais do continente africano como música negra produzida na diáspora europeia.",
   },
   {
-    q: "Onde ouvir e descobrir música afro contemporânea através da AfroSonora?",
-    a: "A AfroSonora não aloja ficheiros de música: cada perfil de artista remete para as plataformas oficiais do próprio (Spotify, YouTube e outras), garantindo que reproduções e direitos ficam do lado do artista. A descoberta acontece nos perfis, nas seleções editoriais e nos eventos e showcases organizados pela plataforma.",
+    q: "O AfroSonora é focado em música africana ou da diáspora?",
+    a: "Ambos. O AfroSonora valoriza a música feita em África e as expressões criativas da diáspora africana na Europa. A plataforma não separa os dois universos: trata-os como parte do mesmo ecossistema de cultura negra, diáspora e sons africanos.",
   },
   {
-    q: "Como é que um artista africano entra na plataforma?",
-    a: "Basta criar um perfil gratuito em afrosonora.lovable.app/registo, preencher a biografia, os géneros e as ligações às plataformas de streaming. Há depois planos de subscrição com maior destaque, candidatura a showcases e acesso a iniciativas como o Home Studio AFROSONORA.",
+    q: "Como posso descobrir novos artistas afro no AfroSonora?",
+    a: "Podes explorar a página /artistas, filtrar por género e país, consultar a agenda de eventos em /eventos, ou seguir as iniciativas do Home Studio e os showcases organizados pela plataforma. Cada perfil de artista inclui biografia, fotografias e ligações diretas para Spotify e YouTube.",
   },
   {
-    q: "A AfroSonora é gratuita?",
-    a: "A criação de perfil e a consulta de artistas e eventos são gratuitas. Existem planos pagos opcionais para artistas que querem destaque editorial, prioridade em seleções e acesso a benefícios adicionais.",
+    q: "Para quem é o AfroSonora?",
+    a: "É para artistas africanos e da diáspora que querem expandir a carreira na Europa; para promotores e agências à procura de talento autêntico; para benfeitores e investidores que apoiam a cultura africana; e para embaixadores comunitários que querem expandir o movimento globalmente.",
   },
   {
-    q: "Onde atua a AfroSonora?",
-    a: "A equipa está representada nos Países Baixos, Luxemburgo, Portugal e França, e trabalha com artistas e promotores de mais de 15 países entre a Europa e o continente africano. A expansão de parcerias é contínua e aberta a novos mercados europeus.",
+    q: "Como é que um artista entra na plataforma?",
+    a: "Basta criar um perfil gratuito em /registo, preencher a biografia, os géneros e as ligações às plataformas de streaming. Existem depois planos de subscrição que dão maior destaque, prioridade em showcases e acesso a iniciativas como o Home Studio AFROSONORA.",
   },
   {
-    q: "Como contactar a AfroSonora?",
-    a: "Por e-mail para info@afrosonora.com ou através do formulário em afrosonora.lovable.app/contacto. Promotores, parceiros comerciais e media têm páginas dedicadas para candidaturas e propostas.",
+    q: "O AfroSonora é gratuito?",
+    a: "A criação de perfil e a consulta de artistas e eventos são gratuitas. Existem planos pagos opcionais para artistas que querem destaque editorial, prioridade em seleções e benefícios adicionais.",
+  },
+  {
+    q: "Onde atua o AfroSonora?",
+    a: "A equipa está sediada nos Países Baixos, com representação em Luxemburgo, Portugal e França, e trabalha com artistas e promotores de mais de 15 países entre a Europa e o continente africano. A expansão de parcerias é contínua e aberta a novos mercados europeus.",
+  },
+  {
+    q: "Como contactar o AfroSonora?",
+    a: "Por e-mail para info@afrosonora.com ou através do formulário em /contacto. Promotores, parceiros comerciais e media têm páginas dedicadas para candidaturas e propostas.",
   },
 ];
 
 const SITE = "https://afrosonora.lovable.app";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${SITE}/sobre#faq`,
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.a,
+    },
+  })),
+};
 
 const sobreJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "@id": `${SITE}/sobre#aboutpage`,
-    name: "Sobre a AfroSonora",
+    name: "Sobre o AfroSonora",
     url: `${SITE}/sobre`,
     inLanguage: "pt-PT",
     description:
-      "O que é a AfroSonora: plataforma europeia de música afro e cultura africana que liga artistas de África e da diáspora a promotores, eventos e público na Europa.",
+      "O que é o AfroSonora: plataforma europeia de música afro e cultura africana que liga artistas de África e da diáspora a promotores, eventos e público na Europa.",
     about: { "@id": `${SITE}/#organization` },
     mainEntity: {
       "@type": "Organization",
@@ -124,9 +155,10 @@ const sobreJsonLd = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Início", item: `${SITE}/` },
-      { "@type": "ListItem", position: 2, name: "Sobre a AfroSonora", item: `${SITE}/sobre` },
+      { "@type": "ListItem", position: 2, name: "Sobre o AfroSonora", item: `${SITE}/sobre` },
     ],
   },
+  faqJsonLd,
 ];
 
 const SobrePage = () => {
@@ -146,8 +178,8 @@ const SobrePage = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Seo
-        title="O que é a AfroSonora | Música Afro e Cultura Africana"
-        description="O que é a AfroSonora: plataforma europeia de música afro que liga artistas de África e da diáspora a promotores, palcos e público — história, missão, pilares e perguntas frequentes."
+        title="Sobre o AfroSonora | Música Afro e Cultura Africana"
+        description="O que é o AfroSonora: plataforma europeia de música afro e cultura africana que liga artistas de África e da diáspora a promotores, palcos e público — história, missão, valores e FAQ."
         path="/sobre"
         jsonLd={sobreJsonLd}
       />
@@ -174,7 +206,7 @@ const SobrePage = () => {
               decoding="sync"
             />
             <h1 className="font-display text-4xl md:text-6xl font-bold">
-              Sobre a <span className="text-gradient-gold">AfroSonora</span>
+              Sobre o <span className="text-gradient-gold">AfroSonora</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
               Sons de África — Sente a cultura, inspira-te e junta-te à tribo!
@@ -198,15 +230,15 @@ const SobrePage = () => {
         </div>
       </section>
 
-      {/* Resposta direta: o que é a AfroSonora */}
+      {/* Resposta direta: o que é o AfroSonora */}
       <section className="pb-16 md:pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto space-y-5 p-8 rounded-2xl border border-gold/20 bg-gold/5">
             <h2 className="font-display text-2xl md:text-3xl font-bold">
-              O que é a <span className="text-gradient-gold">AfroSonora</span>?
+              O que é o <span className="text-gradient-gold">AfroSonora</span>?
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              A <strong className="text-foreground">AfroSonora</strong> é uma plataforma digital
+              O <strong className="text-foreground">AfroSonora</strong> é uma plataforma digital
               europeia dedicada à <strong className="text-foreground">música afro</strong> e à
               cultura africana. Reúne num só lugar perfis profissionais de músicos, bandas e DJs de
               África e da diáspora, uma agenda de eventos culturais, conteúdo editorial e ligação
@@ -215,11 +247,11 @@ const SobrePage = () => {
             <p className="text-muted-foreground leading-relaxed">
               A curadoria abrange afrobeat e afrobeats, kizomba, semba, kuduro, afro house, amapiano,
               morna, highlife, soukous e as fusões contemporâneas da música negra feita na Europa. Os
-              artistas mantêm a sua música nas plataformas oficiais — a AfroSonora trata da
+              artistas mantêm a sua música nas plataformas oficiais — o AfroSonora trata da
               visibilidade, das ligações profissionais e dos palcos.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Está sediada nos Países Baixos, com representação em Luxemburgo, Portugal e França, e
+              Está sediado nos Países Baixos, com representação em Luxemburgo, Portugal e França, e
               trabalha com artistas e promotores de mais de 15 países. O contacto oficial é{" "}
               <a href="mailto:info@afrosonora.com" className="text-gold hover:underline">
                 info@afrosonora.com
@@ -321,7 +353,7 @@ const SobrePage = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-8">
-                Para <span className="text-gradient-gold">Quem</span> É a AfroSonora?
+                Para <span className="text-gradient-gold">Quem</span> É o AfroSonora?
               </h2>
               <div className="space-y-4">
                 {publicos.map((p) => (
@@ -368,8 +400,29 @@ const SobrePage = () => {
         </div>
       </section>
 
-      {/* Perguntas frequentes */}
+      {/* O que diferencia a plataforma */}
       <section className="py-16 md:py-24 bg-charcoal">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-10 text-center">
+              O que Diferencia o <span className="text-gradient-gold">AfroSonora</span>?
+            </h2>
+            <div className="space-y-4">
+              {diferenciais.map((d) => (
+                <div key={d} className="flex items-start gap-4 p-5 rounded-2xl border border-border bg-card">
+                  <div className="mt-1 shrink-0 w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center">
+                    <Check className="w-4 h-4 text-gold" aria-hidden="true" />
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Perguntas frequentes */}
+      <section className="py-16 md:py-24" id="faq">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-10 text-center">
