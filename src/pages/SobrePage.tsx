@@ -129,7 +129,10 @@ const SobrePage = () => {
               <img
                 src={infografia.url}
                 alt="Infografia do ecossistema AfroSonora: showcase de artistas, ligação global, editorial, prémios, dashboard e comunidade"
-                className="w-full h-auto"
+                width={1137}
+                height={928}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full h-auto aspect-[1137/928] object-cover bg-[#1A1A1A]"
                 loading="lazy"
                 decoding="async"
               />
