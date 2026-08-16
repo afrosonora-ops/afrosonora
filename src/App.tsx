@@ -25,6 +25,8 @@ import PromotersPage from "./pages/PromotersPage";
 import AdminPage from "./pages/AdminPage";
 import ComecaACriarPage from "./pages/ComecaACriarPage";
 import QuemSomosPage from "./pages/QuemSomosPage";
+import SobrePage from "./pages/SobrePage";
+
 import StorePage from "./pages/StorePage";
 import EventosCulturais2026Page from "./pages/EventosCulturais2026Page";
 import NotFound from "./pages/NotFound";
@@ -85,6 +87,8 @@ const App = () => (
               <Route path="/promotores" element={<PromotersPage />} />
               <Route path="/comeca-a-criar" element={<ComecaACriarPage />} />
               <Route path="/quem-somos" element={<QuemSomosPage />} />
+              <Route path="/sobre" element={<SobrePage />} />
+
               <Route path="/store" element={<StorePage />} />
               <Route path="/eventos-culturais-2026" element={<EventosCulturais2026Page />} />
               <Route path="/termos" element={<TermsPage />} />

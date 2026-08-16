@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predev": "npx tsx scripts/generate-sitemap.ts",
-    "prebuild": "npx tsx scripts/generate-sitemap.ts"⁠
+    "prebuild": "npx tsx scripts/generate-sitemap.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
