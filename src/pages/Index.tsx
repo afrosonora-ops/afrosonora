@@ -108,26 +108,29 @@ const Index = () => {
             </div>
 
             <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground leading-tight">
-              Conectamos <span className="text-gradient-gold">Artistas</span> ao Mercado Internacional
+              A plataforma de <span className="text-gradient-gold">música afro</span> que liga artistas africanos ao público e aos promotores da Europa
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Promoção artística, criação de oportunidades reais, eventos exclusivos e ligação direta com promotores
-              internacionais.
+              A AfroSonora é a plataforma europeia dedicada à música afro e à cultura africana. Músicos, bandas e DJs de
+              afrobeat, kizomba, semba, kuduro, afro house e amapiano criam o seu perfil, mostram o seu trabalho e chegam
+              diretamente a promotores, agências e público em Portugal e na Europa — sem intermediários e mantendo todos
+              os seus direitos.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link to="/registo">
                 <Button variant="hero" size="xl" className="w-full sm:w-auto">
-                  Criar Perfil <ArrowRight className="ml-2 w-5 h-5" />
+                  Criar perfil de artista grátis <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/artistas">
                 <Button variant="heroOutline" size="xl" className="w-full sm:w-auto">
-                  Ver Artistas
+                  Descobrir músicos afro
                 </Button>
               </Link>
             </div>
+
 
             <div className="flex flex-wrap justify-center gap-8 pt-8 text-muted-foreground">
               <div className="flex items-center gap-2">
