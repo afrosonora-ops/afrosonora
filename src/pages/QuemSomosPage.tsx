@@ -147,7 +147,7 @@ const QuemSomosPage = () => {
         <section className="space-y-4">
           <h2 className="font-display text-3xl font-bold text-foreground">6. Nossos Planos de Assinatura</h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Para atender às diversas necessidades de nossa comunidade, a AFROSONORA oferece planos de assinatura flexíveis, desenhados para acompanhar o artista em cada etapa de sua carreira. Desde o Plano Essencial, ideal para quem está a começar, passando pelo Plano Premium, para quem busca um crescimento sério, até o Plano Pro, que oferece acesso total e prioridade máxima para artistas estabelecidos. Cada plano é cuidadosamente estruturado para maximizar as oportunidades e o suporte, com opções de pagamento mensal ou anual (com benefícios de desconto).
+            Para atender às diversas necessidades de nossa comunidade, a AFROSONORA oferece planos de assinatura flexíveis, desenhados para acompanhar o artista em cada etapa de sua carreira. Desde o Cartão de Membro AFROSONORA (4€/mês), ideal para quem está a começar, passando pelo Premium (9€/mês), para quem busca um crescimento sério, até o Pro (25€/mês), que oferece acesso total e prioridade máxima para artistas estabelecidos. Cada plano é cuidadosamente estruturado para maximizar as oportunidades e o suporte, com opções de pagamento mensal ou anual (com benefícios de desconto).
           </p>
           <Link to="/planos">
             <Button variant="gold" size="lg" className="mt-2">

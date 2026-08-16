@@ -36,7 +36,7 @@ const plans = [
       "Comunidade Exclusiva — Acesso a grupo seleto para networking",
       "Entrevistas — Elegibilidade para entrevistas em nossos canais",
     ],
-    featuresLabel: "Inclui tudo do Essencial, mais:",
+    featuresLabel: "Inclui tudo do Cartão de Membro AFROSONORA, mais:",
     variant: "premium" as const,
     buttonVariant: "gold" as const,
     buttonText: "Escolher Premium",
