@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Award, ArrowRight } from "lucide-react";
 
@@ -8,6 +9,7 @@ const AmbassadorsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Embaixadores AfroSonora | Representa a Cultura Afro na Europa"} description={"Torna-te embaixador AfroSonora e ajuda a levar a música afro, o afrobeat e a cultura africana a novas cidades europeias."} path="/embaixadores" />
 
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">

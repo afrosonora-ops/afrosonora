@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Mic2, Music, Sparkles, Plane, Headphones, Handshake, ArrowRight } from "lucide-react";
 
@@ -8,6 +9,7 @@ const ArtistInfoPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Para Músicos e Artistas Africanos | AfroSonora"} description={"Como a AfroSonora ajuda músicos africanos e da diáspora: perfil profissional, visibilidade junto de promotores europeus, eventos e showcases."} path="/para-artistas" />
 
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">

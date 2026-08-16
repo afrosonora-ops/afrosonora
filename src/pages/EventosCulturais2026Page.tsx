@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, MapPin, Globe, ExternalLink } from "lucide-react";
@@ -75,6 +76,7 @@ const EventosCulturais2026Page = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Eventos Culturais Africanos 2026 | AfroSonora"} description={"Agenda 2026 de eventos culturais e concertos de música afro na Europa promovidos pela AfroSonora: festivais, showcases e encontros da diáspora africana."} path="/eventos-culturais-2026" />
 
       {/* Hero */}
       <section className="relative pt-24">

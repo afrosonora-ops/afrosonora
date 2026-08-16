@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Handshake, Building2, Megaphone, Palette, Music, Send, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -89,6 +90,7 @@ const PartnersPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Parcerias | AfroSonora"} description={"Marcas, instituições e media que querem associar-se à música afro e à cultura africana na Europa: propõe uma parceria à AfroSonora."} path="/parceiros" />
       
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import { Users, ArrowRight, Mail, Globe, Music, Mic2, Send, Headphones, CalendarDays, Eye, Sparkles, Trophy, Star } from "lucide-react";
 import promotersConcert from "@/assets/promoters-concert.webp";
@@ -67,6 +68,7 @@ const PromotersPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Seo title={"Promotores e Agências | Contratar Artistas Afro | AfroSonora"} description={"Promotores e agências europeias encontram na AfroSonora músicos africanos e da diáspora prontos para palco: afrobeat, kizomba, semba, afro house e mais."} path="/promotores" />
 
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4">
