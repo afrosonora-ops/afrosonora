@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import {
@@ -187,6 +188,7 @@ const SobrePage = () => {
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24">
         <div className="container mx-auto px-4">
+          <Breadcrumbs />
           <Link
             to="/"
             className="inline-flex items-center gap-2 min-h-11 text-sm text-muted-foreground hover:text-gold transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"

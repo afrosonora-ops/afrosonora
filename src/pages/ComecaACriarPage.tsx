@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -92,6 +93,7 @@ const ComecaACriarPage = () => {
       {/* Hero */}
       <section className="pt-32 pb-16 bg-charcoal">
         <div className="container mx-auto px-4 text-center space-y-6">
+          <Breadcrumbs className="text-left" />
           <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground">
             Começa a <span className="text-gradient-gold">Criar</span>
           </h1>

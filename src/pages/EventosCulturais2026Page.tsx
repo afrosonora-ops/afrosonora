@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, MapPin, Globe, ExternalLink } from "lucide-react";
 import heroImg from "@/assets/eventos-culturais-2026.webp";
@@ -101,6 +102,7 @@ const EventosCulturais2026Page = () => {
       {/* Timeline / Agenda */}
       <main className="pb-24">
         <div className="container mx-auto px-4 max-w-4xl">
+          <Breadcrumbs />
           <div className="relative">
             {/* Vertical line */}
             <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-border" />

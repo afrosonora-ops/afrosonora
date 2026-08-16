@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import img1 from "@/assets/quem-somos-1.webp";
 import img2 from "@/assets/quem-somos-2.webp";
 import { Link } from "react-router-dom";
@@ -25,6 +26,7 @@ const QuemSomosPage = () => {
       </section>
 
       <div className="container mx-auto px-4 py-16 max-w-4xl space-y-16">
+        <Breadcrumbs />
         {/* 1. Introdução */}
         <section className="space-y-4">
           <h2 className="font-display text-3xl font-bold text-foreground">1. Introdução</h2>
