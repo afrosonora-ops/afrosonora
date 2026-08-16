@@ -68,8 +68,18 @@
             "@id": "https://afrosonora.lovable.app/#website",
             "url": "https://afrosonora.lovable.app/",
             "name": "AfroSonora",
+            "alternateName": "AfroSonora — Música Afro na Europa",
+            "description": "Plataforma que liga músicos, bandas e DJs de música afro de África e da diáspora a promotores, eventos e público na Europa.",
             "inLanguage": "pt-PT",
-            "publisher": { "@id": "https://afrosonora.lovable.app/#organization" }
+            "publisher": { "@id": "https://afrosonora.lovable.app/#organization" },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://afrosonora.lovable.app/artistas?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
           }
         ]
       }

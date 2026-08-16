@@ -91,7 +91,9 @@ const artistsJsonLd = {
 const ArtistsPage = () => {
   const [artists, setArtists] = useState<Artist[]>([]);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(
+    () => new URLSearchParams(window.location.search).get("q") ?? ""
+  );
   const [selectedGenre, setSelectedGenre] = useState("Todos");
   const [selectedCountry, setSelectedCountry] = useState("Todos");
   const { toast } = useToast();

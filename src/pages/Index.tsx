@@ -108,26 +108,29 @@ const Index = () => {
             </div>
 
             <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground leading-tight">
-              Conectamos <span className="text-gradient-gold">Artistas</span> ao Mercado Internacional
+              A plataforma de <span className="text-gradient-gold">música afro</span> que liga artistas africanos ao público e aos promotores da Europa
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Promoção artística, criação de oportunidades reais, eventos exclusivos e ligação direta com promotores
-              internacionais.
+              A AfroSonora é a plataforma europeia dedicada à música afro e à cultura africana. Músicos, bandas e DJs de
+              afrobeat, kizomba, semba, kuduro, afro house e amapiano criam o seu perfil, mostram o seu trabalho e chegam
+              diretamente a promotores, agências e público em Portugal e na Europa — sem intermediários e mantendo todos
+              os seus direitos.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link to="/registo">
                 <Button variant="hero" size="xl" className="w-full sm:w-auto">
-                  Criar Perfil <ArrowRight className="ml-2 w-5 h-5" />
+                  Criar perfil de artista grátis <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/artistas">
                 <Button variant="heroOutline" size="xl" className="w-full sm:w-auto">
-                  Ver Artistas
+                  Descobrir músicos afro
                 </Button>
               </Link>
             </div>
+
 
             <div className="flex flex-wrap justify-center gap-8 pt-8 text-muted-foreground">
               <div className="flex items-center gap-2">
@@ -155,11 +158,15 @@ const Index = () => {
               O que é a <span className="text-gradient-gold">AfroSonora</span>?
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              A AFROSONORA é mais do que uma plataforma digital; somos um movimento dedicado a amplificar as vozes e os ritmos vibrantes de África no coração da Europa. Acreditamos no poder transformador da música e da arte africana
+              A AfroSonora é uma plataforma de promoção e ligação profissional para a música afro na Europa — não é um
+              serviço de streaming. Reunimos num só lugar perfis de artistas de África e da diáspora, agenda de eventos
+              culturais, showcases e um canal direto com promotores e agências. Para os artistas, é visibilidade e
+              oportunidades reais; para promotores e público, é a forma mais simples de encontrar talento africano
+              autêntico para palcos, festas e festivais.
             </p>
             <Link to="/sobre">
               <Button variant="gold" size="sm" className="mt-4">
-                Saber Mais <ArrowRight className="ml-1 w-4 h-4" />
+                Saber mais sobre a AfroSonora <ArrowRight className="ml-1 w-4 h-4" />
               </Button>
             </Link>
 
@@ -172,11 +179,13 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Para <span className="text-gradient-gold">Quem</span>?
+              Para <span className="text-gradient-gold">quem</span> é a AfroSonora?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Uma plataforma desenhada para todos os intervenientes do ecossistema musical africano.
+              Uma plataforma desenhada para todo o ecossistema da música africana na Europa: artistas, promotores,
+              apoiantes e comunidades.
             </p>
+
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -255,7 +264,8 @@ const Index = () => {
               O que <span className="text-gradient-gold">Fazemos</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Criamos valor real para artistas através de seis pilares fundamentais.
+              Promoção, eventos, conteúdo e ligação a promotores: seis pilares que criam oportunidades reais para
+              artistas de música afro na Europa.
             </p>
           </div>
 
@@ -377,7 +387,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              <span className="text-gradient-gold">Planos</span> para  para Músicos, Artistas ...
+              <span className="text-gradient-gold">Planos</span> para músicos, bandas e DJs
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Impulsione sua carreira. Escolha o plano ideal para cada fase da sua jornada artística.
@@ -523,12 +533,13 @@ const Index = () => {
               Pronto para dar o próximo passo na sua <span className="text-gradient-gold">carreira</span>?
             </h2>
             <p className="text-lg text-muted-foreground">
-              Junte-se à comunidade AFROSONORA e comece a construir a sua presença no mercado europeu hoje.
+              Crie o seu perfil de artista na AfroSonora, mostre a sua música e comece hoje a construir a sua presença
+              no mercado europeu.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/registo">
                 <Button variant="hero" size="xl">
-                  Criar Perfil Agora <ArrowRight className="ml-2 w-5 h-5" />
+                  Criar perfil de artista grátis <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/contacto">
