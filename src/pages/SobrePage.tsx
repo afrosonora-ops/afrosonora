@@ -61,8 +61,12 @@ const SobrePage = () => {
             <img
               src={logo3d.url}
               alt="Logótipo AfroSonora em relevo dourado"
-              className="mx-auto w-40 md:w-56 rounded-2xl border border-gold/20 shadow-lg"
-              decoding="async"
+              width={1137}
+              height={928}
+              className="mx-auto w-40 md:w-56 h-auto aspect-[1137/928] object-cover rounded-2xl border border-gold/20 shadow-lg bg-[#1A1A1A]"
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
             />
             <h1 className="font-display text-4xl md:text-6xl font-bold">
               Sobre a <span className="text-gradient-gold">AfroSonora</span>
