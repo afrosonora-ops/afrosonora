@@ -135,6 +135,11 @@ const sobreJsonLd = [
       slogan: "Sons de África — a ponte musical entre África e Europa",
       foundingLocation: { "@type": "Place", name: "Países Baixos" },
       areaServed: ["Países Baixos", "Luxemburgo", "Portugal", "França", "Europa", "África"],
+      sameAs: [
+        "https://www.instagram.com/afro.sonora",
+        "https://www.facebook.com/profile.php?id=61586604232083",
+      ],
+
       knowsAbout: [
         "música afro",
         "afrobeat",

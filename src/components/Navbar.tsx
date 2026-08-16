@@ -4,6 +4,8 @@ import { Menu, X, User, LogOut, Shield } from "lucide-react";
 import { useState } from "react";
 import logo2 from "@/assets/logo2.webp";
 import { useAuth } from "@/contexts/AuthContext";
+import SocialLinks from "@/components/SocialLinks";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +46,8 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
+            <SocialLinks size={18} className="mr-1 border-r border-border pr-2" />
+
             {user ? (
               <>
                 {roles.includes("admin") && (
@@ -127,6 +131,10 @@ const Navbar = () => {
                   </>
                 )}
               </div>
+              <div className="pt-2 border-t border-border">
+                <SocialLinks size={20} className="-ml-3" />
+              </div>
+
             </div>
           </div>
         )}
