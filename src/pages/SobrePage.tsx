@@ -146,7 +146,7 @@ const SobrePage = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Seo
-        title="Sobre a AfroSonora | Sons de África na Europa"
+        title="O que é a AfroSonora | Música Afro e Cultura Africana"
         description="O que é a AfroSonora: plataforma europeia de música afro que liga artistas de África e da diáspora a promotores, palcos e público — história, missão, pilares e perguntas frequentes."
         path="/sobre"
         jsonLd={sobreJsonLd}
