@@ -105,6 +105,7 @@ const Footer = () => {
               <li><Link to="/registo" className="text-muted-foreground hover:text-gold transition-colors text-sm">Criar Perfil</Link></li>
               <li><Link to="/comeca-a-criar" className="text-muted-foreground hover:text-gold transition-colors text-sm">Começa a Criar</Link></li>
               <li><Link to="/store" className="text-muted-foreground hover:text-gold transition-colors text-sm">Store AFROSONORA</Link></li>
+              <li><Link to="/guias" className="text-muted-foreground hover:text-gold transition-colors text-sm">Guias de Música Afro</Link></li>
             </ul>
           </div>
 
