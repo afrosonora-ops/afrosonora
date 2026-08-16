@@ -395,13 +395,13 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Essencial Plan */}
+            {/* Cartão de Membro AFROSONORA */}
             <Card variant="elevated" className="relative overflow-hidden">
               <CardHeader className="pb-4">
                 <CardDescription className="text-gold font-medium">Iniciante</CardDescription>
-                <CardTitle className="text-3xl">Essencial</CardTitle>
+                <CardTitle className="text-3xl">Cartão de Membro AFROSONORA</CardTitle>
                 <div className="pt-2">
-                  <span className="text-4xl font-bold text-foreground">1,50€</span>
+                  <span className="text-4xl font-bold text-foreground">4€</span>
                   <span className="text-muted-foreground">/mês</span>
                 </div>
               </CardHeader>
