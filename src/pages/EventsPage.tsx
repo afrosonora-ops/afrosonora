@@ -10,13 +10,13 @@ import { staticEvents } from "@/data/eventsData";
 const eventsJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  url: "https://afrosonora.lovable.app/eventos",
+  url: "https://afrosonora.com/eventos",
   name: "Eventos e oportunidades AfroSonora",
   inLanguage: "pt-PT",
   description:
     "Iniciativas, showcases e oportunidades para músicos africanos e da diáspora promovidas pela AfroSonora na Europa.",
-  isPartOf: { "@id": "https://afrosonora.lovable.app/#website" },
-  publisher: { "@id": "https://afrosonora.lovable.app/#organization" },
+  isPartOf: { "@id": "https://afrosonora.com/#website" },
+  publisher: { "@id": "https://afrosonora.com/#organization" },
 };
 
 const EventsPage = () => {

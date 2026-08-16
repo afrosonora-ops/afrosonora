@@ -6,7 +6,7 @@ import Seo from "@/components/Seo";
 import { guides } from "@/data/guidesData";
 import { ArrowRight, Clock } from "lucide-react";
 
-const SITE_URL = "https://afrosonora.lovable.app";
+const SITE_URL = "https://afrosonora.com";
 
 const GuidesPage = () => {
   const jsonLd = [

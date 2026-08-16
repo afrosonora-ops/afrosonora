@@ -6,7 +6,7 @@ import Seo from "@/components/Seo";
 import { getGuide, guides } from "@/data/guidesData";
 import { ArrowLeft, ArrowRight, Clock, Check } from "lucide-react";
 
-const SITE_URL = "https://afrosonora.lovable.app";
+const SITE_URL = "https://afrosonora.com";
 
 const GuideArticlePage = () => {
   const { slug } = useParams();

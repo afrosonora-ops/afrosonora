@@ -98,7 +98,7 @@ const faqs = [
   },
 ];
 
-const SITE = "https://afrosonora.lovable.app";
+const SITE = "https://afrosonora.com";
 
 const faqJsonLd = {
   "@context": "https://schema.org",

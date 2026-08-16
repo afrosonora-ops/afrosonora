@@ -72,13 +72,13 @@ const ArtistsSkeleton = () => (
 const artistsJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  url: "https://afrosonora.lovable.app/artistas",
+  url: "https://afrosonora.com/artistas",
   name: "Músicos africanos e da diáspora na AfroSonora",
   inLanguage: "pt-PT",
   description:
     "Diretório exclusivo de músicos, bandas e DJs de música afro. Os perfis e contactos dos artistas estão disponíveis apenas para promotores e agências credenciadas durante a fase de lançamento.",
-  isPartOf: { "@id": "https://afrosonora.lovable.app/#website" },
-  publisher: { "@id": "https://afrosonora.lovable.app/#organization" },
+  isPartOf: { "@id": "https://afrosonora.com/#website" },
+  publisher: { "@id": "https://afrosonora.com/#organization" },
 };
 
 const ArtistsPage = () => {
