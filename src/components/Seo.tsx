@@ -69,23 +69,26 @@ const Seo = ({ title, description, path, image = DEFAULT_IMAGE, jsonLd, breadcru
     setMeta("name", "twitter:image:alt", title);
   }, [title, description, path, image, noindex]);
 
-  const breadcrumbLd = breadcrumbs?.length
-    ? {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [{ name: "Início", path: "/" }, ...breadcrumbs].map((c, i) => ({
-          "@type": "ListItem",
-          position: i + 1,
-          name: c.name,
-          item: `${SITE_URL}${c.path}`,
-        })),
-      }
-    : null;
+  const provided = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+  const hasOwnBreadcrumb = provided.some((n) => n?.["@type"] === "BreadcrumbList");
+  const trail = breadcrumbs ?? getTrail(path);
 
-  const graph = [
-    ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []),
-    ...(breadcrumbLd ? [breadcrumbLd] : []),
-  ];
+  const breadcrumbLd =
+    trail.length && !hasOwnBreadcrumb
+      ? {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [{ name: "Início", path: "/" }, ...trail].map((c, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: c.name,
+            item: `${SITE_URL}${c.path}`,
+          })),
+        }
+      : null;
+
+  const graph = [...provided, ...(breadcrumbLd ? [breadcrumbLd] : [])];
+
   const serialized = graph.length ? JSON.stringify(graph.length === 1 ? graph[0] : graph) : null;
   useEffect(() => {
     if (!serialized) return;
