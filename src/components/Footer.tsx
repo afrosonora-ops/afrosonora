@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Instagram, Youtube, Facebook, Mail, ArrowRight, CheckCircle, Loader2 } from "lucide-react";
+import { Mail, ArrowRight, CheckCircle, Loader2 } from "lucide-react";
+import SocialLinks from "@/components/SocialLinks";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";

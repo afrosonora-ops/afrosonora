@@ -4,6 +4,8 @@ import { Menu, X, User, LogOut, Shield } from "lucide-react";
 import { useState } from "react";
 import logo2 from "@/assets/logo2.webp";
 import { useAuth } from "@/contexts/AuthContext";
+import SocialLinks from "@/components/SocialLinks";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
