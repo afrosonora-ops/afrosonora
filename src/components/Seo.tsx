@@ -1,13 +1,13 @@
 import { useEffect } from "react";
+import { getTrail, type Crumb } from "@/lib/breadcrumbTrails";
+
+export type { Crumb };
 
 const SITE_URL = "https://afrosonora.lovable.app";
 const DEFAULT_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/ZI7Zx4L0GMXfEHzDy466NYNogmn2/social-images/social-1774086687145-Logo_branco.webp";
 
-export interface Crumb {
-  name: string;
-  path: string;
-}
+
 
 interface SeoProps {
   title: string;
