@@ -148,14 +148,11 @@ const Index = () => {
             </div>
 
             <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground leading-tight">
-              A plataforma de <span className="text-gradient-gold">música afro</span> que liga artistas africanos ao público e aos promotores da Europa
+              Conectamos <span className="text-gradient-gold">Artistas</span> ao Mercado Internacional
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              A AfroSonora é a plataforma europeia dedicada à música afro e à cultura africana. Músicos, bandas e DJs de
-              afrobeat, kizomba, semba, kuduro, afro house e amapiano criam o seu perfil, mostram o seu trabalho e chegam
-              diretamente a promotores, agências e público em Portugal e na Europa — sem intermediários e mantendo todos
-              os seus direitos.
+              Promoção artística, criação de oportunidades reais, eventos exclusivos e ligação direta com promotores internacionais.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
