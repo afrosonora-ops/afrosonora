@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle2, AlertTriangle, ArrowRight, Loader2 } from "lucide-react";
+import { CheckCircle2, AlertTriangle } from "lucide-react";
 import type { BillingPeriod } from "@/pages/PlansPage";
 
 const plans = [
@@ -67,11 +67,9 @@ const plans = [
 
 interface PlansGridProps {
   billingPeriod: BillingPeriod;
-  loadingPlan: string | null;
-  onCheckout: (planSlug: string) => void;
 }
 
-const PlansGrid = ({ billingPeriod, loadingPlan, onCheckout }: PlansGridProps) => {
+const PlansGrid = ({ billingPeriod }: PlansGridProps) => {
   const formatPrice = (plan: typeof plans[0]) => {
     const price = billingPeriod === "annual" ? plan.annualPrice : plan.monthlyPrice;
     return price % 1 === 0 ? `${price}€` : `${price.toFixed(2).replace(".", ",")}€`;
