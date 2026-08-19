@@ -1,12 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { useAuth } from "@/contexts/AuthContext";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
 import PlansBillingToggle from "@/components/plans/PlansBillingToggle";
 import PlansGrid from "@/components/plans/PlansGrid";
 import PlansFAQ from "@/components/plans/PlansFAQ";
@@ -15,36 +11,6 @@ export type BillingPeriod = "monthly" | "annual";
 
 const PlansPage = () => {
   const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>("monthly");
-  const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
-  const { user } = useAuth();
-  const navigate = useNavigate();
-
-  const handleCheckout = async (planSlug: string) => {
-    if (!user) {
-      toast.info("Crie uma conta ou inicie sessão para subscrever.");
-      navigate("/registo");
-      return;
-    }
-
-    setLoadingPlan(planSlug);
-    try {
-      const { data, error } = await supabase.functions.invoke("create-checkout", {
-        body: { planSlug, billingPeriod },
-      });
-
-      if (error) throw error;
-      if (data?.url) {
-        window.location.href = data.url;
-      } else {
-        throw new Error("Não foi possível iniciar o pagamento.");
-      }
-    } catch (err: any) {
-      toast.error(err.message || "Erro ao processar pagamento.");
-    } finally {
-      setLoadingPlan(null);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -62,11 +28,14 @@ const PlansPage = () => {
             <PlansBillingToggle billingPeriod={billingPeriod} onChange={setBillingPeriod} />
           </div>
 
-          <PlansGrid
-            billingPeriod={billingPeriod}
-            loadingPlan={loadingPlan}
-            onCheckout={handleCheckout}
-          />
+          <div className="max-w-3xl mx-auto mb-10 rounded-xl border border-primary/40 bg-primary/5 px-6 py-4 text-center">
+            <p className="text-sm text-foreground">
+              As subscrições ainda não estão disponíveis. Os planos abaixo são informativos —
+              em breve poderás aderir online.
+            </p>
+          </div>
+
+          <PlansGrid billingPeriod={billingPeriod} />
 
           <PlansFAQ />
         </div>

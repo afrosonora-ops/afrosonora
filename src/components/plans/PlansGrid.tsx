@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle2, AlertTriangle, ArrowRight, Loader2 } from "lucide-react";
+import { CheckCircle2, AlertTriangle } from "lucide-react";
 import type { BillingPeriod } from "@/pages/PlansPage";
 
 const plans = [
@@ -67,11 +67,9 @@ const plans = [
 
 interface PlansGridProps {
   billingPeriod: BillingPeriod;
-  loadingPlan: string | null;
-  onCheckout: (planSlug: string) => void;
 }
 
-const PlansGrid = ({ billingPeriod, loadingPlan, onCheckout }: PlansGridProps) => {
+const PlansGrid = ({ billingPeriod }: PlansGridProps) => {
   const formatPrice = (plan: typeof plans[0]) => {
     const price = billingPeriod === "annual" ? plan.annualPrice : plan.monthlyPrice;
     return price % 1 === 0 ? `${price}€` : `${price.toFixed(2).replace(".", ",")}€`;
@@ -137,22 +135,16 @@ const PlansGrid = ({ billingPeriod, loadingPlan, onCheckout }: PlansGridProps) =
                 variant={plan.buttonVariant}
                 className="w-full"
                 size="lg"
-                onClick={() => onCheckout(plan.slug)}
-                disabled={loadingPlan !== null}
+                disabled
+                aria-label={`${plan.name} — subscrições em breve`}
               >
-                {loadingPlan === plan.slug ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                    A processar...
-                  </>
-                ) : (
-                  <>
-                    {plan.buttonText}
-                    {plan.popular && <ArrowRight className="ml-2 w-4 h-4" />}
-                  </>
-                )}
+                Em Breve
               </Button>
+              <p className="text-xs text-muted-foreground text-center mt-2">
+                Subscrições ainda não disponíveis.
+              </p>
             </div>
+
           </CardContent>
         </Card>
       ))}
