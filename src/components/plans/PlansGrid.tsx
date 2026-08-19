@@ -137,22 +137,16 @@ const PlansGrid = ({ billingPeriod, loadingPlan, onCheckout }: PlansGridProps) =
                 variant={plan.buttonVariant}
                 className="w-full"
                 size="lg"
-                onClick={() => onCheckout(plan.slug)}
-                disabled={loadingPlan !== null}
+                disabled
+                aria-label={`${plan.name} — subscrições em breve`}
               >
-                {loadingPlan === plan.slug ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                    A processar...
-                  </>
-                ) : (
-                  <>
-                    {plan.buttonText}
-                    {plan.popular && <ArrowRight className="ml-2 w-4 h-4" />}
-                  </>
-                )}
+                Em Breve
               </Button>
+              <p className="text-xs text-muted-foreground text-center mt-2">
+                Subscrições ainda não disponíveis.
+              </p>
             </div>
+
           </CardContent>
         </Card>
       ))}
